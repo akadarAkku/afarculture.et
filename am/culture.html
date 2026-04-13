@@ -1,0 +1,567 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afar Culture - Traditions, Customs & Heritage</title>
+    <meta name="description" content="Explore the rich cultural traditions of the Afar people, including social structure, traditional attire, ceremonies, and oral traditions">
+    <link rel="icon" href="../assets/images/favicon.png" type="image/x-icon">
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <style>
+        :root {
+            --primary-blue: #1a3a5c;
+            --secondary-blue: #2c5f7c;
+            --accent-gold: #ffd700;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f8f9fa;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            padding: 15px 0;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand img {
+            height: 50px;
+        }
+        
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--accent-gold) !important;
+        }
+        
+        .language-selector {
+            display: flex;
+            gap: 10px;
+            margin-left: 20px;
+        }
+        
+        .lang-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-btn:hover, .lang-btn.active {
+            background: var(--accent-gold);
+            color: var(--primary-blue);
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(26,58,92,0.85), rgba(44,95,124,0.9)), url('https://images.unsplash.com/photo-1590073242678-70ee3fc28f8a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        /* Content Sections */
+        .culture-section {
+            padding: 80px 0;
+        }
+        
+        .culture-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            height: 100%;
+            transition: all 0.3s ease;
+            border-bottom: 4px solid var(--secondary-blue);
+        }
+        
+        .culture-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(26,58,92,0.15);
+        }
+        
+        .culture-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .culture-icon i {
+            font-size: 30px;
+            color: var(--accent-gold);
+        }
+        
+        .culture-card h3 {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .culture-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        /* Tradition Timeline */
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 40px;
+        }
+        
+        .timeline-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-gold);
+            font-size: 24px;
+            margin-right: 30px;
+            flex-shrink: 0;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            flex-grow: 1;
+        }
+        
+        .timeline-content h4 {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        /* Image Gallery */
+        .culture-gallery {
+            margin-top: 30px;
+        }
+        
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Footer */
+        .footer {
+            background: #0f2640;
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer h5 {
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-gold);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--accent-gold);
+            color: var(--primary-blue);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 40px;
+            padding-top: 20px;
+            text-align: center;
+            color: #aaa;
+        }
+        
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 99;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+            }
+            
+            .timeline-icon {
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 50'%3E%3Crect width='150' height='50' rx='5' fill='%23ffd700'/%3E%3Ctext x='75' y='30' font-family='Arial' font-size='14' fill='%231a3a5c' text-anchor='middle' font-weight='bold'%3EAfar Culture%3C/text%3E%3C/svg%3E" alt="Afar Culture">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="culture.html">Culture</a></li>
+                    <li class="nav-item"><a class="nav-link" href="customs.html">Customary Law</a></li>
+                    <li class="nav-item"><a class="nav-link" href="lifestyle.html">Lifestyle</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="language-selector">
+                    <a href="../afar/culture.html" class="lang-btn">Afar</a>
+                    <a href="../am/culture.html" class="lang-btn">አማርኛ</a>
+                    <a href="culture.html" class="lang-btn active">English</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 data-aos="fade-up">Afar Culture & Traditions</h1>
+            <p data-aos="fade-up" data-aos-delay="100">Discover the ancient customs, social structures, and cultural practices that define Afar identity</p>
+        </div>
+    </section>
+
+    <!-- Social Structure Section -->
+    <section class="culture-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1072&q=80" alt="Afar Social Structure" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h2 style="color: var(--primary-blue); font-weight: 700; margin-bottom: 20px;">Social Structure & Clan System</h2>
+                    <p style="color: #666; line-height: 1.8; margin-bottom: 20px;">Afar society is organized around a complex clan system that forms the backbone of social, political, and economic life. The Afar people are divided into two main categories: the Asaimara (red men) and the Adoimara (white men).</p>
+                    <p style="color: #666; line-height: 1.8; margin-bottom: 20px;">The Asaimara traditionally held political and religious authority, while the Adoimara were primarily pastoralists. Today, this distinction is less rigid, but clan identity remains central to Afar social organization.</p>
+                    <p style="color: #666; line-height: 1.8;">There are four major clan families: the Asaemara, Adoemara, Hadarem, and Debeniwe'ima, each further divided into numerous sub-clans and lineages. This system governs marriage, inheritance, and conflict resolution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cultural Elements Grid -->
+    <section class="culture-section" style="background: #f0f4f8;">
+        <div class="container">
+            <h2 class="text-center mb-5" style="color: var(--primary-blue); font-weight: 700;" data-aos="fade-up">Key Cultural Elements</h2>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="culture-card">
+                        <div class="culture-icon">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        <h3>Traditional Attire</h3>
+                        <p>The Sanafil (waistcloth) and Shash (headscarf) for men, and the colorful Gambo (dress) for women are distinctive elements of Afar identity. The Jile, a curved dagger, is an essential accessory for men.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="culture-card">
+                        <div class="culture-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <h3>Oral Traditions</h3>
+                        <p>Poetry (Gabay), proverbs, and folk songs are vital for preserving history, expressing emotions, and transmitting knowledge. The Afar language (Afaraf) is rich in oral literature.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="culture-card">
+                        <div class="culture-icon">
+                            <i class="fas fa-ring"></i>
+                        </div>
+                        <h3>Marriage Customs</h3>
+                        <p>Marriage is traditionally arranged between families, with bride wealth (Lebe) paid in livestock. The Absuma custom (cousin marriage) is preferred to maintain clan ties.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="culture-card">
+                        <div class="culture-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3>Ceremonies & Festivals</h3>
+                        <p>Important life events like births, circumcisions, marriages, and funerals are marked by elaborate ceremonies involving the entire community with feasting and dancing.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="culture-card">
+                        <div class="culture-icon">
+                            <i class="fas fa-hand-sparkles"></i>
+                        </div>
+                        <h3>Hospitality (Qaffu)</h3>
+                        <p>Hospitality is a sacred duty. Guests are offered fresh milk, meat, and the traditional drink Ali. Refusing hospitality is considered a serious breach of social etiquette.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="culture-card">
+                        <div class="culture-icon">
+                            <i class="fas fa-dove"></i>
+                        </div>
+                        <h3>Peacemaking (Mabla)</h3>
+                        <p>Traditional conflict resolution mechanisms emphasize reconciliation and compensation rather than punishment, with elders playing a crucial mediating role.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Jile Dagger Section -->
+    <section class="culture-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2 mb-4" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1589652717521-10c0d092dea9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1072&q=80" alt="The Jile Dagger" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+                </div>
+                <div class="col-lg-6 order-lg-1" data-aos="fade-right">
+                    <h2 style="color: var(--primary-blue); font-weight: 700; margin-bottom: 20px;">The Jile: Symbol of Honor</h2>
+                    <p style="color: #666; line-height: 1.8; margin-bottom: 20px;">The Jile is a traditional curved dagger that is perhaps the most recognizable symbol of Afar culture. More than just a weapon, it represents honor, bravery, and manhood.</p>
+                    <p style="color: #666; line-height: 1.8; margin-bottom: 20px;">A young Afar man receives his first Jile during his initiation into adulthood. The dagger is worn on the right side, secured by the Sanafil, and is never drawn in anger except in self-defense or to protect one's honor.</p>
+                    <p style="color: #666; line-height: 1.8;">The craftsmanship of the Jile is highly valued, with the best blades being passed down through generations as family heirlooms. The sheath is often decorated with leather work and metal ornaments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cultural Timeline -->
+    <section class="culture-section" style="background: #f0f4f8;">
+        <div class="container">
+            <h2 class="text-center mb-5" style="color: var(--primary-blue); font-weight: 700;" data-aos="fade-up">Traditional Life Cycle</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Birth (Ubka)</h4>
+                        <p>The birth of a child, especially a son, is celebrated with great joy. A naming ceremony is held on the seventh day, where the child receives their name and is welcomed into the clan.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Circumcision (Asallata)</h4>
+                        <p>Boys undergo circumcision between ages 7-12, marking their transition from childhood. The ceremony is a community event with feasting and celebration. Girls also undergo traditional practices.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Initiation to Adulthood</h4>
+                        <p>Young men learn the responsibilities of adulthood, including livestock management, customary law, and the warrior code. They receive their first Jile dagger as a symbol of manhood.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Marriage (Rihino)</h4>
+                        <p>Marriage is a union of families and clans. The bride wealth (Lebe) is negotiated and paid in livestock. Wedding celebrations can last for several days with feasting and dancing.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Elder Status</h4>
+                        <p>Elders (Dorra) are highly respected for their wisdom and knowledge of Mada'a (customary law). They serve as judges, mediators, and guardians of tradition.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>About Afar Culture</h5>
+                    <p style="color: #ccc;">Dedicated to preserving, documenting, and sharing the rich cultural heritage of the Afar people in the Horn of Africa.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="culture.html">Culture</a></li>
+                        <li><a href="customs.html">Customary Law</a></li>
+                        <li><a href="lifestyle.html">Lifestyle</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Resources</h5>
+                    <ul class="footer-links">
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Publications</a></li>
+                        <li><a href="#">Research</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <h5>Contact</h5>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> Afar Region, Ethiopia</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@afarculture.org</li>
+                        <li><i class="fas fa-phone me-2"></i> +251 000 000000</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Qafar Qaada | Afar Culture. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../assets/js/main.js"></script>
+    
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>

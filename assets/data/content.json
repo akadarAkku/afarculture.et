@@ -1,0 +1,105 @@
+  {
+  "site": {
+    "name": {
+      "en": "Afar Culture",
+      "afar": "Qafar Qaada",
+      "am": "የአፋር ባህል"
+    },
+    "description": {
+      "en": "Preserving and sharing the rich cultural heritage of the Afar people",
+      "afar": "Qafar Qaada dacayroh gacsaay fayyaaqiyya",
+      "am": "የአፋር ህዝብ የበለጸገ ባህላዊ ቅርስ መጠበቅ እና ማካፈል"
+    }
+  },
+  "navigation": {
+    "en": ["Home", "Culture", "Customary Law", "Lifestyle", "Gallery", "Contact"],
+    "afar": ["Qari", "Qaada", "Mada'a", "Mano", "Sawari", "Caaqid"],
+    "am": ["መነሻ", "ባህል", "ልማዳዊ ህግ", "አኗኗር", "ጋለሪ", "እውቂያ"]
+  },
+  "pages": {
+    "home": {
+      "en": {
+        "hero": {
+          "title": "Discover the Rich Heritage of the Afar People",
+          "subtitle": "Explore the ancient traditions, customary laws, and nomadic lifestyle of one of the Horn of Africa's most resilient cultures",
+          "button": "Explore Culture"
+        },
+        "about": {
+          "title": "The Afar People: Guardians of the Danakil",
+          "content": "The Afar people, also known as the Danakil, are a Cushitic ethnic group inhabiting the Horn of Africa. Primarily residing in the Afar Region of Ethiopia, northern Djibouti, and southern Eritrea, they are renowned for their resilience in one of the hottest and most inhospitable environments on Earth - the Danakil Depression."
+        },
+        "features": [
+          {
+            "icon": "fa-mask",
+            "title": "Traditional Culture",
+            "description": "Discover the unique customs, ceremonies, and social structures that define Afar identity"
+          },
+          {
+            "icon": "fa-gavel",
+            "title": "Customary Law (Mada'a)",
+            "description": "Understand the traditional legal system that has governed Afar society for generations"
+          },
+          {
+            "icon": "fa-campground",
+            "title": "Pastoral Lifestyle",
+            "description": "Explore the nomadic traditions and the deep connection between Afar people and their land"
+          }
+        ]
+      },
+      "afar": {
+        "hero": {
+          "title": "Qafar Qaada Dacayro Baxxaqis",
+          "subtitle": "Qafar qaada, mada'aay, kee manol xayloh tan gexsititte qambal",
+          "button": "Qaada Baxxaqis"
+        }
+      },
+      "am": {
+        "hero": {
+          "title": "የአፋር ህዝብ የበለጸገ ቅርስ ይወቁ",
+          "subtitle": "በአፍሪካ ቀንድ ከሚገኙት በጣም ጠንካራ ባህሎች መካከል አንዱ የሆነውን ጥንታዊ ወጎችን፣ ልማዳዊ ህጎችን እና ዘላን አኗኗርን ይመርምሩ",
+          "button": "ባህልን ይመርምሩ"
+        }
+      }
+    }
+  },
+  "culture": {
+    "en": {
+      "title": "Afar Culture and Traditions",
+      "sections": [
+        {
+          "title": "Social Structure",
+          "content": "Afar society is organized into clans and sub-clans, with a strong emphasis on kinship and collective responsibility."
+        },
+        {
+          "title": "Traditional Attire",
+          "content": "The distinctive Sanafil (waistcloth) and Shash (headscarf) for men, and the colorful Gambo (dress) for women."
+        },
+        {
+          "title": "The Jile Dagger",
+          "content": "The Jile is a traditional curved dagger that symbolizes honor, bravery, and manhood in Afar culture."
+        }
+      ]
+    }
+  },
+  "customs": {
+    "en": {
+      "title": "Mada'a - Afar Customary Law",
+      "content": "The Mada'a is the traditional legal system of the Afar people, governing everything from marriage and inheritance to conflict resolution and resource management."
+    }
+  },
+  "lifestyle": {
+    "en": {
+      "title": "Pastoral Lifestyle",
+      "content": "The Afar are traditionally pastoralists, herding camels, goats, sheep, and cattle across the arid landscapes of the Horn of Africa."
+    }
+  },
+  "gallery": {
+    "categories": ["Landscape", "People", "Traditions", "Daily Life"],
+    "images": []
+  },
+  "settings": {
+    "primaryColor": "#1a3a5c",
+    "secondaryColor": "#2c5f7c",
+    "accentColor": "#ffd700"
+  }
+}

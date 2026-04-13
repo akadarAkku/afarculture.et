@@ -1,0 +1,899 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Afar Culture CMS</title>
+    <link rel="icon" href="../assets/images/favicon.png" type="image/x-icon">
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Summernote Editor -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+    <!-- Custom Admin CSS -->
+    <link rel="stylesheet" href="admin.css">
+    
+    <style>
+        :root {
+            --primary-blue: #1a3a5c;
+            --secondary-blue: #2c5f7c;
+            --accent-gold: #ffd700;
+            --sidebar-width: 280px;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f5f7fa;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: var(--sidebar-width);
+            background: linear-gradient(180deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: white;
+            padding: 20px 0;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+        
+        .sidebar-header {
+            padding: 0 20px 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .sidebar-header h3 {
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+        
+        .sidebar-menu {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .sidebar-menu li {
+            margin-bottom: 5px;
+        }
+        
+        .sidebar-menu a {
+            display: flex;
+            align-items: center;
+            padding: 12px 20px;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .sidebar-menu a:hover,
+        .sidebar-menu a.active {
+            background: rgba(255,255,255,0.1);
+            color: var(--accent-gold);
+        }
+        
+        .sidebar-menu i {
+            width: 24px;
+            margin-right: 12px;
+        }
+        
+        /* Main Content */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            padding: 20px 30px;
+            min-height: 100vh;
+        }
+        
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .page-title {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+        
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .user-profile img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid var(--accent-gold);
+        }
+        
+        /* Cards */
+        .stat-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary-blue);
+        }
+        
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-gold);
+            font-size: 24px;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* Content Editor Card */
+        .editor-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        
+        .editor-card h5 {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        /* Language Tabs */
+        .language-tabs {
+            border-bottom: 2px solid #e0e0e0;
+            margin-bottom: 20px;
+        }
+        
+        .language-tabs .nav-link {
+            color: #666;
+            border: none;
+            padding: 12px 24px;
+            font-weight: 500;
+        }
+        
+        .language-tabs .nav-link.active {
+            color: var(--primary-blue);
+            border-bottom: 3px solid var(--primary-blue);
+            background: transparent;
+        }
+        
+        /* Table */
+        .table-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        
+        .table th {
+            color: var(--primary-blue);
+            font-weight: 600;
+            border-bottom-width: 2px;
+        }
+        
+        .status-badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .status-published {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status-draft {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        /* Buttons */
+        .btn-primary-custom {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary-custom:hover {
+            background: var(--secondary-blue);
+            transform: translateY(-2px);
+        }
+        
+        .btn-gold {
+            background: var(--accent-gold);
+            color: var(--primary-blue);
+            border: none;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-gold:hover {
+            background: #e6c200;
+            transform: translateY(-2px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            
+            .sidebar.show {
+                transform: translateX(0);
+            }
+            
+            .main-content {
+                margin-left: 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+        }
+        
+        .menu-toggle {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1001;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+        }
+        
+        /* Image Upload Preview */
+        .image-preview {
+            width: 150px;
+            height: 100px;
+            border: 2px dashed #ddd;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+            cursor: pointer;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        /* JSON Preview */
+        .json-preview {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 13px;
+            max-height: 400px;
+            overflow: auto;
+        }
+        
+        .json-key {
+            color: #9cdcfe;
+        }
+        
+        .json-string {
+            color: #ce9178;
+        }
+        
+        .json-number {
+            color: #b5cea8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile Menu Toggle -->
+    <button class="menu-toggle" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3><i class="fas fa-crown me-2"></i>Afar Culture CMS</h3>
+            <p class="mb-0" style="opacity: 0.8; font-size: 0.9rem;">Content Management System</p>
+        </div>
+        
+        <ul class="sidebar-menu">
+            <li>
+                <a href="#" class="active" onclick="showSection('dashboard')">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="showSection('pages')">
+                    <i class="fas fa-file-alt"></i> Pages
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="showSection('culture')">
+                    <i class="fas fa-mask"></i> Culture Content
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="showSection('customs')">
+                    <i class="fas fa-gavel"></i> Customary Law
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="showSection('lifestyle')">
+                    <i class="fas fa-campground"></i> Lifestyle
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="showSection('gallery')">
+                    <i class="fas fa-images"></i> Gallery
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="showSection('settings')">
+                    <i class="fas fa-cog"></i> Settings
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="showSection('export')">
+                    <i class="fas fa-download"></i> Export Data
+                </a>
+            </li>
+            <li>
+                <a href="../index.html">
+                    <i class="fas fa-sign-out-alt"></i> View Site
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <h2 class="page-title" id="sectionTitle">Dashboard</h2>
+            <div class="user-profile">
+                <span>Admin User</span>
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='45' height='45' viewBox='0 0 45 45'%3E%3Ccircle cx='22.5' cy='22.5' r='22.5' fill='%232c5f7c'/%3E%3Ctext x='22.5' y='30' font-size='18' fill='white' text-anchor='middle'%3E👤%3C/text%3E%3C/svg%3E" alt="Admin">
+            </div>
+        </div>
+
+        <!-- Dashboard Section -->
+        <div id="dashboardSection">
+            <!-- Stats Row -->
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-card d-flex align-items-center">
+                        <div class="stat-icon me-3">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div>
+                            <div class="stat-number">24</div>
+                            <div class="stat-label">Total Pages</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-card d-flex align-items-center">
+                        <div class="stat-icon me-3">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div>
+                            <div class="stat-number">156</div>
+                            <div class="stat-label">Gallery Items</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-card d-flex align-items-center">
+                        <div class="stat-icon me-3">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div>
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Languages</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-card d-flex align-items-center">
+                        <div class="stat-icon me-3">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div>
+                            <div class="stat-number">2.4K</div>
+                            <div class="stat-label">Monthly Views</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity & Quick Actions -->
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="table-container">
+                        <h5><i class="fas fa-history me-2"></i>Recent Updates</h5>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Page</th>
+                                    <th>Language</th>
+                                    <th>Last Updated</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Homepage</td>
+                                    <td>English</td>
+                                    <td>2024-01-15 14:30</td>
+                                    <td><span class="status-badge status-published">Published</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-primary me-1" onclick="editContent('home_en')"><i class="fas fa-edit"></i></button>
+                                        <button class="btn btn-sm btn-outline-success"><i class="fas fa-eye"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Culture</td>
+                                    <td>Afar</td>
+                                    <td>2024-01-14 09:15</td>
+                                    <td><span class="status-badge status-published">Published</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-primary me-1"><i class="fas fa-edit"></i></button>
+                                        <button class="btn btn-sm btn-outline-success"><i class="fas fa-eye"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Customary Law</td>
+                                    <td>Amharic</td>
+                                    <td>2024-01-13 16:45</td>
+                                    <td><span class="status-badge status-draft">Draft</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-primary me-1"><i class="fas fa-edit"></i></button>
+                                        <button class="btn btn-sm btn-outline-success"><i class="fas fa-eye"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="editor-card">
+                        <h5><i class="fas fa-bolt me-2"></i>Quick Actions</h5>
+                        <button class="btn btn-primary-custom w-100 mb-3" onclick="createNewPage()">
+                            <i class="fas fa-plus-circle me-2"></i>Create New Page
+                        </button>
+                        <button class="btn btn-gold w-100 mb-3" onclick="showSection('gallery')">
+                            <i class="fas fa-upload me-2"></i>Upload Images
+                        </button>
+                        <button class="btn btn-outline-primary w-100" onclick="exportContent()">
+                            <i class="fas fa-file-export me-2"></i>Export All Content
+                        </button>
+                    </div>
+                    
+                    <div class="editor-card">
+                        <h5><i class="fas fa-info-circle me-2"></i>Quick Help</h5>
+                        <p class="mb-2"><strong>How to update content:</strong></p>
+                        <ol class="small">
+                            <li>Select a section from the sidebar</li>
+                            <li>Choose the language tab</li>
+                            <li>Edit content in the editor</li>
+                            <li>Click "Save Changes"</li>
+                        </ol>
+                        <p class="mb-0 text-muted">All changes are saved to a JSON file that powers the website.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page Editor Section -->
+        <div id="pagesSection" style="display: none;">
+            <div class="editor-card">
+                <h5><i class="fas fa-file-alt me-2"></i>Page Content Editor</h5>
+                
+                <!-- Page Selector -->
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label class="form-label">Select Page</label>
+                        <select class="form-select" id="pageSelector" onchange="loadPageContent()">
+                            <option value="home">Homepage</option>
+                            <option value="culture">Culture</option>
+                            <option value="customs">Customary Law</option>
+                            <option value="lifestyle">Lifestyle</option>
+                            <option value="gallery">Gallery</option>
+                            <option value="contact">Contact</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Status</label>
+                        <select class="form-select" id="pageStatus">
+                            <option value="published">Published</option>
+                            <option value="draft">Draft</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Last Saved</label>
+                        <input type="text" class="form-control" id="lastSaved" readonly value="2024-01-15 14:30">
+                    </div>
+                </div>
+                
+                <!-- Language Tabs -->
+                <ul class="nav nav-tabs language-tabs" id="languageTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="en-tab" data-bs-toggle="tab" data-bs-target="#en-content" type="button" role="tab">English</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="afar-tab" data-bs-toggle="tab" data-bs-target="#afar-content" type="button" role="tab">Qafar Af</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="am-tab" data-bs-toggle="tab" data-bs-target="#am-content" type="button" role="tab">አማርኛ</button>
+                    </li>
+                </ul>
+                
+                <!-- Tab Content -->
+                <div class="tab-content mt-3">
+                    <!-- English Content -->
+                    <div class="tab-pane fade show active" id="en-content" role="tabpanel">
+                        <div class="mb-3">
+                            <label class="form-label">Page Title (English)</label>
+                            <input type="text" class="form-control" id="en-title" value="Discover Afar Culture">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Meta Description</label>
+                            <textarea class="form-control" id="en-meta" rows="2">Discover the rich culture, traditions, and lifestyle of the Afar people in the Horn of Africa</textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Content</label>
+                            <div id="en-editor"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Featured Image</label>
+                            <input type="file" class="form-control" id="en-image" accept="image/*">
+                            <div class="image-preview" id="en-preview" onclick="document.getElementById('en-image').click()">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Afar Content -->
+                    <div class="tab-pane fade" id="afar-content" role="tabpanel">
+                        <div class="mb-3">
+                            <label class="form-label">Page Title (Afar)</label>
+                            <input type="text" class="form-control" id="afar-title" value="Qafar Qaada">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Content</label>
+                            <div id="afar-editor"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Amharic Content -->
+                    <div class="tab-pane fade" id="am-content" role="tabpanel">
+                        <div class="mb-3">
+                            <label class="form-label">Page Title (Amharic)</label>
+                            <input type="text" class="form-control" id="am-title" value="የአፋር ባህል">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Content</label>
+                            <div id="am-editor"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Action Buttons -->
+                <div class="mt-4">
+                    <button class="btn btn-primary-custom me-2" onclick="saveContent()">
+                        <i class="fas fa-save me-2"></i>Save Changes
+                    </button>
+                    <button class="btn btn-outline-secondary me-2" onclick="previewPage()">
+                        <i class="fas fa-eye me-2"></i>Preview
+                    </button>
+                    <button class="btn btn-gold" onclick="publishPage()">
+                        <i class="fas fa-globe me-2"></i>Publish
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Export Section -->
+        <div id="exportSection" style="display: none;">
+            <div class="editor-card">
+                <h5><i class="fas fa-download me-2"></i>Export Content Data</h5>
+                <p>All content is stored in a single JSON file. You can download it for backup or use it to update the website.</p>
+                
+                <div class="mb-3">
+                    <label class="form-label">Content Data (content.json)</label>
+                    <div class="json-preview" id="jsonPreview">
+                        Loading content data...
+                    </div>
+                </div>
+                
+                <button class="btn btn-primary-custom me-2" onclick="downloadJSON()">
+                    <i class="fas fa-download me-2"></i>Download JSON
+                </button>
+                <button class="btn btn-gold" onclick="copyJSON()">
+                    <i class="fas fa-copy me-2"></i>Copy to Clipboard
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+    <script src="admin.js"></script>
+    
+    <script>
+        // Initialize Summernote Editors
+        $(document).ready(function() {
+            $('#en-editor').summernote({
+                height: 300,
+                placeholder: 'Write your content here...',
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'underline', 'clear']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['table', ['table']],
+                    ['insert', ['link', 'picture', 'video']],
+                    ['view', ['fullscreen', 'codeview', 'help']]
+                ]
+            });
+            
+            $('#afar-editor').summernote({
+                height: 300,
+                placeholder: 'Qafar afat yaktube...',
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'underline', 'clear']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['insert', ['link', 'picture']],
+                    ['view', ['fullscreen', 'help']]
+                ]
+            });
+            
+            $('#am-editor').summernote({
+                height: 300,
+                placeholder: 'በአማርኛ ይጻፉ...',
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'underline', 'clear']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['insert', ['link', 'picture']],
+                    ['view', ['fullscreen', 'help']]
+                ]
+            });
+            
+            // Load initial content
+            loadContentData();
+        });
+        
+        // Content Data Structure
+        let contentData = {
+            home: {
+                en: {
+                    title: 'Discover Afar Culture',
+                    meta: 'Discover the rich culture, traditions, and lifestyle of the Afar people in the Horn of Africa',
+                    content: '<p>Welcome to Afar Culture website...</p>',
+                    image: ''
+                },
+                afar: {
+                    title: 'Qafar Qaada',
+                    content: '<p>Ahaak Qafar Qaada website...</p>'
+                },
+                am: {
+                    title: 'የአፋር ባህል',
+                    content: '<p>እንኳን ወደ አፋር ባህል ድህረ ገጽ በደህና መጡ...</p>'
+                }
+            },
+            culture: {
+                en: { title: 'Afar Culture', content: '' },
+                afar: { title: 'Qafar Qaada', content: '' },
+                am: { title: 'የአፋር ባህል', content: '' }
+            },
+            customs: {
+                en: { title: 'Customary Law', content: '' },
+                afar: { title: 'Mada\'a', content: '' },
+                am: { title: 'የአፋር ልማዳዊ ህግ', content: '' }
+            },
+            lifestyle: {
+                en: { title: 'Lifestyle', content: '' },
+                afar: { title: 'Mano', content: '' },
+                am: { title: 'የአኗኗር ዘይቤ', content: '' }
+            }
+        };
+        
+        function loadContentData() {
+            // In production, load from server
+            localStorage.setItem('afar_culture_content', JSON.stringify(contentData));
+            updateJSONPreview();
+        }
+        
+        function updateJSONPreview() {
+            document.getElementById('jsonPreview').textContent = JSON.stringify(contentData, null, 2);
+        }
+        
+        function saveContent() {
+            const page = document.getElementById('pageSelector').value;
+            const status = document.getElementById('pageStatus').value;
+            
+            // Get English content
+            contentData[page].en.title = document.getElementById('en-title').value;
+            contentData[page].en.meta = document.getElementById('en-meta').value;
+            contentData[page].en.content = $('#en-editor').summernote('code');
+            
+            // Get Afar content
+            contentData[page].afar.title = document.getElementById('afar-title').value;
+            contentData[page].afar.content = $('#afar-editor').summernote('code');
+            
+            // Get Amharic content
+            contentData[page].am.title = document.getElementById('am-title').value;
+            contentData[page].am.content = $('#am-editor').summernote('code');
+            
+            // Save to localStorage
+            localStorage.setItem('afar_culture_content', JSON.stringify(contentData));
+            
+            // Update last saved time
+            const now = new Date();
+            document.getElementById('lastSaved').value = now.toISOString().slice(0, 16).replace('T', ' ');
+            
+            updateJSONPreview();
+            
+            alert('Content saved successfully!');
+        }
+        
+        function loadPageContent() {
+            const page = document.getElementById('pageSelector').value;
+            const data = contentData[page];
+            
+            if (data) {
+                document.getElementById('en-title').value = data.en.title || '';
+                document.getElementById('en-meta').value = data.en.meta || '';
+                $('#en-editor').summernote('code', data.en.content || '');
+                
+                document.getElementById('afar-title').value = data.afar.title || '';
+                $('#afar-editor').summernote('code', data.afar.content || '');
+                
+                document.getElementById('am-title').value = data.am.title || '';
+                $('#am-editor').summernote('code', data.am.content || '');
+            }
+        }
+        
+        function showSection(section) {
+            // Hide all sections
+            document.getElementById('dashboardSection').style.display = 'none';
+            document.getElementById('pagesSection').style.display = 'none';
+            document.getElementById('exportSection').style.display = 'none';
+            
+            // Show selected section
+            document.getElementById(section + 'Section').style.display = 'block';
+            
+            // Update title
+            const titles = {
+                dashboard: 'Dashboard',
+                pages: 'Page Editor',
+                culture: 'Culture Content',
+                customs: 'Customary Law Content',
+                lifestyle: 'Lifestyle Content',
+                gallery: 'Gallery Manager',
+                settings: 'Settings',
+                export: 'Export Data'
+            };
+            document.getElementById('sectionTitle').textContent = titles[section] || section;
+            
+            // Update active menu item
+            document.querySelectorAll('.sidebar-menu a').forEach(link => {
+                link.classList.remove('active');
+            });
+            event.target.closest('a').classList.add('active');
+            
+            // Close sidebar on mobile
+            if (window.innerWidth <= 768) {
+                document.getElementById('sidebar').classList.remove('show');
+            }
+        }
+        
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('show');
+        }
+        
+        function downloadJSON() {
+            const dataStr = JSON.stringify(contentData, null, 2);
+            const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+            
+            const exportFileDefaultName = 'afar-culture-content.json';
+            
+            const linkElement = document.createElement('a');
+            linkElement.setAttribute('href', dataUri);
+            linkElement.setAttribute('download', exportFileDefaultName);
+            linkElement.click();
+        }
+        
+        function copyJSON() {
+            const jsonStr = JSON.stringify(contentData, null, 2);
+            navigator.clipboard.writeText(jsonStr).then(() => {
+                alert('JSON copied to clipboard!');
+            });
+        }
+        
+        function createNewPage() {
+            const pageName = prompt('Enter new page name (e.g., "history"):');
+            if (pageName) {
+                contentData[pageName] = {
+                    en: { title: 'New Page', content: '' },
+                    afar: { title: 'Qando Qado', content: '' },
+                    am: { title: 'አዲስ ገጽ', content: '' }
+                };
+                saveContent();
+                alert('New page created! You can now edit it.');
+            }
+        }
+        
+        function previewPage() {
+            window.open('../en/index.html', '_blank');
+        }
+        
+        function publishPage() {
+            saveContent();
+            alert('Page published successfully!');
+        }
+        
+        // Image preview
+        document.getElementById('en-image').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('en-preview').style.backgroundImage = `url(${e.target.result})`;
+                    document.getElementById('en-preview').innerHTML = '';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,453 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afar Lifestyle - Pastoral Traditions & Daily Life</title>
+    <meta name="description" content="Explore the pastoral lifestyle of the Afar people, their nomadic traditions, livestock management, and adaptation to the harsh Danakil environment">
+    <link rel="icon" href="../assets/images/favicon.png" type="image/x-icon">
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <style>
+        :root {
+            --primary-blue: #1a3a5c;
+            --secondary-blue: #2c5f7c;
+            --accent-gold: #ffd700;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f8f9fa;
+        }
+        
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            padding: 15px 0;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand img { height: 50px; }
+        
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover { color: var(--accent-gold) !important; }
+        
+        .language-selector {
+            display: flex;
+            gap: 10px;
+            margin-left: 20px;
+        }
+        
+        .lang-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-btn:hover, .lang-btn.active {
+            background: var(--accent-gold);
+            color: var(--primary-blue);
+        }
+        
+        .page-header {
+            background: linear-gradient(rgba(26,58,92,0.85), rgba(44,95,124,0.9)), url('https://images.unsplash.com/photo-1509316785289-025f5b846b35?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .lifestyle-section {
+            padding: 80px 0;
+        }
+        
+        .lifestyle-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+        
+        .lifestyle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(26,58,92,0.15);
+        }
+        
+        .lifestyle-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .lifestyle-card .content {
+            padding: 25px;
+        }
+        
+        .lifestyle-card h3 {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .lifestyle-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .stat-box {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+        
+        .footer {
+            background: #0f2640;
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer h5 { color: var(--accent-gold); margin-bottom: 20px; }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li { margin-bottom: 10px; }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover { color: var(--accent-gold); }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--accent-gold);
+            color: var(--primary-blue);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 40px;
+            padding-top: 20px;
+            text-align: center;
+            color: #aaa;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 99;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        @media (max-width: 768px) {
+            .page-header h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 50'%3E%3Crect width='150' height='50' rx='5' fill='%23ffd700'/%3E%3Ctext x='75' y='30' font-family='Arial' font-size='14' fill='%231a3a5c' text-anchor='middle' font-weight='bold'%3EAfar Culture%3C/text%3E%3C/svg%3E" alt="Afar Culture">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="culture.html">Culture</a></li>
+                    <li class="nav-item"><a class="nav-link" href="customs.html">Customary Law</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="lifestyle.html">Lifestyle</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="language-selector">
+                    <a href="../afar/lifestyle.html" class="lang-btn">Afar</a>
+                    <a href="../am/lifestyle.html" class="lang-btn">አማርኛ</a>
+                    <a href="lifestyle.html" class="lang-btn active">English</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 data-aos="fade-up">Pastoral Lifestyle</h1>
+            <p data-aos="fade-up" data-aos-delay="100">Discover the nomadic traditions and daily life of the Afar people in the Horn of Africa</p>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="lifestyle-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1589652717521-10c0d092dea9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1072&q=80" alt="Afar Pastoral Life" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h2 style="color: var(--primary-blue); font-weight: 700; margin-bottom: 20px;">Life as Pastoral Nomads</h2>
+                    <p style="color: #666; line-height: 1.8; margin-bottom: 20px;">The Afar people are traditionally pastoral nomads, a way of life that has been practiced for millennia in the arid landscapes of the Horn of Africa. Their lives revolve around the care and management of livestock - camels, goats, sheep, and cattle.</p>
+                    <p style="color: #666; line-height: 1.8; margin-bottom: 20px;">Pastoralism is not merely an economic activity but a complete way of life that shapes social organization, cultural values, and identity. The Afar have developed sophisticated knowledge of their environment, enabling them to survive and thrive in one of the hottest places on Earth.</p>
+                    <p style="color: #666; line-height: 1.8;">Seasonal migration patterns follow the availability of water and pasture, with families moving their herds across vast territories according to established patterns and clan rights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Livestock Section -->
+    <section class="lifestyle-section" style="background: #f0f4f8;">
+        <div class="container">
+            <h2 class="text-center mb-5" style="color: var(--primary-blue); font-weight: 700;" data-aos="fade-up">The Importance of Livestock</h2>
+            
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="lifestyle-card">
+                        <img src="https://images.unsplash.com/photo-1606836591695-4d58a73eba1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Camels">
+                        <div class="content">
+                            <h3><i class="fas fa-camel me-2" style="color: var(--accent-gold);"></i>Camels (Gaala)</h3>
+                            <p>Camels are the most prized livestock, valued for their milk, meat, and ability to survive in extreme conditions. They are also essential for transport and as bride wealth.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="lifestyle-card">
+                        <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Goats">
+                        <div class="content">
+                            <h3><i class="fas fa-goat me-2" style="color: var(--accent-gold);"></i>Goats (Reyta)</h3>
+                            <p>Goats are the most numerous livestock, providing milk and meat for daily consumption. They are hardy and can browse on sparse vegetation.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="lifestyle-card">
+                        <img src="https://images.unsplash.com/photo-1583499871880-8410b91d3304?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Sheep">
+                        <div class="content">
+                            <h3><i class="fas fa-sheep me-2" style="color: var(--accent-gold);"></i>Sheep (Maruw)</h3>
+                            <p>Sheep are valued for their wool and meat. They are often slaughtered for special occasions and ceremonies.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="lifestyle-card">
+                        <img src="https://images.unsplash.com/photo-1596733430284-f7437764b1a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Cattle">
+                        <div class="content">
+                            <h3><i class="fas fa-cow me-2" style="color: var(--accent-gold);"></i>Cattle (Sagaa)</h3>
+                            <p>Cattle are important in areas with more reliable water sources. They provide milk and are a sign of wealth and status.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Traditional Housing -->
+    <section class="lifestyle-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2 mb-4" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1531386151447-fd76ad50012f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1072&q=80" alt="Traditional Ari House" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+                </div>
+                <div class="col-lg-6 order-lg-1" data-aos="fade-right">
+                    <h2 style="color: var(--primary-blue); font-weight: 700; margin-bottom: 20px;">The Ari: Traditional Housing</h2>
+                    <p style="color: #666; line-height: 1.8; margin-bottom: 20px;">The traditional Afar dwelling is called an Ari (or Daboyta). It is a dome-shaped structure made from a framework of bent branches covered with mats woven from palm fronds or grass.</p>
+                    <p style="color: #666; line-height: 1.8; margin-bottom: 20px;">The Ari is designed for mobility - it can be dismantled quickly and loaded onto camels when the family moves to new grazing areas. Despite its simple appearance, it is well-adapted to the harsh climate, providing shade during the day and warmth at night.</p>
+                    <p style="color: #666; line-height: 1.8;">The interior is organized with specific areas for sleeping, cooking, and storing household items. The mat coverings can be rolled up on the windward side to allow cooling breezes to pass through.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Life -->
+    <section class="lifestyle-section" style="background: #f0f4f8;">
+        <div class="container">
+            <h2 class="text-center mb-5" style="color: var(--primary-blue); font-weight: 700;" data-aos="fade-up">Daily Life and Responsibilities</h2>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="fade-up">
+                    <div class="stat-box">
+                        <i class="fas fa-male fa-3x mb-3" style="color: var(--primary-blue);"></i>
+                        <h4>Men's Responsibilities</h4>
+                        <p>Herding camels and cattle, protecting the camp, negotiating with other clans, and managing political affairs. Young men often travel long distances with the camel herds.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-box">
+                        <i class="fas fa-female fa-3x mb-3" style="color: var(--primary-blue);"></i>
+                        <h4>Women's Responsibilities</h4>
+                        <p>Managing the household, milking goats, preparing food, weaving mats, raising children, and caring for small livestock near the camp.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-box">
+                        <i class="fas fa-child fa-3x mb-3" style="color: var(--primary-blue);"></i>
+                        <h4>Children's Role</h4>
+                        <p>Helping with younger siblings, watching over goat and sheep herds near the camp, and learning traditional skills from their parents.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Food and Diet -->
+    <section class="lifestyle-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1072&q=80" alt="Afar Cuisine" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h2 style="color: var(--primary-blue); font-weight: 700; margin-bottom: 20px;">Traditional Diet</h2>
+                    <p style="color: #666; line-height: 1.8; margin-bottom: 20px;">The Afar diet is centered on livestock products. Fresh and fermented milk (Ali) are staples, providing essential nutrition in the harsh environment. Meat is consumed on special occasions and when animals are sacrificed.</p>
+                    <p style="color: #666; line-height: 1.8; margin-bottom: 20px;">Ghee (clarified butter) is an important product, used in cooking and as a skin moisturizer. In recent times, grains like sorghum and maize have been incorporated into the diet, often obtained through trade.</p>
+                    <p style="color: #666; line-height: 1.8;">Hospitality demands that guests be offered the best available food - usually fresh milk, followed by meat if available. Refusing hospitality is considered a serious insult.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>About Afar Culture</h5>
+                    <p style="color: #ccc;">Dedicated to preserving, documenting, and sharing the rich cultural heritage of the Afar people in the Horn of Africa.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="culture.html">Culture</a></li>
+                        <li><a href="customs.html">Customary Law</a></li>
+                        <li><a href="lifestyle.html">Lifestyle</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Resources</h5>
+                    <ul class="footer-links">
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Publications</a></li>
+                        <li><a href="#">Research</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <h5>Contact</h5>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> Afar Region, Ethiopia</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@afarculture.org</li>
+                        <li><i class="fas fa-phone me-2"></i> +251 000 000000</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Qafar Qaada | Afar Culture. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../assets/js/main.js"></script>
+    
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>

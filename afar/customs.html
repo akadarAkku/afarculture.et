@@ -1,0 +1,533 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mada'a - Afar Customary Law | Traditional Justice System</title>
+    <meta name="description" content="Learn about Mada'a, the traditional customary law system of the Afar people governing conflict resolution, marriage, inheritance, and social order">
+    <link rel="icon" href="../assets/images/favicon.png" type="image/x-icon">
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <style>
+        :root {
+            --primary-blue: #1a3a5c;
+            --secondary-blue: #2c5f7c;
+            --accent-gold: #ffd700;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f8f9fa;
+        }
+        
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            padding: 15px 0;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand img { height: 50px; }
+        
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover { color: var(--accent-gold) !important; }
+        
+        .language-selector {
+            display: flex;
+            gap: 10px;
+            margin-left: 20px;
+        }
+        
+        .lang-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-btn:hover, .lang-btn.active {
+            background: var(--accent-gold);
+            color: var(--primary-blue);
+        }
+        
+        .page-header {
+            background: linear-gradient(rgba(26,58,92,0.85), rgba(44,95,124,0.9)), url('https://images.unsplash.com/photo-1589391886645-d65141b1e862?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .customs-section {
+            padding: 80px 0;
+        }
+        
+        .law-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            height: 100%;
+            border-left: 4px solid var(--accent-gold);
+            margin-bottom: 30px;
+        }
+        
+        .law-card h3 {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .law-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .principle-box {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .principle-box i {
+            font-size: 40px;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+        }
+        
+        .principle-box h4 {
+            margin-bottom: 10px;
+        }
+        
+        .compensation-table {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        
+        .compensation-table th {
+            background: var(--primary-blue);
+            color: white;
+            padding: 15px;
+            font-weight: 600;
+        }
+        
+        .compensation-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .footer {
+            background: #0f2640;
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer h5 { color: var(--accent-gold); margin-bottom: 20px; }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li { margin-bottom: 10px; }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover { color: var(--accent-gold); }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--accent-gold);
+            color: var(--primary-blue);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 40px;
+            padding-top: 20px;
+            text-align: center;
+            color: #aaa;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 99;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        @media (max-width: 768px) {
+            .page-header h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 50'%3E%3Crect width='150' height='50' rx='5' fill='%23ffd700'/%3E%3Ctext x='75' y='30' font-family='Arial' font-size='14' fill='%231a3a5c' text-anchor='middle' font-weight='bold'%3EAfar Culture%3C/text%3E%3C/svg%3E" alt="Afar Culture">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="culture.html">Culture</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="customs.html">Customary Law</a></li>
+                    <li class="nav-item"><a class="nav-link" href="lifestyle.html">Lifestyle</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="language-selector">
+                    <a href="../afar/customs.html" class="lang-btn">Afar</a>
+                    <a href="../am/customs.html" class="lang-btn">አማርኛ</a>
+                    <a href="customs.html" class="lang-btn active">English</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 data-aos="fade-up">Mada'a - Afar Customary Law</h1>
+            <p data-aos="fade-up" data-aos-delay="100">Understanding the traditional legal system that has governed Afar society for generations</p>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="customs-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1589578527966-fdac0f44566c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1072&q=80" alt="Elders Council" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h2 style="color: var(--primary-blue); font-weight: 700; margin-bottom: 20px;">What is Mada'a?</h2>
+                    <p style="color: #666; line-height: 1.8; margin-bottom: 20px;">Mada'a (also known as Ada) is the traditional customary law of the Afar people. It is an unwritten but well-established body of rules, principles, and procedures that governs virtually every aspect of Afar life.</p>
+                    <p style="color: #666; line-height: 1.8; margin-bottom: 20px;">Unlike formal state law, Mada'a is based on consensus, compensation, and restoration of social harmony rather than punishment. It has been passed down orally through generations and continues to function alongside modern legal systems.</p>
+                    <p style="color: #666; line-height: 1.8;">The system is administered by councils of elders (Mada'a Abba) who are respected for their wisdom, knowledge of precedents, and impartiality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Principles -->
+    <section class="customs-section" style="background: #f0f4f8;">
+        <div class="container">
+            <h2 class="text-center mb-5" style="color: var(--primary-blue); font-weight: 700;" data-aos="fade-up">Core Principles of Mada'a</h2>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="principle-box">
+                        <i class="fas fa-handshake"></i>
+                        <h4>Reconciliation (Mabla)</h4>
+                        <p>The primary goal is to restore peace and harmony between parties rather than to punish the offender.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="principle-box">
+                        <i class="fas fa-coins"></i>
+                        <h4>Compensation (Guma)</h4>
+                        <p>Wrongs are righted through payment of compensation, typically in livestock, based on established scales.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="principle-box">
+                        <i class="fas fa-users"></i>
+                        <h4>Collective Responsibility</h4>
+                        <p>The clan or family shares responsibility for the actions of its members and for paying compensation.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="principle-box">
+                        <i class="fas fa-gavel"></i>
+                        <h4>Elder Authority</h4>
+                        <p>Decisions are made by councils of respected elders who serve as judges and mediators.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="principle-box">
+                        <i class="fas fa-balance-scale"></i>
+                        <h4>Precedent-Based</h4>
+                        <p>Decisions are guided by past cases and established customs rather than written codes.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="principle-box">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Sanctity of Oath</h4>
+                        <p>Oaths taken on the Quran or traditional symbols are considered sacred and binding.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compensation Scales -->
+    <section class="customs-section">
+        <div class="container">
+            <h2 class="text-center mb-5" style="color: var(--primary-blue); font-weight: 700;" data-aos="fade-up">Compensation Scales (Guma)</h2>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto" data-aos="fade-up">
+                    <div class="compensation-table">
+                        <table class="table table-bordered mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Offense</th>
+                                    <th>Compensation</th>
+                                    <th>Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Homicide (Unintentional)</td>
+                                    <td>100 camels</td>
+                                    <td>Paid by clan of offender to family of victim</td>
+                                </tr>
+                                <tr>
+                                    <td>Homicide (Intentional)</td>
+                                    <td>100 camels + exile</td>
+                                    <td>Additional sanctions may apply</td>
+                                </tr>
+                                <tr>
+                                    <td>Loss of Eye</td>
+                                    <td>50 camels</td>
+                                    <td>Half the value of a life</td>
+                                </tr>
+                                <tr>
+                                    <td>Loss of Limb</td>
+                                    <td>50 camels</td>
+                                    <td>Per major limb</td>
+                                </tr>
+                                <tr>
+                                    <td>Broken Bone</td>
+                                    <td>10-30 camels</td>
+                                    <td>Depending on severity</td>
+                                </tr>
+                                <tr>
+                                    <td>Theft of Camel</td>
+                                    <td>Return + 2-4 camels</td>
+                                    <td>Multiple of value stolen</td>
+                                </tr>
+                                <tr>
+                                    <td>Adultery</td>
+                                    <td>Varies by circumstance</td>
+                                    <td>Can include divorce and compensation</td>
+                                </tr>
+                                <tr>
+                                    <td>Insult/Defamation</td>
+                                    <td>1-5 camels or goat</td>
+                                    <td>Depending on severity</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-muted mt-3 text-center">Note: These are approximate values. Actual compensation may vary by region and specific circumstances.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Areas of Application -->
+    <section class="customs-section" style="background: #f0f4f8;">
+        <div class="container">
+            <h2 class="text-center mb-5" style="color: var(--primary-blue); font-weight: 700;" data-aos="fade-up">Areas Governed by Mada'a</h2>
+            
+            <div class="row">
+                <div class="col-md-6 mb-4" data-aos="fade-up">
+                    <div class="law-card">
+                        <h3><i class="fas fa-heart me-2" style="color: var(--accent-gold);"></i> Marriage & Family</h3>
+                        <p>Mada'a regulates marriage arrangements, bride wealth (Lebe), divorce procedures, child custody, and inheritance. The Absuma custom (preferential cousin marriage) is strongly encouraged.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="law-card">
+                        <h3><i class="fas fa-skull me-2" style="color: var(--accent-gold);"></i> Homicide & Blood Feud</h3>
+                        <p>Detailed rules govern responses to homicide, including compensation payments (Diyya), reconciliation ceremonies, and mechanisms to prevent escalation into blood feuds.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4" data-aos="fade-up">
+                    <div class="law-card">
+                        <h3><i class="fas fa-hand-fist me-2" style="color: var(--accent-gold);"></i> Assault & Injury</h3>
+                        <p>Specific compensation amounts are prescribed for different types of injuries, from minor wounds to permanent disability or disfigurement.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="law-card">
+                        <h3><i class="fas fa-pastafarianism me-2" style="color: var(--accent-gold);"></i> Property & Livestock</h3>
+                        <p>Rules cover theft, damage to property, grazing rights, water access, and the use of communal resources like pastureland and wells.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4" data-aos="fade-up">
+                    <div class="law-card">
+                        <h3><i class="fas fa-venus-mars me-2" style="color: var(--accent-gold);"></i> Sexual Offenses</h3>
+                        <p>Mada'a addresses issues of adultery, rape, and other sexual misconduct, with compensation and social sanctions as primary responses.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="law-card">
+                        <h3><i class="fas fa-dove me-2" style="color: var(--accent-gold);"></i> Peace Treaties</h3>
+                        <p>Formal procedures exist for negotiating and concluding peace agreements between clans, including ritual elements that make the agreement binding.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Council of Elders -->
+    <section class="customs-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2 mb-4" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1576485375217-d6a95e34d043?ixlib=rb-4.0.3&auto=format&fit=crop&w=1072&q=80" alt="Elders Council" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+                </div>
+                <div class="col-lg-6 order-lg-1" data-aos="fade-right">
+                    <h2 style="color: var(--primary-blue); font-weight: 700; margin-bottom: 20px;">The Council of Elders (Mada'a Abba)</h2>
+                    <p style="color: #666; line-height: 1.8; margin-bottom: 20px;">The Mada'a Abba (literally "fathers of the law") are the custodians and interpreters of customary law. These are men who have earned respect through their wisdom, knowledge, and impartiality.</p>
+                    <p style="color: #666; line-height: 1.8; margin-bottom: 20px;">When a dispute arises, parties select elders to hear their case. The elders listen to testimony, consult precedents, and deliberate before issuing a binding decision. Their authority derives from community consensus rather than coercive power.</p>
+                    <p style="color: #666; line-height: 1.8;">The council's primary goal is to restore harmony. Even when compensation is ordered, it is accompanied by rituals of reconciliation that formally end the dispute and restore normal relations between the parties.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>About Afar Culture</h5>
+                    <p style="color: #ccc;">Dedicated to preserving, documenting, and sharing the rich cultural heritage of the Afar people in the Horn of Africa.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="culture.html">Culture</a></li>
+                        <li><a href="customs.html">Customary Law</a></li>
+                        <li><a href="lifestyle.html">Lifestyle</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Resources</h5>
+                    <ul class="footer-links">
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Publications</a></li>
+                        <li><a href="#">Research</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <h5>Contact</h5>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> Afar Region, Ethiopia</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@afarculture.org</li>
+                        <li><i class="fas fa-phone me-2"></i> +251 000 000000</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Qafar Qaada | Afar Culture. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../assets/js/main.js"></script>
+    
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
