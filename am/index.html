@@ -1,1 +1,204 @@
-  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afar Culture - English Home</title>
+    <meta name="description" content="Discover Afar culture, traditions, and lifestyle">
+    <link rel="icon" href="../assets/images/favicon.png" type="image/x-icon">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        :root { --primary-blue: #1a3a5c; --secondary-blue: #2c5f7c; --accent-gold: #ffd700; }
+        body { font-family: 'Poppins', sans-serif; background: #f8f9fa; }
+        .navbar { background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%); padding: 15px 0; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        .nav-link { color: white !important; font-weight: 500; margin: 0 10px; transition: all 0.3s ease; }
+        .nav-link:hover { color: var(--accent-gold) !important; }
+        .lang-btn { background: rgba(255,255,255,0.2); color: white; padding: 8px 15px; border-radius: 20px; text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; }
+        .lang-btn:hover, .lang-btn.active { background: var(--accent-gold); color: var(--primary-blue); }
+        .hero-section { background: linear-gradient(rgba(26,58,92,0.85), rgba(44,95,124,0.9)), url('https://images.unsplash.com/photo-1590073242678-70ee3fc28f8a?w=1950&q=80'); background-size: cover; background-position: center; color: white; padding: 120px 0; }
+        .hero-section h1 { font-size: 3.5rem; font-weight: 700; }
+        .btn-hero { background: var(--accent-gold); color: var(--primary-blue); padding: 15px 35px; border-radius: 30px; font-weight: 600; text-decoration: none; display: inline-block; transition: all 0.3s ease; }
+        .btn-hero:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); color: var(--primary-blue); }
+        .section-padding { padding: 80px 0; }
+        .feature-card { background: white; border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); height: 100%; text-align: center; transition: all 0.3s ease; }
+        .feature-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(26,58,92,0.15); }
+        .feature-icon { width: 70px; height: 70px; background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue)); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+        .feature-icon i { font-size: 30px; color: var(--accent-gold); }
+        .footer { background: #0f2640; color: white; padding: 60px 0 20px; }
+        .footer h5 { color: var(--accent-gold); margin-bottom: 20px; }
+        .footer-links { list-style: none; padding: 0; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { color: #ccc; text-decoration: none; transition: all 0.3s ease; }
+        .footer-links a:hover { color: var(--accent-gold); padding-left: 5px; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 40px; padding-top: 20px; text-align: center; color: #aaa; }
+        .back-to-top { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background: var(--primary-blue); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 99; }
+        .back-to-top.show { opacity: 1; visibility: visible; }
+        .back-to-top:hover { background: var(--accent-gold); color: var(--primary-blue); }
+        @media (max-width: 768px) { .hero-section h1 { font-size: 2.5rem; } }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+           <a class="navbar-brand" href="index.html">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 50'%3E%3Crect width='150' height='50' rx='5' fill='%23ffd700'/%3E%3Ctext x='75' y='30' font-family='Arial' font-size='14' fill='%231a3a5c' text-anchor='middle' font-weight='bold'%3EAfar Culture%3C/text%3E%3C/svg%3E" alt="Afar Culture" style="height: 50px;">
+</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto" id="nav-menu"></ul>
+                <div class="language-selector">
+                    <a href="../afar/index.html" class="lang-btn">Afar</a>
+                    <a href="../am/index.html" class="lang-btn">አማርኛ</a>
+                    <a href="index.html" class="lang-btn active">English</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <h1 id="hero-title"></h1>
+                    <p id="hero-subtitle" style="font-size: 1.2rem; margin-bottom: 30px; opacity: 0.95;"></p>
+                    <a href="culture.html" class="btn-hero" id="hero-button"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row" id="features-container"></div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section-padding" style="background: #f0f4f8;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1072&q=80" alt="Afar People" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h2 id="about-title" style="color: var(--primary-blue); font-weight: 700; margin-bottom: 20px;"></h2>
+                    <div id="about-content" style="color: #666; line-height: 1.8;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4"><h5 id="footer-about-title"></h5><p id="footer-about-text" style="color: #ccc;"></p></div>
+                <div class="col-lg-2 mb-4"><h5 id="footer-links-title"></h5><ul class="footer-links" id="footer-links"></ul></div>
+                <div class="col-lg-4 mb-4"><h5 id="footer-contact-title"></h5><ul class="footer-links" id="footer-contact"></ul></div>
+            </div>
+            <div class="footer-bottom"><p id="footer-copyright"></p></div>
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        window.addEventListener('scroll', () => document.querySelector('.back-to-top').classList.toggle('show', window.pageYOffset > 300));
+        
+        const LANG = 'am';
+        
+        async function loadContent() {
+            try {
+                const response = await fetch('../assets/data/content.json');
+                const data = await response.json();
+                
+                // Navigation
+                const navItems = data.navigation?.[LANG] || ['Home', 'Culture', 'Customary Law', 'Lifestyle', 'Gallery', 'Contact'];
+                const navUrls = ['index.html', 'culture.html', 'customs.html', 'lifestyle.html', 'gallery.html', 'contact.html'];
+                document.getElementById('nav-menu').innerHTML = navItems.map((item, i) => 
+                    `<li class="nav-item"><a class="nav-link ${i === 0 ? 'active' : ''}" href="${navUrls[i]}">${item}</a></li>`
+                ).join('');
+                
+                // Page Content
+                const page = data.pages?.home?.[LANG];
+                if (page) {
+                    // Hero
+                    if (page.hero) {
+                        document.getElementById('hero-title').textContent = page.hero.title || 'Discover Afar Culture';
+                        document.getElementById('hero-subtitle').textContent = page.hero.subtitle || '';
+                        document.getElementById('hero-button').innerHTML = `${page.hero.button || 'Explore'} <i class="fas fa-arrow-right ms-2"></i>`;
+                    }
+                    
+                    // About
+                    if (page.about) {
+                        document.getElementById('about-title').textContent = page.about.title || '';
+                        document.getElementById('about-content').innerHTML = `<p>${page.about.content || ''}</p>`;
+                    }
+                    
+                    // Features
+                    if (page.features) {
+                        document.getElementById('features-container').innerHTML = page.features.map(f => `
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="feature-card">
+                                    <div class="feature-icon"><i class="fas ${f.icon || 'fa-star'}"></i></div>
+                                    <h3 style="color: var(--primary-blue); margin-bottom: 15px;">${f.title || ''}</h3>
+                                    <p style="color: #666;">${f.description || ''}</p>
+                                </div>
+                            </div>
+                        `).join('');
+                    }
+                }
+                
+                // Site Info
+                const site = data.site;
+                if (site) {
+                    document.getElementById('footer-about-title').textContent = `About ${site.name?.[LANG] || 'Afar Culture'}`;
+                    document.getElementById('footer-about-text').textContent = site.description?.[LANG] || '';
+                    document.getElementById('footer-links-title').textContent = 'Quick Links';
+                    document.getElementById('footer-contact-title').textContent = 'Contact';
+                    document.getElementById('footer-copyright').textContent = `© 2024 ${site.name?.[LANG] || 'Afar Culture'}. All Rights Reserved.`;
+                }
+                
+                // Footer Links
+                document.getElementById('footer-links').innerHTML = navItems.slice(0, 4).map((item, i) => 
+                    `<li><a href="${navUrls[i]}">${item}</a></li>`
+                ).join('');
+                
+                // Footer Contact
+                document.getElementById('footer-contact').innerHTML = `
+                    <li><i class="fas fa-map-marker-alt me-2"></i> Afar Region, Ethiopia</li>
+                    <li><i class="fas fa-envelope me-2"></i> info@afarculture.org</li>
+                `;
+                
+            } catch (error) {
+                console.log('Loading default content...');
+                // Fallback content
+                document.getElementById('hero-title').textContent = 'የአፋር ባህልን ያግኙ';
+                document.getElementById('hero-button').innerHTML = 'ይጫኑ<i class="fas fa-arrow-right ms-2"></i>';
+                document.getElementById('features-container').innerHTML = `
+                    <div class="col-lg-4 col-md-6 mb-4"><div class="feature-card"><div class="feature-icon"><i class="fas fa-mask"></i></div><h3>ባህል</h3><p>Discover traditions</p></div></div>
+                    <div class="col-lg-4 col-md-6 mb-4"><div class="feature-card"><div class="feature-icon"><i class="fas fa-gavel"></i></div><h3>ባህላዊ ህግ</h3><p>Traditional justice</p></div></div>
+                    <div class="col-lg-4 col-md-6 mb-4"><div class="feature-card"><div class="feature-icon"><i class="fas fa-campground"></i></div><h3>የአኗኗር ዘይቤ</h3><p>Pastoral traditions</p></div></div>
+                `;
+            }
+        }
+        
+        loadContent();
+    </script>
+</body>
+</html>

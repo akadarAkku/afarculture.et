@@ -1,4 +1,4 @@
-  {
+{
   "site": {
     "name": {
       "en": "Afar Culture",
@@ -7,14 +7,14 @@
     },
     "description": {
       "en": "Preserving and sharing the rich cultural heritage of the Afar people",
-      "afar": "Qafar Qaada dacayroh gacsaay fayyaaqiyya",
-      "am": "የአፋር ህዝብ የበለጸገ ባህላዊ ቅርስ መጠበቅ እና ማካፈል"
+      "afar": "Qafar Qaada kee abuk raqtih daaran dacrisaanama",
+      "am": "የአፋር ህዝብ የበለጸገ ባህላዊ ቅርስን መጠበቅ እና ማስተላለፍ"
     }
   },
   "navigation": {
     "en": ["Home", "Culture", "Customary Law", "Lifestyle", "Gallery", "Contact"],
-    "afar": ["Qari", "Qaada", "Mada'a", "Mano", "Sawari", "Caaqid"],
-    "am": ["መነሻ", "ባህል", "ልማዳዊ ህግ", "አኗኗር", "ጋለሪ", "እውቂያ"]
+    "afar": ["Ugtuma", "Qaada-Gadda", "Madqa", "Dacarsitto Mano", "Tasaawir", "Net Ongoorowa"],
+    "am": ["መነሻ ገጽ", "ባህላዊ ዕሴቶች", "ባህላዊ ህግ/ Mada'a", "አኗኗር", "ፎቶ ጋለሪ", "ይጻፉልን"]
   },
   "pages": {
     "home": {
@@ -48,54 +48,192 @@
       },
       "afar": {
         "hero": {
-          "title": "Qafar Qaada Dacayro Baxxaqis",
-          "subtitle": "Qafar qaada, mada'aay, kee manol xayloh tan gexsititte qambal",
-          "button": "Qaada Baxxaqis"
-        }
+          "title": "Qafar Qaadaay, abuk-raqti kee nihiritte sinnih ixigaay, eysexeexega.",
+          "subtitle": "Qafar qaadaay, madaqa kee kalah tan nihiritte bayeh uma nagra kinnuk takkel mangom teetik geetton.",
+          "button": "Qaada Baxxaqsa"
+        },
+        "about": {
+          "title": "Qafar Qaada",
+          "content": "Qafar baaxoy baadol mangonnal tamixxige, Afrikah gaysal guubuh tan inki afaat, Qaadaay, diini kee amolladih inki kinnaane le ummatta kinnim tamixxige. Axcih, Itiyoppiyak Qafar Rakaakayaay, Jabuuti Eretriyal Geytimta ummattaay, kaxxaam baadal muxxo le baaxo kinnim dubuh hinnay niqanah baadal tamixxige baaxooxak tiyak teenal tamixxige."
+        },
+        "features": [
+          {
+            "icon": "fa-mask",
+            "title": "Qafar Qaada",
+            "description": "Qafar qaada dacayroh gacsa"
+          },
+          {
+            "icon": "fa-gavel",
+            "title": "Mada'a",
+            "description": "Qafar mada'a dacayro"
+          },
+          {
+            "icon": "fa-campground",
+            "title": "Dacarsitto Mano",
+            "description": "Qafar dacarsittoh mano"
+          }
+        ]
       },
       "am": {
         "hero": {
           "title": "የአፋር ህዝብ የበለጸገ ቅርስ ይወቁ",
-          "subtitle": "በአፍሪካ ቀንድ ከሚገኙት በጣም ጠንካራ ባህሎች መካከል አንዱ የሆነውን ጥንታዊ ወጎችን፣ ልማዳዊ ህጎችን እና ዘላን አኗኗርን ይመርምሩ",
-          "button": "ባህልን ይመርምሩ"
+          "subtitle": "በአፍሪካ ቀንድ ከሚገኙት በጣም ጠንካራ ባህሎች መካከል አንዱ የሆነውን ጥንታዊ ወጎችን፣ ባህላዊ ህጎችና  የአኗኗር ዘይበ እዚህ ያገኙ",
+          "button": "ባህልን ያገኙ"
+        },
+        "about": {
+          "title": "የአፋር ህዝብ",
+          "content": "የአፋር ሕዝብ ከኩሽ ነገዶች አንዱ እንደሆነ ይነገራል። ከክርስቶስ ልደት በፊት ከ500 ዓ.ዓ እስከ 15 ዓ.ም ድረስ ከየመን፣ ከግብጽ፣ ከአክሱም ነገሥታት ጋር ግንኙነት እንደነበራቸውና በስተሰሜን ከዳህላክ ደሴቶች ጀምሮ በስተደቡብ እስከ ዘይላ ድረስ ባለው አካባቢ እንደኖሩ ይነገራል።"
+        },
+        "features": [
+          {
+            "icon": "fa-mask",
+            "title": "ባህላዊ ወጎች",
+            "description": "የአፋርን ማንነት የሚገልጹ ልዩ ልማዶችን ያግኙ"
+          },
+          {
+            "icon": "fa-gavel",
+            "title": "ልማዳዊ ህግ",
+            "description": "የአፋርን ማህበረሰብ ለትውልድ ሲያስተዳድር የቆየውን ባህላዊ የህግ ስርዓት ይረዱ"
+          },
+          {
+            "icon": "fa-campground",
+            "title": "አርብቶ አደር አኗኗር",
+            "description": "በአፋር ህዝብ እና በመሬታቸው መካከል ያለውን ጥልቅ ግንኙነት ይማሩ"
+          }
+        ]
+      }
+    },
+    "culture": {
+      "en": {
+        "title": "Afar Culture and Traditions",
+        "hero": {
+          "title": "Afar Culture & Traditions",
+          "subtitle": "Discover the ancient customs, social structures, and cultural practices that define Afar identity"
+        },
+        "intro": {
+          "title": "Social Structure & Clan System",
+          "content": "Afar society is organized around a complex clan system..."
+        },
+        "elements": [
+          {
+            "icon": "fa-user-tie",
+            "title": "Traditional Attire",
+            "preview": "The Sanafil and Shash for men, Gambo for women, and the iconic Jile dagger.",
+            "full": "Detailed content about traditional attire..."
+          },
+          {
+            "icon": "fa-music",
+            "title": "Oral Traditions",
+            "preview": "Poetry (Gabay), proverbs, and folk songs preserve history and knowledge.",
+            "full": "Detailed content about oral traditions..."
+          },
+          {
+            "icon": "fa-ring",
+            "title": "Marriage Customs",
+            "preview": "Arranged marriages with bride wealth (Lebe) and Absuma preference.",
+            "full": "Detailed content about marriage customs..."
+          },
+          {
+            "icon": "fa-calendar-alt",
+            "title": "Ceremonies & Festivals",
+            "preview": "Births, circumcisions, weddings, and funerals marked by community celebrations.",
+            "full": "Detailed content about ceremonies..."
+          },
+          {
+            "icon": "fa-hand-sparkles",
+            "title": "Hospitality (Qaffu)",
+            "preview": "Sacred duty to welcome guests with milk, meat, and Ali.",
+            "full": "Detailed content about hospitality..."
+          },
+          {
+            "icon": "fa-dove",
+            "title": "Peacemaking (Mabla)",
+            "preview": "Reconciliation and compensation through elder mediation.",
+            "full": "Detailed content about peacemaking..."
+          }
+        ]
+      },
+      "afar": {
+        "title": "Qafar Qaada",
+        "hero": {
+          "title": "Qafar Qaada kee Abukraqti",
+          "subtitle": "Qafar qaadak daaran dacayrih guubu"
+        }
+      },
+      "am": {
+        "title": "የአፋር ባህል",
+        "hero": {
+          "title": "የአፋር ባህል እና ልምዶች",
+          "subtitle": "የአፋርን ማንነት የሚገልጹ ጥንታዊ ልማዶችን ያግኙ"
+        }
+      }
+    },
+    "customs": {
+      "en": {
+        "title": "Mada'a - Afar Customary Law",
+        "hero": {
+          "title": "Mada'a - Afar Customary Law",
+          "subtitle": "Understanding the traditional legal system that has governed Afar society for generations"
+        },
+        "content": "The Mada'a is the traditional legal system of the Afar people..."
+      },
+      "afar": {
+        "title": "Madqa",
+        "hero": {
+          "title": "Qafar - Mablo",
+          "subtitle": "Qafar madqah baxxaqsa baatil meklah addatino"
+        }
+      },
+      "am": {
+        "title": "ማዳዓ - የአፋር ባህላዊ ህግ",
+        "hero": {
+          "title": "ማዳአ/Mada'a - የአፋር ባህላዊ ህግ",
+          "subtitle": "የአፋርን ማህበረሰብ ከትውልድ ለትውልድ ሲተላለፍ የመጣውን ባህላዊ የእርቅና የህግ ስርዓት"
+        }
+      }
+    },
+    "lifestyle": {
+      "en": {
+        "title": "Pastoral Lifestyle",
+        "hero": {
+          "title": "Pastoral Lifestyle",
+          "subtitle": "Discover the nomadic traditions and daily life of the Afar people"
+        },
+        "content": "The Afar are traditionally pastoralists..."
+      },
+      "afar": {
+        "title": "Dacarsittoh Xiina Mano",
+        "hero": {
+          "title": "Qafar Ummattag Mano",
+          "subtitle": "Qafar Ummattag mano elle soltam barit.."
+        }
+      },
+      "am": {
+        "title": "የአፋር አርብቶ አደር አኗኗር",
+        "hero": {
+          "title": "የአርብቶ አደር አኗኗር ዘይበ",
+          "subtitle": "የአፋር አርብቶ አደርህ ህዝብ የዕለት ተዕለት የኑሮ ዘይበን ያግኙ "
+        }
+      }
+    },
+    "gallery": {
+      "en": {
+        "title": "Gallery",
+        "hero": {
+          "title": "Gallery",
+          "subtitle": "A visual journey through Afar culture"
+        }
+      }
+    },
+    "contact": {
+      "en": {
+        "title": "Contact Us",
+        "hero": {
+          "title": "Contact Us",
+          "subtitle": "We'd love to hear from you"
         }
       }
     }
-  },
-  "culture": {
-    "en": {
-      "title": "Afar Culture and Traditions",
-      "sections": [
-        {
-          "title": "Social Structure",
-          "content": "Afar society is organized into clans and sub-clans, with a strong emphasis on kinship and collective responsibility."
-        },
-        {
-          "title": "Traditional Attire",
-          "content": "The distinctive Sanafil (waistcloth) and Shash (headscarf) for men, and the colorful Gambo (dress) for women."
-        },
-        {
-          "title": "The Jile Dagger",
-          "content": "The Jile is a traditional curved dagger that symbolizes honor, bravery, and manhood in Afar culture."
-        }
-      ]
-    }
-  },
-  "customs": {
-    "en": {
-      "title": "Mada'a - Afar Customary Law",
-      "content": "The Mada'a is the traditional legal system of the Afar people, governing everything from marriage and inheritance to conflict resolution and resource management."
-    }
-  },
-  "lifestyle": {
-    "en": {
-      "title": "Pastoral Lifestyle",
-      "content": "The Afar are traditionally pastoralists, herding camels, goats, sheep, and cattle across the arid landscapes of the Horn of Africa."
-    }
-  },
-  "gallery": {
-    "categories": ["Landscape", "People", "Traditions", "Daily Life"],
-    "images": []
   },
   "settings": {
     "primaryColor": "#1a3a5c",

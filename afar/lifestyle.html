@@ -1,1 +1,163 @@
-  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afar Lifestyle - Pastoral Traditions</title>
+    <meta name="description" content="Explore the pastoral lifestyle of the Afar people">
+    <link rel="icon" href="../assets/images/favicon.png" type="image/x-icon">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <style>
+        :root { --primary-blue: #1a3a5c; --secondary-blue: #2c5f7c; --accent-gold: #ffd700; }
+        body { font-family: 'Poppins', sans-serif; background: #f8f9fa; }
+        .navbar { background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%); padding: 15px 0; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        .nav-link { color: white !important; font-weight: 500; margin: 0 10px; transition: all 0.3s ease; }
+        .nav-link:hover { color: var(--accent-gold) !important; }
+        .lang-btn { background: rgba(255,255,255,0.2); color: white; padding: 8px 15px; border-radius: 20px; text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; }
+        .lang-btn:hover, .lang-btn.active { background: var(--accent-gold); color: var(--primary-blue); }
+        .page-header { background: linear-gradient(rgba(26,58,92,0.85), rgba(44,95,124,0.9)), url('https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=1950&q=80'); background-size: cover; background-position: center; color: white; padding: 80px 0; text-align: center; }
+        .page-header h1 { font-size: 3.5rem; font-weight: 700; }
+        .content-section { padding: 80px 0; }
+        .lifestyle-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08); height: 100%; transition: all 0.3s ease; }
+        .lifestyle-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(26,58,92,0.15); }
+        .lifestyle-card img { width: 100%; height: 200px; object-fit: cover; }
+        .lifestyle-card .content { padding: 25px; }
+        .lifestyle-card h3 { color: var(--primary-blue); font-weight: 600; margin-bottom: 15px; }
+        .lifestyle-card p { color: #666; line-height: 1.8; }
+        .footer { background: #0f2640; color: white; padding: 60px 0 20px; }
+        .footer h5 { color: var(--accent-gold); margin-bottom: 20px; }
+        .footer-links { list-style: none; padding: 0; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { color: #ccc; text-decoration: none; transition: all 0.3s ease; }
+        .footer-links a:hover { color: var(--accent-gold); padding-left: 5px; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 40px; padding-top: 20px; text-align: center; color: #aaa; }
+        .back-to-top { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background: var(--primary-blue); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 99; }
+        .back-to-top.show { opacity: 1; visibility: visible; }
+        .back-to-top:hover { background: var(--accent-gold); color: var(--primary-blue); }
+        @media (max-width: 768px) { .page-header h1 { font-size: 2.5rem; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 50'%3E%3Crect width='150' height='50' rx='5' fill='%23ffd700'/%3E%3Ctext x='75' y='30' font-family='Arial' font-size='14' fill='%231a3a5c' text-anchor='middle' font-weight='bold'%3EAfar Culture%3C/text%3E%3C/svg%3E" alt="Afar Culture" style="height: 50px;">
+</a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto" id="nav-menu"></ul>
+                <div class="language-selector">
+                    <a href="../afar/lifestyle.html" class="lang-btn">Afar</a>
+                    <a href="../am/lifestyle.html" class="lang-btn">አማርኛ</a>
+                    <a href="lifestyle.html" class="lang-btn active">English</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 data-aos="fade-up" id="hero-title"></h1>
+            <p data-aos="fade-up" data-aos-delay="100" id="hero-subtitle"></p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="row" id="lifestyle-container"></div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4"><h5 id="footer-about-title"></h5><p id="footer-about-text" style="color: #ccc;"></p></div>
+                <div class="col-lg-2 mb-4"><h5 id="footer-links-title"></h5><ul class="footer-links" id="footer-links"></ul></div>
+                <div class="col-lg-4 mb-4"><h5 id="footer-contact-title"></h5><ul class="footer-links" id="footer-contact"></ul></div>
+            </div>
+            <div class="footer-bottom"><p id="footer-copyright"></p></div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        window.addEventListener('scroll', () => document.querySelector('.back-to-top').classList.toggle('show', window.pageYOffset > 300));
+        
+        const LANG = 'afar';
+        
+        async function loadContent() {
+            try {
+                const res = await fetch('../assets/data/content.json');
+                const data = await res.json();
+                
+                // Navigation
+                const navItems = data.navigation?.[LANG] || ['Home', 'Culture', 'Customary Law', 'Lifestyle', 'Gallery', 'Contact'];
+                const navUrls = ['index.html', 'culture.html', 'customs.html', 'lifestyle.html', 'gallery.html', 'contact.html'];
+                document.getElementById('nav-menu').innerHTML = navItems.map((item, i) => 
+                    `<li class="nav-item"><a class="nav-link ${i === 3 ? 'active' : ''}" href="${navUrls[i]}">${item}</a></li>`
+                ).join('');
+                
+                // Page Content
+                const page = data.pages?.lifestyle?.[LANG];
+                if (page) {
+                    document.getElementById('hero-title').textContent = page.hero?.title || 'Pastoral Lifestyle';
+                    document.getElementById('hero-subtitle').textContent = page.hero?.subtitle || '';
+                    
+                    const sections = page.sections || [];
+                    document.getElementById('lifestyle-container').innerHTML = sections.map((s) => `
+                        <div class="col-lg-6 mb-4" data-aos="fade-up">
+                            <div class="lifestyle-card">
+                                <img src="${s.image || 'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=600&q=80'}" alt="${s.title}">
+                                <div class="content">
+                                    <h3>${s.title || ''}</h3>
+                                    <p>${s.content || ''}</p>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+                
+                // Footer
+                const site = data.site;
+                if (site) {
+                    document.getElementById('footer-about-title').textContent = `About ${site.name?.[LANG] || 'Afar Culture'}`;
+                    document.getElementById('footer-about-text').textContent = site.description?.[LANG] || '';
+                    document.getElementById('footer-links-title').textContent = 'Quick Links';
+                    document.getElementById('footer-contact-title').textContent = 'Contact';
+                    document.getElementById('footer-copyright').textContent = `© 2024 ${site.name?.[LANG] || 'Afar Culture'}. All Rights Reserved.`;
+                }
+                
+                document.getElementById('footer-links').innerHTML = navItems.slice(0, 4).map((item, i) => 
+                    `<li><a href="${navUrls[i]}">${item}</a></li>`
+                ).join('');
+                
+                document.getElementById('footer-contact').innerHTML = `
+                    <li><i class="fas fa-map-marker-alt me-2"></i> Afar Region, Ethiopia</li>
+                    <li><i class="fas fa-envelope me-2"></i> info@afarculture.org</li>
+                `;
+                
+            } catch (e) {
+                console.log('Loading default...');
+                document.getElementById('hero-title').textContent = 'Pastoral Lifestyle';
+                document.getElementById('lifestyle-container').innerHTML = `
+                    <div class="col-lg-6 mb-4"><div class="lifestyle-card"><img src="https://images.unsplash.com/photo-1589652717521-10c0d092dea9?w=600&q=80"><div class="content"><h3>Pastoral Nomads</h3><p>The Afar people are traditionally pastoral nomads...</p></div></div></div>
+                    <div class="col-lg-6 mb-4"><div class="lifestyle-card"><img src="https://images.unsplash.com/photo-1531386151447-fd76ad50012f?w=600&q=80"><div class="content"><h3>The Ari House</h3><p>Traditional dome-shaped dwelling...</p></div></div></div>
+                `;
+            }
+        }
+        
+        loadContent();
+    </script>
+</body>
+</html>
