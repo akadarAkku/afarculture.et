@@ -1,152 +1,907 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="am">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mada'a - Afar Customary Law</title>
-    <meta name="description" content="Learn about Mada'a, the traditional customary law of the Afar people">
+    <title>ማድዓ - የአፋር ባህላዊ ሕግ | ባህላዊ የፍትህ ስርዓት</title>
+    <meta name="description" content="ስለ አፋር ባህላዊ ሕግ ማድዓ ይወቁ፤ ግጭቶችን መፍታትን፣ ጋብቻን፣ ውርስን እና ማህበራዊ ስርዓትን የሚቆጣጠር">
     <link rel="icon" href="../assets/images/favicon.png" type="image/x-icon">
     
+    <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
     
     <style>
-        :root { --primary-blue: #1a3a5c; --secondary-blue: #2c5f7c; --accent-gold: #ffd700; }
-        body { font-family: 'Poppins', sans-serif; background: #f8f9fa; }
-        .navbar { background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%); padding: 15px 0; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
-        .nav-link { color: white !important; font-weight: 500; margin: 0 10px; transition: all 0.3s ease; }
+        :root {
+            --primary-blue: #1a3a5c;
+            --secondary-blue: #2c5f7c;
+            --accent-gold: #ffd700;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f8f9fa;
+        }
+        
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            padding: 15px 0;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand img { height: 50px; }
+        
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
         .nav-link:hover { color: var(--accent-gold) !important; }
-        .lang-btn { background: rgba(255,255,255,0.2); color: white; padding: 8px 15px; border-radius: 20px; text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; }
-        .lang-btn:hover, .lang-btn.active { background: var(--accent-gold); color: var(--primary-blue); }
-        .page-header { background: linear-gradient(rgba(26,58,92,0.85), rgba(44,95,124,0.9)), url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXCMXlMFwHbUxO2J1AXee8If531-C-z5FpTg&s'); background-size: cover; background-position: center; color: white; padding: 80px 0; text-align: center; }
-        .page-header h1 { font-size: 3.5rem; font-weight: 700; }
-        .content-section { padding: 80px 0; }
-        .content-card { background: white; border-radius: 15px; padding: 40px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); }
-        .content-card h2 { color: var(--primary-blue); font-weight: 700; margin-bottom: 20px; }
-        .content-card h3 { color: var(--primary-blue); font-weight: 600; margin: 30px 0 15px; }
-        .content-card p { color: #666; line-height: 1.8; }
-        .content-card ul { color: #666; line-height: 1.8; padding-left: 20px; }
-        .content-card li { margin-bottom: 8px; }
-        .footer { background: #0f2640; color: white; padding: 60px 0 20px; }
+        
+        .language-selector {
+            display: flex;
+            gap: 10px;
+            margin-left: 20px;
+        }
+        
+        .lang-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-btn:hover, .lang-btn.active {
+            background: var(--accent-gold);
+            color: var(--primary-blue);
+        }
+        
+        .page-header {
+            background: linear-gradient(rgba(26,58,92,0.85), rgba(44,95,124,0.9)), url('https://images.unsplash.com/photo-1589391886645-d65141b1e862?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .customs-section {
+            padding: 60px 0;
+        }
+        
+        .principle-box {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .principle-box i {
+            font-size: 40px;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+        }
+        
+        .principle-box h4 {
+            margin-bottom: 10px;
+        }
+        
+        /* Amharic Areas Card */
+        .amharic-areas-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(26, 58, 92, 0.08);
+            margin-bottom: 20px;
+        }
+        
+        .amharic-areas-header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: white;
+            padding: 35px 30px 30px;
+            text-align: center;
+        }
+        
+        .amharic-areas-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            border: 3px solid var(--accent-gold);
+        }
+        
+        .amharic-areas-icon i {
+            font-size: 34px;
+            color: var(--accent-gold);
+        }
+        
+        .amharic-areas-header h3 {
+            margin: 0 0 10px;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: white;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        .amharic-areas-header p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+        
+        .amharic-areas-grid {
+            padding: 35px 30px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px 30px;
+        }
+        
+        .amharic-area-item {
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+        }
+        
+        .area-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border: 1px solid rgba(26, 58, 92, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .amharic-area-item:hover .area-icon {
+            background: var(--primary-blue);
+            border-color: var(--primary-blue);
+        }
+        
+        .amharic-area-item:hover .area-icon i {
+            color: var(--accent-gold);
+        }
+        
+        .area-icon i {
+            font-size: 22px;
+            color: var(--primary-blue);
+            transition: all 0.3s ease;
+        }
+        
+        .area-content h4 {
+            color: var(--primary-blue);
+            font-weight: 700;
+            margin: 0 0 8px;
+            font-size: 1.15rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        .area-content p {
+            color: #666;
+            margin: 0;
+            line-height: 1.7;
+            font-size: 0.95rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        /* Amharic Read More Button */
+        .amharic-read-more-wrapper {
+            text-align: center;
+            padding: 0 30px 35px;
+        }
+        
+        .amharic-read-more {
+            background: transparent;
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+            padding: 14px 35px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Times New Roman', serif;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .amharic-read-more:hover {
+            background: var(--primary-blue);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(26, 58, 92, 0.2);
+        }
+        
+        /* Modal Overlay */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            overflow-y: auto;
+            padding: 20px;
+            backdrop-filter: blur(8px);
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .amharic-modal-container {
+            background: white;
+            border-radius: 20px;
+            max-width: 700px;
+            width: 90%;
+            max-height: 85vh;
+            margin: 40px auto;
+            position: relative;
+            animation: slideUp 0.4s ease;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-close:hover {
+            background: var(--accent-gold);
+            color: var(--primary-blue);
+            transform: rotate(90deg);
+        }
+        
+        .amharic-modal-header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: white;
+            padding: 25px 30px 20px;
+            text-align: center;
+        }
+        
+        .amharic-modal-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+            border: 3px solid var(--accent-gold);
+        }
+        
+        .amharic-modal-icon i {
+            font-size: 28px;
+            color: var(--accent-gold);
+        }
+        
+        .amharic-modal-header h2 {
+            margin: 0 0 8px;
+            font-weight: 700;
+            font-size: 1.6rem;
+            color: white;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        .amharic-modal-header p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+        
+        .amharic-modal-body {
+            padding: 20px 30px 25px;
+            overflow-y: auto;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        .amharic-section {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .amharic-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .amharic-section h3 {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 12px;
+            font-size: 1.15rem;
+        }
+        
+        .amharic-section p {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+        
+        .amharic-section ul {
+            color: #555;
+            line-height: 1.7;
+            padding-left: 20px;
+            margin-bottom: 12px;
+        }
+        
+        .amharic-section li {
+            margin-bottom: 5px;
+        }
+        
+        .amharic-version {
+            background: #f8f9fa;
+            padding: 12px 18px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            border-left: 4px solid var(--accent-gold);
+        }
+        
+        .amharic-version h4 {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin: 0 0 5px;
+            font-size: 1rem;
+        }
+        
+        .amharic-version p {
+            margin: 3px 0;
+            font-size: 0.9rem;
+        }
+        
+        .amharic-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .amharic-table th {
+            background: var(--primary-blue);
+            color: white;
+            padding: 10px 12px;
+            font-weight: 600;
+        }
+        
+        .amharic-table td {
+            padding: 8px 12px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .table-note {
+            font-size: 0.85rem;
+            color: #888;
+            text-align: center;
+            font-style: italic;
+            margin-top: 10px;
+        }
+        
+        .footer {
+            background: #0f2640;
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
         .footer h5 { color: var(--accent-gold); margin-bottom: 20px; }
-        .footer-links { list-style: none; padding: 0; }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
         .footer-links li { margin-bottom: 10px; }
-        .footer-links a { color: #ccc; text-decoration: none; transition: all 0.3s ease; }
-        .footer-links a:hover { color: var(--accent-gold); padding-left: 5px; }
-        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 40px; padding-top: 20px; text-align: center; color: #aaa; }
-        .back-to-top { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background: var(--primary-blue); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 99; }
-        .back-to-top.show { opacity: 1; visibility: visible; }
-        .back-to-top:hover { background: var(--accent-gold); color: var(--primary-blue); }
-        @media (max-width: 768px) { .page-header h1 { font-size: 2.5rem; } }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover { color: var(--accent-gold); }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--accent-gold);
+            color: var(--primary-blue);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 40px;
+            padding-top: 20px;
+            text-align: center;
+            color: #aaa;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 99;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        @media (max-width: 992px) {
+            .amharic-areas-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 30px 25px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-header h1 { font-size: 2.5rem; }
+            .amharic-modal-container { margin: 20px auto; }
+            .amharic-modal-header { padding: 20px 20px 15px; }
+            .amharic-modal-header h2 { font-size: 1.4rem; }
+            .amharic-modal-body { padding: 18px 20px; }
+            .amharic-areas-header { padding: 25px 20px 20px; }
+            .amharic-areas-header h3 { font-size: 1.5rem; }
+            .amharic-areas-grid { padding: 25px 20px; }
+            .amharic-area-item { gap: 15px; }
+            .area-icon { width: 45px; height: 45px; }
+            .area-icon i { font-size: 20px; }
+            .amharic-read-more-wrapper { padding: 0 20px 25px; }
+        }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 50'%3E%3Crect width='150' height='50' rx='5' fill='%23ffd700'/%3E%3Ctext x='75' y='30' font-family='Arial' font-size='14' fill='%231a3a5c' text-anchor='middle' font-weight='bold'%3EAfar Culture%3C/text%3E%3C/svg%3E" alt="Afar Culture" style="height: 50px;">
-</a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 50'%3E%3Crect width='150' height='50' rx='5' fill='%23ffd700'/%3E%3Ctext x='75' y='30' font-family='Arial' font-size='14' fill='%231a3a5c' text-anchor='middle' font-weight='bold'%3EAfar Culture%3C/text%3E%3C/svg%3E" alt="Afar Culture">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto" id="nav-menu"></ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">መነሻ ገጽ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="culture.html">ባህላዊ ዕሴቶች</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="customs.html">ባህላዊ ህግ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">ፎቶ ጋላሪ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">ይጻፉልን</a></li>
+                </ul>
                 <div class="language-selector">
                     <a href="../afar/customs.html" class="lang-btn">Afar</a>
-                    <a href="../am/customs.html" class="lang-btn">አማርኛ</a>
-                    <a href="customs.html" class="lang-btn active">English</a>
+                    <a href="../am/customs.html" class="lang-btn active">አማርኛ</a>
+                    <a href="../en/customs.html" class="lang-btn">English</a>
                 </div>
             </div>
         </div>
     </nav>
 
+    <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1 data-aos="fade-up" id="hero-title"></h1>
-            <p data-aos="fade-up" data-aos-delay="100" id="hero-subtitle"></p>
+            <h1 data-aos="fade-up">ማድዓ - የአፋር ባህላዊ ሕግ</h1>
+            <p data-aos="fade-up" data-aos-delay="100"><span style="color: #c2b280;">ከትውልድ ለትውልድ ሲተላለፍ የመጣው የአፋር ባህላዊ የህግ ስርዓት</span></p>
         </div>
     </section>
 
-    <section class="content-section">
+    <!-- Introduction -->
+    <section class="customs-section">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-10 mx-auto">
-                    <div class="content-card" data-aos="fade-up" id="page-content"></div>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4" data-aos="fade-right">
+                    <img src="../assets/images/gallery/galery2.jpg" alt="Elders Council" style="width: 100%; border-radius: 14px; box-shadow: 0 8px 26px rgba(0,0,0,0.15); height: 530px;">
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h2 style="color: var(--primary-blue); font-weight: 700; margin-bottom: 20px;">ማድዓ ምንድነው?</h2>
+                    <p style="color: #666; line-height: 1.8; margin-bottom: 20px;">የአፋር ባህላዊ የሕግ ሥርዓት "መድዓ" ለዘመናት በቃል ሲተላለፍ የቆየ፣ ከጋብቻና ውርስ እስከ ከባድ ወንጀሎች እንዲሁም የተፈጥሮ ሀብት (ውኃና ሳር) አጠቃቀም ድረስ ሁሉንም የሕይወት ዘርፎች የሚገዛ ሁሉን አቀፍ የሕግ ሥርዓት ነው።</p>
+                    <p style="color: #666; line-height: 1.8; margin-bottom: 20px;">በአፋር ባህላዊ ሕግ ለተፈፀመ ጥፋት አጥፊው ብቻ ሳይሆን የአጥፊው ጎሳ በሙሉ ተጠያቂ የሚያደርግ ነው። ጥፋተኛው ጥፋቱን የፈፀመው ባለማወቅ ነው ወይስ ሆን ብሎ ነው የሚለውን ለይቶ አውቆ የሚቀጣ ነው።</p>
+                    <p style="color: #666; line-height: 1.8;">በባህላዊ ሕጉ "መድዓ" መሠረት የበደል ካሳ በቁም እንስሳት አሊያም በጥሬ ገንዘብ ለተበዳይ የሚከፈል ነው።</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Core Principles -->
+    <section class="customs-section" style="background: #f0f4f8;">
+        <div class="container">
+            <h2 class="text-center mb-5" style="color: var(--primary-blue); font-weight: 700;" data-aos="fade-up">የአፋር ባህላዊ ህግ (ማድዓ) ዋና መርሆዎች</h2>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="principle-box">
+                        <i class="fas fa-handshake"></i>
+                        <h4>እርቅ (ማብላ)</h4>
+                        <p>ዋናው ዓላማ ጥፋተኛውን ከመቅጣት ይልቅ በወገኖች መካከል ያለውን ሰላምና ስምምነት መመለስ ነው።</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="principle-box">
+                        <i class="fas fa-coins"></i>
+                        <h4>ካሳ (ጉማ)</h4>
+                        <p>ስህተቶች የሚታረሙት በተቀመጡት መለኪያዎች ላይ በመመስረት፣ በተለይም በእንስሳት መልክ የሚከፈል ካሳ በመክፈል ነው።</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="principle-box">
+                        <i class="fas fa-users"></i>
+                        <h4>የጋራ ኃላፊነት</h4>
+                        <p>ጎሳው ወይም ቤተሰቡ የአባላቱን ድርጊት እና ካሳ ለመክፈል ኃላፊነት ይወስዳሉ።</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="principle-box">
+                        <i class="fas fa-gavel"></i>
+                        <h4>የሽማግሌዎች ስልጣን</h4>
+                        <p>ውሳኔዎች የሚወሰኑት እንደ ዳኛና አስታራቂ ሆነው በሚያገለግሉና እጅግ በተከበሩ የሀገር ሽማግሌዎች ነው።</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="principle-box">
+                        <i class="fas fa-balance-scale"></i>
+                        <h4>ቀድሞ-ተኮር</h4>
+                        <p>ውሳኔዎች የሚመሩት በተጻፉ ህጎች ሳይሆን በቀደሙት ጉዳዮችና ልማዶች ነው።</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="principle-box">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>የመሀላ ቅድስና</h4>
+                        <p>በቁርአን ወይም በባህላዊ ምልክቶች የሚፈጸሙ መሃላዎች እንደ ቅዱስ እና አስገዳጅ ይቆጠራሉ።</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Areas Governed by Mada'a - Beautiful Amharic Card -->
+    <section class="customs-section" style="background: #f0f4f8;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="amharic-areas-card" data-aos="fade-up">
+                        <div class="amharic-areas-header">
+                            <div class="amharic-areas-icon">
+                                <i class="fas fa-gavel"></i>
+                            </div>
+                            <h3>በማድዓ የሚተዳደሩ ጉዳዮች</h3>
+                            <p>የአፋር ባህላዊ ሕግ የሚሸፍናቸው ዋና ዋና ዘርፎች</p>
+                        </div>
+                        
+                        <div class="amharic-areas-grid">
+                            <div class="amharic-area-item">
+                                <div class="area-icon"><i class="fas fa-heart"></i></div>
+                                <div class="area-content">
+                                    <h4>ጋብቻ እና ቤተሰብ</h4>
+                                    <p>ማድዓ የጋብቻ ዝግጅቶችን፣ የሙሽራ ሀብትን (ሌቤ)፣ የፍቺ ሂደቶችን፣ የልጆች ማሳደግን እና ውርስን ይቆጣጠራል።</p>
+                                </div>
+                            </div>
+                            <div class="amharic-area-item">
+                                <div class="area-icon"><i class="fas fa-skull"></i></div>
+                                <div class="area-content">
+                                    <h4>ግድያ እና የደም ፋይዳ</h4>
+                                    <p>ዝርዝር ደንቦች ለግድያ ምላሽን ይቆጣጠራሉ፣ ይህም የካሳ ክፍያዎችን (ዲያ) እና የእርቅ ሥነ-ሥርዓቶችን ያጠቃልላል።</p>
+                                </div>
+                            </div>
+                            <div class="amharic-area-item">
+                                <div class="area-icon"><i class="fas fa-hand-fist"></i></div>
+                                <div class="area-content">
+                                    <h4>ጥቃት እና ጉዳት</h4>
+                                    <p>ለተለያዩ የጉዳት ዓይነቶች የተወሰነ የካሳ መጠን ታዝዟል፤ ከቀላል ቁስሎች እስከ ዘላቂ የአካል ጉዳት ድረስ።</p>
+                                </div>
+                            </div>
+                            <div class="amharic-area-item">
+                                <div class="area-icon"><i class="fas fa-home"></i></div>
+                                <div class="area-content">
+                                    <h4>ንብረት እና ከብት</h4>
+                                    <p>ሕጎች ስርቆትን፣ በንብረት ላይ ጉዳት ማድረስን፣ የግጦሽ መብቶችን፣ የውሃ አቅርቦትን ይሸፍናሉ።</p>
+                                </div>
+                            </div>
+                            <div class="amharic-area-item">
+                                <div class="area-icon"><i class="fas fa-venus-mars"></i></div>
+                                <div class="area-content">
+                                    <h4>የፆታ ጥፋቶች</h4>
+                                    <p>ማድዓ ዝሙትን፣ አስገድዶ መድፈርን እና ሌሎች የፆታ ጥፋቶችን ይመለከታል።</p>
+                                </div>
+                            </div>
+                            <div class="amharic-area-item">
+                                <div class="area-icon"><i class="fas fa-dove"></i></div>
+                                <div class="area-content">
+                                    <h4>የሰላም ስምምነቶች</h4>
+                                    <p>በጎሳዎች መካከል የሰላም ስምምነቶችን ለመደራደር እና ለማጠቃለል መደበኛ ሂደቶች አሉ።</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Read More Button -->
+                        <div class="amharic-read-more-wrapper">
+                            <button class="amharic-read-more" onclick="openAmharicMadaaModal()">
+                                <i class="fas fa-book-open"></i> ስለ ማድዓ ተጨማሪ ያንብቡ
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Council of Elders -->
+    <section class="customs-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2 mb-4" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1576485375217-d6a95e34d043?ixlib=rb-4.0.3&auto=format&fit=crop&w=1072&q=80" alt="Elders Council" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+                </div>
+                <div class="col-lg-6 order-lg-1" data-aos="fade-right">
+                    <h2 style="color: var(--primary-blue); font-weight: 700; margin-bottom: 20px;">የሽማግሌዎች ምክር ቤት (መድዓ አባ)</h2>
+                    <p style="color: #666; line-height: 1.8; margin-bottom: 20px;">መድዓ አባ (ቃል በቃል "የሕግ አባቶች") የባህላዊ ሕጉ ጠባቂዎች እና ተርጓሚዎች ናቸው። እነዚህ በጥበባቸው፣ በእውቀታቸው እና በገለልተኛነታቸው አክብሮትን ያተረፉ ሰዎች ናቸው።</p>
+                    <p style="color: #666; line-height: 1.8; margin-bottom: 20px;">ግጭት በሚፈጠርበት ጊዜ ተዋዋይ ወገኖች ጉዳያቸውን የሚሰሙ ሽማግሌዎችን ይመርጣሉ። ሽማግሌዎቹ ምስክርነቶችን ያዳምጣሉ፣ ቀደምት ጉዳዮችን ያማክራሉ እና አስገዳጅ ውሳኔ ከመስጠታቸው በፊት ይወያያሉ።</p>
+                    <p style="color: #666; line-height: 1.8;">የምክር ቤቱ ዋና ግብ ስምምነትን መመለስ ነው። ካሳ በታዘዘ ጊዜም እንኳ ግጭቱን በመደበኛነት የሚያቆምና በወገኖች መካከል መደበኛ ግንኙነትን የሚመልስ የእርቅ ሥነ-ሥርዓት አብሮ ይከናወናል።</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 mb-4"><h5 id="footer-about-title"></h5><p id="footer-about-text" style="color: #ccc;"></p></div>
-                <div class="col-lg-2 mb-4"><h5 id="footer-links-title"></h5><ul class="footer-links" id="footer-links"></ul></div>
-                <div class="col-lg-4 mb-4"><h5 id="footer-contact-title"></h5><ul class="footer-links" id="footer-contact"></ul></div>
+                <div class="col-lg-4 mb-4">
+                    <h5>ስለ አፋር ባህል</h5>
+                    <p style="color: #ccc;">በአፍሪካ ቀንድ የሚገኘውን የአፋር ህዝብ የበለጸገ ባህላዊ ቅርስ ለማቆየት፣ ለመመዝገብ እና ለማካፈል የተቋቋመ።</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>ፈጣን አገናኞች</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">መነሻ ገጽ</a></li>
+                        <li><a href="culture.html">ባህል</a></li>
+                        <li><a href="customs.html">ባህላዊ ሕግ</a></li>
+                        <li><a href="lifestyle.html">አኗኗር</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>መረጃዎች</h5>
+                    <ul class="footer-links">
+                        <li><a href="gallery.html">ፎቶ ጋላሪ</a></li>
+                        <li><a href="#">ብሎግ</a></li>
+                        <li><a href="#">ህትመቶች</a></li>
+                        <li><a href="#">ምርምር</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <h5>አድራሻ</h5>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> አፋር ክልል፣ ኢትዮጵያ</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@afarculture.org</li>
+                        <li><i class="fas fa-phone me-2"></i> +251 000 000000</li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-bottom"><p id="footer-copyright"></p></div>
+            <div class="footer-bottom">
+                <p>© 2024 ቃፋር ቃዓዳ | የአፋር ባህል። መብቱ በህግ የተጠበቀ ነው።</p>
+            </div>
         </div>
     </footer>
 
+    <!-- Back to Top -->
     <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
 
+    <!-- ============================================== -->
+    <!-- AMHARIC MADA'A POPUP MODAL                       -->
+    <!-- ============================================== -->
+    <div class="modal-overlay" id="amharicMadaaModal" onclick="closeAmharicMadaaModal()">
+        <div class="amharic-modal-container" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeAmharicMadaaModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="amharic-modal-header">
+                <div class="amharic-modal-icon">
+                    <i class="fas fa-landmark"></i>
+                </div>
+                <h2>የአፋር ማዳአ - ባህላዊ ህግ</h2>
+                <p>አምስቱ የአፋር ማዳአ ስሪቶች አጠቃላይ እይታ</p>
+            </div>
+            
+            <div class="amharic-modal-body">
+                
+                <div class="amharic-section">
+                    <h3><i class="fas fa-globe-africa me-2"></i>መግቢያ</h3>
+                    <p>የአፋር ህዝብ በአፍሪካ ቀንድ በሶስት ሀገራት ውስጥ ይኖራል፦ ኢትዮጵያ፣ ኤርትራ እና ጅቡቲ። የአፋር ማዳአ (ባህላዊ ህግ) አምስት የተለያዩ ስሪቶች ያሉት ሲሆን፣ እያንዳንዳቸው በተለያዩ ክልሎች እና በተለያዩ ታሪካዊ ተጽእኖዎች ስር ተዘጋጅተዋል።</p>
+                </div>
+                
+                <div class="amharic-section">
+                    <h3><i class="fas fa-scroll me-2"></i>አምስቱ የአፋር ማዳአ ስሪቶች</h3>
+                    
+                    <div class="amharic-version">
+                        <h4>1. ቡርቂሊ ማድቃ</h4>
+                        <p><strong>ክልል፦</strong> ኤርትራ፣ ሰሜን ኢትዮጵያ</p>
+                        <p><strong>ካሳ፦</strong> በግመል የሚከፈል</p>
+                    </div>
+                    
+                    <div class="amharic-version">
+                        <h4>2. ቡኽሁቶ ማድቃ</h4>
+                        <p><strong>ክልል፦</strong> ኤርትራ፣ ኢትዮጵያ</p>
+                        <p><strong>ካሳ፦</strong> በፍየልና በግ የሚከፈል</p>
+                    </div>
+                    
+                    <div class="amharic-version">
+                        <h4>3. አፍኪቀክ ማቃድ</h4>
+                        <p><strong>ክልል፦</strong> አውሲ ራሱ፣ ጋቢ ራሱ</p>
+                        <p><strong>ካሳ፦</strong> ባህላዊ ካሳ</p>
+                    </div>
+                    
+                    <div class="amharic-version">
+                        <h4>4. ባዶይታ መኤላህ ማድቃ</h4>
+                        <p><strong>ክልል፦</strong> ቻሪ ራሱ</p>
+                        <p><strong>ካሳ፦</strong> ዘመናዊ መላመድ</p>
+                    </div>
+                    
+                    <div class="amharic-version">
+                        <h4>5. ደብነክ ወቂማ</h4>
+                        <p><strong>ክልል፦</strong> ጅቡቲ፣ ኢትዮጵያ</p>
+                        <p><strong>ካሳ፦</strong> ድብልቅ የእንስሳት ካሳ</p>
+                    </div>
+                </div>
+                
+                <div class="amharic-section">
+                    <h3><i class="fas fa-star me-2"></i>ዋና ዋና መርሆዎች</h3>
+                    <ul>
+                        <li><strong>እርቅ (ማብላ)፦</strong> ዋናው ግብ ቅጣት ሳይሆን ሰላምና ስምምነትን መመለስ ነው</li>
+                        <li><strong>ካሳ (ጉማ)፦</strong> በደሎች በካሳ ክፍያ ይቀጣሉ</li>
+                        <li><strong>የጋራ ኃላፊነት፦</strong> ጎሳው ለአባላቱ ድርጊት ኃላፊነቱን ይወስዳል</li>
+                        <li><strong>የሽማግሌዎች ስልጣን፦</strong> ውሳኔዎች በተከበሩ ሽማግሌዎች ምክር ቤት ይሰጣሉ</li>
+                    </ul>
+                </div>
+                
+                <div class="amharic-section">
+                    <h3><i class="fas fa-balance-scale me-2"></i>የካሳ መጠኖች (ምሳሌ)</h3>
+                    <table class="amharic-table">
+                        <thead>
+                            <tr><th>ጥፋት</th><th>ካሳ</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>ግድያ (ያልታሰበ)</td><td>100 ግመል</td></tr>
+                            <tr><td>ግድያ (ታስቦ)</td><td>100 ግመል + ስደት</td></tr>
+                            <tr><td>ዓይን ማጣት</td><td>50 ግመል</td></tr>
+                            <tr><td>እጅ/እግር ማጣት</td><td>50 ግመል</td></tr>
+                            <tr><td>አጥንት መሰበር</td><td>10-30 ግመል</td></tr>
+                            <tr><td>ስርቆት</td><td>መመለስ + 2-4x</td></tr>
+                        </tbody>
+                    </table>
+                    <p class="table-note">ማስታወሻ፦ እነዚህ ግምታዊ ዋጋዎች ናቸው። ትክክለኛው ካሳ እንደ ክልሉና እንደ ሁኔታው ሊለያይ ይችላል።</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../assets/js/main.js"></script>
+    
     <script>
         AOS.init({ duration: 1000, once: true });
-        window.addEventListener('scroll', () => document.querySelector('.back-to-top').classList.toggle('show', window.pageYOffset > 300));
         
-        const LANG = 'am';
-        
-        async function loadContent() {
-            try {
-                const res = await fetch('../assets/data/content.json');
-                const data = await res.json();
-                
-                // Navigation
-                const navItems = data.navigation?.[LANG] || ['Home', 'Culture', 'Customary Law', 'Lifestyle', 'Gallery', 'Contact'];
-                const navUrls = ['index.html', 'culture.html', 'customs.html', 'lifestyle.html', 'gallery.html', 'contact.html'];
-                document.getElementById('nav-menu').innerHTML = navItems.map((item, i) => 
-                    `<li class="nav-item"><a class="nav-link ${i === 2 ? 'active' : ''}" href="${navUrls[i]}">${item}</a></li>`
-                ).join('');
-                
-                // Page Content
-                const page = data.pages?.customs?.[LANG];
-                if (page) {
-                    document.getElementById('hero-title').textContent = page.hero?.title || 'Mada\'a - Afar Customary Law';
-                    document.getElementById('hero-subtitle').textContent = page.hero?.subtitle || '';
-                    document.getElementById('page-content').innerHTML = page.content || '<p>Content loading...</p>';
-                }
-                
-                // Footer
-                const site = data.site;
-                if (site) {
-                    document.getElementById('footer-about-title').textContent = `About ${site.name?.[LANG] || 'Afar Culture'}`;
-                    document.getElementById('footer-about-text').textContent = site.description?.[LANG] || '';
-                    document.getElementById('footer-links-title').textContent = 'Quick Links';
-                    document.getElementById('footer-contact-title').textContent = 'Contact';
-                    document.getElementById('footer-copyright').textContent = `© 2024 ${site.name?.[LANG] || 'Afar Culture'}. All Rights Reserved.`;
-                }
-                
-                document.getElementById('footer-links').innerHTML = navItems.slice(0, 4).map((item, i) => 
-                    `<li><a href="${navUrls[i]}">${item}</a></li>`
-                ).join('');
-                
-                document.getElementById('footer-contact').innerHTML = `
-                    <li><i class="fas fa-map-marker-alt me-2"></i> Afar Region, Ethiopia</li>
-                    <li><i class="fas fa-envelope me-2"></i> info@afarculture.org</li>
-                `;
-                
-            } catch (e) {
-                console.log('Loading default...');
-                document.getElementById('hero-title').textContent = 'Mada\'a - Afar Customary Law';
-                document.getElementById('page-content').innerHTML = '<h2>What is Mada\'a?</h2><p>Mada\'a is the traditional customary law of the Afar people...</p>';
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
             }
+        });
+        
+        // ==============================================
+        // AMHARIC MADA'A MODAL FUNCTIONS
+        // ==============================================
+        function openAmharicMadaaModal() {
+            document.getElementById('amharicMadaaModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
         }
         
-        loadContent();
+        function closeAmharicMadaaModal() {
+            document.getElementById('amharicMadaaModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeAmharicMadaaModal();
+            }
+        });
     </script>
 </body>
 </html>

@@ -3,151 +3,2275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mada'a - Afar Customary Law</title>
-    <meta name="description" content="Learn about Mada'a, the traditional customary law of the Afar people">
+    <title>Qafarre - Qafarak Qaada-Madqa  | Abuk Raqti Qadli</title>
+    <meta name="description" content="Learn about Mada'a, the traditional customary law system of the Afar people governing conflict resolution, marriage, inheritance, and social order">
     <link rel="icon" href="../assets/images/favicon.png" type="image/x-icon">
     
+    <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
     
-    <style>
-        :root { --primary-blue: #1a3a5c; --secondary-blue: #2c5f7c; --accent-gold: #ffd700; }
-        body { font-family: 'Poppins', sans-serif; background: #f8f9fa; }
-        .navbar { background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%); padding: 15px 0; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
-        .nav-link { color: white !important; font-weight: 500; margin: 0 10px; transition: all 0.3s ease; }
+     <style>
+        :root {
+            --primary-blue: #1a3a5c;
+            --secondary-blue: #2c5f7c;
+            --accent-gold: #ffd700;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f8f9fa;
+        }
+        
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            padding: 15px 0;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand img { height: 50px; }
+        
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
         .nav-link:hover { color: var(--accent-gold) !important; }
-        .lang-btn { background: rgba(255,255,255,0.2); color: white; padding: 8px 15px; border-radius: 20px; text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; }
-        .lang-btn:hover, .lang-btn.active { background: var(--accent-gold); color: var(--primary-blue); }
-        .page-header { background: linear-gradient(rgba(26,58,92,0.85), rgba(44,95,124,0.9)), url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXCMXlMFwHbUxO2J1AXee8If531-C-z5FpTg&s'); background-size: cover; background-position: center; color: white; padding: 80px 0; text-align: center; }
-        .page-header h1 { font-size: 3.5rem; font-weight: 700; }
-        .content-section { padding: 80px 0; }
-        .content-card { background: white; border-radius: 15px; padding: 40px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); }
-        .content-card h2 { color: var(--primary-blue); font-weight: 700; margin-bottom: 20px; }
-        .content-card h3 { color: var(--primary-blue); font-weight: 600; margin: 30px 0 15px; }
-        .content-card p { color: #666; line-height: 1.8; }
-        .content-card ul { color: #666; line-height: 1.8; padding-left: 20px; }
-        .content-card li { margin-bottom: 8px; }
-        .footer { background: #0f2640; color: white; padding: 60px 0 20px; }
+        
+        .language-selector {
+            display: flex;
+            gap: 10px;
+            margin-left: 20px;
+        }
+        
+        .lang-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-btn:hover, .lang-btn.active {
+            background: var(--accent-gold);
+            color: var(--primary-blue);
+        }
+        
+        .page-header {
+            background: linear-gradient(rgba(26,58,92,0.85), rgba(44,95,124,0.9)), url('https://images.unsplash.com/photo-1589391886645-d65141b1e862?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .customs-section {
+            padding: 60px 0;
+        }
+        
+        .law-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            height: 100%;
+            border-left: 4px solid var(--accent-gold);
+            margin-bottom: 30px;
+        }
+        
+        .law-card h3 {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .law-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .principle-box {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .principle-box i {
+            font-size: 40px;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+        }
+        
+        .principle-box h4 {
+            margin-bottom: 10px;
+        }
+        
+        /* Mada'a Cards with Tables */
+        .madaa-card {
+            background: white;
+            border-radius: 15px;
+            padding: 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            height: 100%;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .madaa-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(26, 58, 92, 0.15);
+        }
+        
+        .madaa-card.highlight {
+            border: 2px solid var(--accent-gold);
+        }
+        
+        .madaa-header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: white;
+            padding: 20px 20px 15px;
+            text-align: center;
+        }
+        
+        .madaa-header h4 {
+            margin: 0 0 5px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: white;
+        }
+        
+        .madaa-subtitle {
+            margin: 0;
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+        
+        .madaa-table {
+            padding: 15px;
+            flex-grow: 1;
+        }
+        
+        .madaa-table table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        
+        .madaa-table th {
+            background: var(--primary-blue);
+            color: white;
+            padding: 10px 8px;
+            font-weight: 600;
+            text-align: left;
+            font-size: 0.85rem;
+        }
+        
+        .madaa-table td {
+            padding: 8px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .madaa-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .madaa-table tr:hover td {
+            background-color: rgba(26, 58, 92, 0.03);
+        }
+        
+        .madaa-table td:first-child {
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .madaa-table td:last-child {
+            font-weight: 600;
+            color: var(--primary-blue);
+            text-align: right;
+        }
+        
+        .btn-madaa {
+            background: transparent;
+            color: var(--primary-blue);
+            border: none;
+            border-top: 1px solid #eee;
+            padding: 15px 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-align: center;
+            margin-top: auto;
+        }
+        
+        .btn-madaa:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+        
+        /* Modal Overlay */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            overflow-y: auto;
+            padding: 20px;
+            backdrop-filter: blur(8px);
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .madaa-modal-container, .general-modal-container {
+            background: white;
+            border-radius: 20px;
+            max-width: 800px;
+            width: 90%;
+            max-height: 85vh;
+            margin: 40px auto;
+            position: relative;
+            animation: slideUp 0.4s ease;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-close:hover {
+            background: var(--accent-gold);
+            color: var(--primary-blue);
+            transform: rotate(90deg);
+        }
+        
+        .madaa-modal-header, .general-modal-header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: white;
+            padding: 35px 30px 25px;
+            text-align: center;
+        }
+        
+        .madaa-modal-icon, .general-modal-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            border: 3px solid var(--accent-gold);
+        }
+        
+        .madaa-modal-icon i, .general-modal-icon i {
+            font-size: 32px;
+            color: var(--accent-gold);
+        }
+        
+        .madaa-modal-header h2, .general-modal-header h2 {
+            margin: 0 0 8px;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: white;
+        }
+        
+        .madaa-modal-header p, .general-modal-header p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+        
+        .madaa-modal-body, .general-modal-body {
+            padding: 30px;
+            overflow-y: auto;
+        }
+        
+        .madaa-table-container {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 20px;
+        }
+        
+        .madaa-table-container table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0;
+        }
+        
+        .madaa-table-container thead {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: white;
+        }
+        
+        .madaa-table-container th {
+            padding: 15px !important;
+            font-weight: 600;
+            font-size: 1rem;
+            text-align: left;
+            border: none !important;
+        }
+        
+        .madaa-table-container td {
+            padding: 12px 15px !important;
+            vertical-align: middle;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .madaa-table-container tbody tr:hover {
+            background-color: rgba(26, 58, 92, 0.03);
+        }
+        
+        .madaa-table-container tbody tr:nth-child(even) {
+            background-color: #fafbfc;
+        }
+        
+        .madaa-table-container td:first-child {
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .madaa-table-container td:nth-child(2) {
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+        
+        .madaa-table-container td:nth-child(3) {
+            color: #666;
+        }
+        
+        .madaa-modal-note, .modal-note {
+            text-align: center;
+            color: #888;
+            font-size: 0.85rem;
+            margin: 0;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        /* Overview Sections for General Modal */
+        .overview-section {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .overview-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .overview-section h3 {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .overview-section h4 {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin: 15px 0 5px;
+            font-size: 1.1rem;
+        }
+        
+        .overview-section p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .overview-section ul, .overview-section ol {
+            color: #666;
+            line-height: 1.8;
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .overview-section li {
+            margin-bottom: 8px;
+        }
+        
+        .version-item {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--accent-gold);
+        }
+        
+        .version-item h4 {
+            margin-top: 0;
+        }
+        
+        .footer {
+            background: #0f2640;
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
         .footer h5 { color: var(--accent-gold); margin-bottom: 20px; }
-        .footer-links { list-style: none; padding: 0; }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
         .footer-links li { margin-bottom: 10px; }
-        .footer-links a { color: #ccc; text-decoration: none; transition: all 0.3s ease; }
-        .footer-links a:hover { color: var(--accent-gold); padding-left: 5px; }
-        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 40px; padding-top: 20px; text-align: center; color: #aaa; }
-        .back-to-top { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background: var(--primary-blue); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 99; }
-        .back-to-top.show { opacity: 1; visibility: visible; }
-        .back-to-top:hover { background: var(--accent-gold); color: var(--primary-blue); }
-        @media (max-width: 768px) { .page-header h1 { font-size: 2.5rem; } }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover { color: var(--accent-gold); }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--accent-gold);
+            color: var(--primary-blue);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 40px;
+            padding-top: 20px;
+            text-align: center;
+            color: #aaa;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 99;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        @media (max-width: 768px) {
+            .page-header h1 { font-size: 2.5rem; }
+            .madaa-modal-container, .general-modal-container { margin: 20px auto; }
+            .madaa-modal-header, .general-modal-header { padding: 25px 20px 20px; }
+            .madaa-modal-header h2, .general-modal-header h2 { font-size: 1.5rem; }
+            .madaa-modal-body, .general-modal-body { padding: 20px; }
+            .madaa-table-container th, .madaa-table-container td { padding: 10px !important; font-size: 0.85rem; }
+            .madaa-table table { font-size: 0.85rem; }
+            .madaa-table th, .madaa-table td { padding: 8px 5px; }
+        }
+        /* ============================================== */
+    /* REDUCE SPACING FOR AFAR TEXT SECTIONS         */
+    /* ============================================== */
+    .customs-section {
+        padding: 30px 0 !important;
+    }
+    
+    .customs-section h2 {
+        margin-bottom: 10px !important;
+    }
+    
+    .customs-section p {
+        margin-bottom: 8px !important;
+    }
+    
+    .customs-section + .customs-section {
+        padding-top: 10px !important;
+    }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 50'%3E%3Crect width='150' height='50' rx='5' fill='%23ffd700'/%3E%3Ctext x='75' y='30' font-family='Arial' font-size='14' fill='%231a3a5c' text-anchor='middle' font-weight='bold'%3EAfar Culture%3C/text%3E%3C/svg%3E" alt="Afar Culture" style="height: 50px;">
-</a>
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 50'%3E%3Crect width='150' height='50' rx='5' fill='%23ffd700'/%3E%3Ctext x='75' y='30' font-family='Arial' font-size='14' fill='%231a3a5c' text-anchor='middle' font-weight='bold'%3EAfar Culture%3C/text%3E%3C/svg%3E" alt="Afar Culture">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto" id="nav-menu"></ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Ugtuma</a></li>
+                    <li class="nav-item"><a class="nav-link" href="culture.html">Qaada-Gadda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="customs.html">Qafarre-Madqa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Tasaawir</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Net Ongoorowa</a></li>
+                </ul>
                 <div class="language-selector">
                     <a href="../afar/customs.html" class="lang-btn">Afar</a>
                     <a href="../am/customs.html" class="lang-btn">አማርኛ</a>
-                    <a href="customs.html" class="lang-btn active">English</a>
+                    <a href="/customs.html" class="lang-btn active">English</a>
                 </div>
             </div>
         </div>
     </nav>
 
+    <!-- Page Header -->
     <section class="page-header">
-        <div class="container">
-            <h1 data-aos="fade-up" id="hero-title"></h1>
-            <p data-aos="fade-up" data-aos-delay="100" id="hero-subtitle"></p>
-        </div>
-    </section>
+    <div class="container">
+        <h1 data-aos="fade-up">Qafarre - Qaada-Madqa</h1>
+        <p data-aos="fade-up" data-aos-delay="100" style="
+            text-align: justify;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            color: white;
+            font-size: 1.1rem;
+            line-height: 1.9;
+            word-break: break-word;">
+            <span style="color: #c0c0c0; font-family: 'Times New Roman', serif;">Qafar ummatta abuuy akaakayyuh edde xiinak temeteeh uxih edde xintah tan Qafarre Madqak adda nagay yaaxigeenim dibuh hinnay qasriino le gurral baadal aysixxiguk nagrisaanama!</span>
+        </p>
+    </div>
+</section>
 
-    <section class="content-section">
+    <!-- Introduction -->
+    <section class="customs-section">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-10 mx-auto">
-                    <div class="content-card" data-aos="fade-up" id="page-content"></div>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4" data-aos="fade-right">
+                    <img src="../assets/images/culture/mablo.png" alt="Elders Council" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h2 style="color: var(--primary-blue); font-weight: 700; margin-bottom: 20px;"><span style="font-family: 'Times New Roman', serif; font-family: 'Times New Roman', serif;">Qafarre Macaay?</span></h2>
+                    <p style="color: #666; line-height: 1.8; margin-bottom: 20px;"><span style="color: #A813B7;">Qafarre</span><span style="font-family: 'Times New Roman', serif; font-size: 18px;"> deqsittam Qafar ummatta abuuy akaakayyuh qunxxah kaxxam edde xiinissaah, umaane edde kalaltaah, toomem edde taymaaqeh tan abuk raqti <span style="font-weight: bold;">'Ganuunuy'</span> mango daboonah ankuttube kal makaabon aliilih luk sugte.</span></p>
+                    <p style="color: #666; line-height: 1.8; margin-bottom: 20px;"><span style="font-family: 'Times New Roman', serif; font-size: 18px;">Awayih uddur tunkuttubem dubuh hinnay Qasriinot culusak Galli Marok UNSCO (Yuniskoh) mamaxxaga kah geytannah tu taaxago kee doolat xagorti elle taamitak geytimta caddo gufteh geytimta.</span>
+                    <span style="font-family: 'Times New Roman', serif; font-size: 18px;">Ta madqay amolladih Qafarrel tamixxigeeh, addal kaaduk darifaak dariifal dagoo baxsa luk 5 takkek addafakoot ta Weebsayitil geetton. Ta Madqay nek dumi mari ankuttube kal horak horal tabk nee gufteh tani, nanu kaadu asaaku edde tan caddok muxxi kusaaqittey, qasriino kee teknoolojit antifiquk dadlisnaah, baye kallam faxximtam kassisna.</span></p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Core Principles -->
+    <section class="customs-section" style="background: #f0f4f8;">
+        <div class="container">
+            <h2 class="text-center mb-5" style="color: var(--primary-blue); font-weight: 700;" data-aos="fade-up">Qafarre-Madqak rakiibô radmooma </h2>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="principle-box">
+                        <i class="fas fa-handshake"></i>
+                        <h4>Wagari (Mablo)</h4>
+                        <p><span style="color: #a9a9a9; font-family: 'Times New Roman', serif;">Wagari/Mablok aharsi hadaf uneyna digalaanamak muxxi namma marih fanat salaam kee bica hadlaanama</span></p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="principle-box">
+                        <i class="fas fa-coins"></i>
+                        <h4>Maruuso /Mamqa</h4>
+                        <p><span style="font-family: 'Times New Roman', serif; color: #a9a9a9;">Arrabak xabba haanam 5 feerak sehdaytul bahen baatil timixxige digaala le.
+                            </span></p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="principle-box">
+                        <i class="fas fa-users"></i>
+                        <h4>Digaala Takkuqem Kedo</h4>
+                        <p><span style="font-family: 'Times New Roman', serif; color: #a9a9a9;">Qafarrel, faxe baatil kee hoxak digaala (qaaqa) elle raddam dubuh hoxe num hinnay kah yaabuke kedo.</span></p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="principle-box">
+                        <i class="fas fa-gavel"></i>
+                        <h4>Idoolâ Doori</h4>
+                        <p><span style="font-family: 'Times New Roman', serif; color: #a9a9a9;">Qafarrel faxe malkitik margaqa beytam <span style="font-weight: bold;"> Makaabonul</span> tamixxige idoolay ayyunti addal kaxxa massakaxxa le.
+                     </span></p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="principle-box">
+                        <i class="fas fa-balance-scale"></i>
+                        <h4>Cokmi Gexsit</h4>
+                        <p><span style="font-family: 'Times New Roman', serif; color: #a9a9a9;">Cokmi elle yakkem duma macak maca iyyenih sugeniih, axcuk madqa akkuk temeete margaqooqi.! </span></p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="principle-box">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Qadli kee Damiir</h4>
+                        <p><span style="font-family: 'Times New Roman', serif; color: #a9a9a9;">Qaffarel Mablo kaxxaam qadlil takke. Umam baahe mara kee elle baahen mara yalla kasak cakkit yaaban.
+                  </span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+           <!-- Afar Mada'a (Qafarre) - 5 Versions with Tables -->
+<section class="customs-section" style="background: #f0f4f8;">
+    <div class="container">
+        <h2 class="text-center mb-4" style="color: var(--primary-blue); font-weight: 700;" data-aos="fade-up">Qafarre – Qafarak Abuk-Raqti (Madqa)</h2>
+        <p class="text-center mb-5" data-aos="fade-up" style="color: #666; max-width: 800px; margin-left: auto; margin-right: auto;">
+        Qafar Madqooqi sittat 5 takke. Takkay ikkah baxsi keenik kaxxaam dagooh, 
+        axcih digaala edde meklan saqih qaynat kee mangak biso baxsa mali. Kulli dariifal mangih lon saqa, axcih<span style="color: #367588; text-align: left; font-size: 14px; text-align: center; font-weight: bold; font-family: 'Times New Roman',"> Gaala, Laa kee  Wadar</span> kinnuk ahaak gubal elle tablen innal tan.</span>
+        </p>
+        </p>
+        <div class="row">
+
+
+            <!-- Version 1 - Burqili Madqa -->
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="madaa-card">
+                        <div class="madaa-header">
+                            <h4>Burqili Madqa</h4>
+                            <p class="madaa-subtitle">Burqili Madqal arrabaak xabba haanam sehdayti rooci fan mekla edde takkem qasa wadara</p>
+                        </div>
+                        <div class="madaa-table">
+                           <table>
+                            <tr><th>Qellata /baatili </th><th>Mekla/Digaala</th></tr>
+                            <tr><td>Sahdayti Rooci (Diyata)</td><td>3000 baklo</td></tr>
+                            <tr><td>Xagara (xicka)</td><td>750 baklo </td></tr>
+                            <tr><td>Namma inti (kattek)</td><td>750 baklo</td></tr>
+                            <tr><td>Namma gaba (Kattek)</td><td>750 baklo</td></tr>
+                        </table>
+                        </div>
+                        <button class="btn-madaa" onclick="openMadaaTableModal(1)">
+                            <i class="fas fa-table me-2"></i>Inkih Tan Madqah Akkel Xukkut
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Version 2 - Afkiqek Maqad -->
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="madaa-card">
+                        <div class="madaa-header">
+                            <h4>Afkiqek-Maqadih Madqa</h4>
+                            <p class="madaa-subtitle">Afkiqek-Maqadih Madqak Meklaali</p>
+                        </div>
+                        <div class="madaa-table">
+                            <table>
+                            <tr><th>Qellata /baatili </th><th>Mekla/Digaala</th></tr>
+                            <tr><td>Sahdayti Rooci (Diyata)</td><td>3000 baklo</td></tr>
+                            <tr><td>Xagara (xicka)</td><td>750 baklo </td></tr>
+                            <tr><td>Namma inti (kattek)</td><td>750 baklo</td></tr>
+                            <tr><td>Namma gaba (Kattek)</td><td>750 baklo</td></tr>
+                        </table>
+                        </div>
+                        <button class="btn-madaa" onclick="openMadaaTableModal(2)">
+                            <i class="fas fa-table me-2"></i>Inkih Tan Madqah Akkel Xukkut
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Version 3 - Buxxuto Madqa -->
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="madaa-card">
+                        <div class="madaa-header">
+                            <h4>Buxxuto-Baxih Madqa</h4>
+                            <p class="madaa-subtitle">Madqak Qillatitte kee Digaala/Mekla ahak gubal geetton</p>
+                        </div>
+                        <div class="madaa-table">
+                            <table>
+                            <tr><th>Qellata /baatili </th><th>Buxxuto-Baxih Madqak Meklaali/Digaala</th></tr>
+                            <tr><td>Sahdayti Rooci (Diyata)</td><td>3000 baklo</td></tr>
+                            <tr><td>Xagara (xicka)</td><td>750 baklo </td></tr>
+                            <tr><td>Namma inti (kattek)</td><td>750 baklo</td></tr>
+                            <tr><td>Namma gaba (Kattek)</td><td>750 baklo</td></tr>
+                        </table>
+                        </div>
+                        <button class="btn-madaa" onclick="openMadaaTableModal(3)">
+                            <i class="fas fa-table me-2"></i>Inkih Tan Madqah Akkel Xukkut
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Version 4 - Debnek Weeqiima -->
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="madaa-card">
+                        <div class="madaa-header">
+                            <h4>Debnek-Weeqiimih Madqa</h4>
+                            <p class="madaa-subtitle">Debnek-Weeqiimih Madqak Qillatitte kee Digaala/Mekla ahak gubal geetton</p>
+                        </div>
+                        <div class="madaa-table">
+                            <table>
+                            <tr><th>Qellata /baatili</th><th>Mekla/Digaala</th></tr>
+                            <tr><td>Sahdayti Rooci (Diyata)</td><td>3000 baklo</td></tr>
+                            <tr><td>Xagara (xicka)</td><td>750 baklo </td></tr>
+                            <tr><td>Namma inti (kattek)</td><td>750 baklo</td></tr>
+                            <tr><td>Namma gaba (Kattek)</td><td>750 baklo</td></tr>
+                        </table>
+                        </div>
+                        <button class="btn-madaa" onclick="openMadaaTableModal(4)">
+                            <i class="fas fa-table me-2"></i>Inkih Tan Madqah Akkel Xukkut
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Version 5 - Badoyta Madqa -->
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="madaa-card">
+                        <div class="madaa-header">
+                            <h4>Badoyta-Meelah Madqa</h4>
+                            <p class="madaa-subtitle">Badoyta-Meelah Madqak Qillatitte kee Digaala/Mekla ahak gubal geetton</p>
+                        </div>
+                        <div class="madaa-table">
+                            <table>
+                            <tr><th>Qellata /baatili </th><th>Mekla/Digaala</th></tr>
+                            <tr><td>Sahdayti Rooci (Diyata)</td><td>3000 baklo</td></tr>
+                            <tr><td>Xagara (xicka)</td><td>750 baklo </td></tr>
+                            <tr><td>Namma inti (kattek)</td><td>750 baklo</td></tr>
+                            <tr><td>Namma gaba (Kattek)</td><td>750 baklo</td></tr>
+                        </table>
+                        </div>
+                        <button class="btn-madaa" onclick="openMadaaTableModal(5)">
+                            <i class="fas fa-table me-2"></i>Inkih Tan Madqah Akkel Xukkut
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Version 6 - General Afarre Mada'a Overview -->
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="madaa-card highlight">
+                        <div class="madaa-header">
+                            <h4>Amolladih 5 Madqah Addafakoot</h4>
+                        </div>
+                        <div class="madaa-table">
+                            <p> <span style=" font-family: 'Times New Roman', Times, serif;">Ta madqooqi gabat leh yan marak, kutbeh gaaboysaanam faxximte.
+                                Too gaaboysoy namma gurral tekke, meqe malcina liggida beyte
+                                Tohum sanat 2000-2006  fan kinni. Woo gaabooyso,  elle  
+                                    tekke namma gurrah tu gacte tet tekkek, madqooqi 
+                                    elle taamitta rasitté fan gexak gaaboysimtem kee, tet 
+                                    abnisak suge , marak tut tu, Samara magaalâ fan 
+                                    baahak , esserik - gacsal gaabowtem tekke.</span></p>
+                        </div>
+                        <button class="btn-madaa" onclick="openGeneralMadaaModal()">
+                            <i class="fas fa-book-open me-2"></i>Addafakoot
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+        
+        </div>
+    </section>
+
+    <!-- Areas of Application -->
+    <section class="customs-section" style="background: #f0f4f8;">
+        <div class="container">
+            <h2 class="text-center mb-5" style="color: var(--primary-blue); font-weight: 700;" data-aos="fade-up">Areas Governed by Mada'a</h2>
+            <div class="row">
+                
+                
+                <div class="col-md-6 mb-4" data-aos="fade-up">
+                    <div class="law-card">
+                        <h3><i class="fas fa-hand-fist me-2" style="color: var(--accent-gold);"></i> Assault & Injury</h3>
+                        <p>Specific compensation amounts are prescribed for different types of injuries, from minor wounds to permanent disability or disfigurement.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="law-card">
+                        <h3><i class="fas fa-pastafarianism me-2" style="color: var(--accent-gold);"></i> Property & Livestock</h3>
+                        <p>Rules cover theft, damage to property, grazing rights, water access, and the use of communal resources like pastureland and wells.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4" data-aos="fade-up">
+                    <div class="law-card">
+                        <h3><i class="fas fa-venus-mars me-2" style="color: var(--accent-gold);"></i> Sexual Offenses</h3>
+                        <p>Mada'a addresses issues of adultery, rape, and other sexual misconduct, with compensation and social sanctions as primary responses.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="law-card">
+                        <h3><i class="fas fa-dove me-2" style="color: var(--accent-gold);"></i> Peace Treaties</h3>
+                        <p>Formal procedures exist for negotiating and concluding peace agreements between clans, including ritual elements that make the agreement binding.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Council of Elders 
+    <section class="customs-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2 mb-4" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1576485375217-d6a95e34d043?ixlib=rb-4.0.3&auto=format&fit=crop&w=1072&q=80" alt="Elders Council" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+                </div>
+                <div class="col-lg-6 order-lg-1" data-aos="fade-right">
+                    <h2 style="color: var(--primary-blue); font-weight: 700; margin-bottom: 20px;">The Council of Elders (Mada'a Abba)</h2>
+                    <p style="color: #666; line-height: 1.8; margin-bottom: 20px;">The Mada'a Abba (literally "fathers of the law") are the custodians and interpreters of customary law. These are men who have earned respect through their wisdom, knowledge, and impartiality.</p>
+                    <p style="color: #666; line-height: 1.8; margin-bottom: 20px;">When a dispute arises, parties select elders to hear their case. The elders listen to testimony, consult precedents, and deliberate before issuing a binding decision. Their authority derives from community consensus rather than coercive power.</p>
+                    <p style="color: #666; line-height: 1.8;">The council's primary goal is to restore harmony. Even when compensation is ordered, it is accompanied by rituals of reconciliation that formally end the dispute and restore normal relations between the parties.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    -->
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 mb-4"><h5 id="footer-about-title"></h5><p id="footer-about-text" style="color: #ccc;"></p></div>
-                <div class="col-lg-2 mb-4"><h5 id="footer-links-title"></h5><ul class="footer-links" id="footer-links"></ul></div>
-                <div class="col-lg-4 mb-4"><h5 id="footer-contact-title"></h5><ul class="footer-links" id="footer-contact"></ul></div>
+                <div class="col-lg-4 mb-4">
+                    <h5>About Afar Culture</h5>
+                    <p>ummattak Qaada-gaddih daaran dacrisaanamaay, sanaditteh haak tabasaanam nek hadafa.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Ugtuma</a></li>
+                        <li><a href="culture.html">Qaada-Gadda</a></li>
+                        <li><a href="customs.html">Qafarre-Madqa</a></li>
+                        <li><a href="/afar/gallery.html">Tasaawir</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Resources</h5>
+                    <ul class="footer-links">
+                        <li><a href="gallery.html">Tasaawir</a></li>
+                        <li><a href="#">Xaagu</a></li>
+                        <li><a href="#">Kutbeeba</a></li>
+                        <li><a href="#">Kusaqitte</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <h5>Contact</h5>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> Samara Qafar Rakaakay</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@afarculture.org</li>
+                        <li><i class="fas fa-phone me-2"></i> +251 000 000000</li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-bottom"><p id="footer-copyright"></p></div>
+            <div class="footer-bottom">
+                <p>© 2024 Qafar Qaada | Afar Culture. Ikoytiini-Gar Dacayrit Le</p>
+            </div>
         </div>
     </footer>
 
+    <!-- Back to Top -->
     <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
 
+    <!-- ============================================== -->
+    <!-- MODAL 1: Mada'a Table Modal (for 5 versions)    -->
+    <!-- ============================================== -->
+    <div class="modal-overlay" id="madaaTableModal" onclick="closeMadaaTableModal()">
+        <div class="madaa-modal-container" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeMadaaTableModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="madaa-modal-header" id="madaaModalHeader">
+                <div class="madaa-modal-icon">
+                    <i class="fas fa-scroll"></i>
+                </div>
+                <h2 id="madaaModalTitle">Burqili Madqa</h2>
+                <p id="madaaModalSubtitle">Camel-Based Compensation • Traditional Afar Customary Law</p>
+            </div>
+            
+            <div class="madaa-modal-body">
+                <p id="madaaModalDescription" style="color: #666; margin-bottom: 20px; font-style: italic; text-align: center;">
+                    Burqili Madqal arrabak tewqemik xabba haanam, biyakaay, Garqiinok rooci/Diyata (Biilu) fan takke digaala qasa wadarah meklan.
+                </p>
+                
+                <div id="madaaTableContainer" class="madaa-table-container">
+                    <!-- Table will be dynamically inserted here -->
+                </div>
+                
+                <p class="madaa-modal-note">
+                    <i class="fas fa-info-circle me-1"></i>
+                    <span id="madaaModalNote">Note: These are traditional values. Actual compensation may vary by region and specific circumstances.</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================== -->
+    <!-- MODAL 2: General Afarre Mada'a Overview Modal   -->
+    <!-- ============================================== -->
+    <div class="modal-overlay" id="generalMadaaModal" onclick="closeGeneralMadaaModal()">
+        <div class="general-modal-container" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeGeneralMadaaModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="general-modal-header">
+                <div class="general-modal-icon">
+                    <i class="fas fa-landmark"></i>
+                </div>
+                <h2>Qafar Madqooqiy (5)</h2>
+                <p><span style="color: #f2f3f4;">Akkel Hayneh Nan MadqooqiK Baxxaqsa kee Elle kobxisen inni edde anuk addafak</span> </p>
+            </div>
+            <div class="general-modal-body">
+                
+                <!-- Culmeena - Introduction -->
+                <div class="overview-section">
+                    <h3><i class="fas fa-globe-africa me-2"></i>Culmeena</h3>
+                    <p>Qafar ummattaa kee tet ardi, Farangi ku-amol-ayyok wadirillah, sidiica baaxol kurrumteh raqte. Tohim:-</p>
+                   <Span style="font-family: Georgia, 'Times New Roman', Times, serif;">    <ul>
+                     <li>1. Itoobboya</li>
+                        <li>2. Eretriya</li>
+                        <li>3. Jabuuti</li>
+                    </ul>
+                    <p>Eretriyaa kee Jabuuti namma Farangi (Tilyaan kee faransaawi) baxsitte baaxo kinni waqdi, Itoobboyah tu gactek, Qafar kee Qafar baaxo affara xiinissoh rakaakat kuram kurteh, baxambaxsitteh ten wohim:-</p>
+                    <ul>
+                        <li>1. Harara</li>
+                        <li>2. Shawa</li>
+                        <li>3. Wollo</li>
+                        <li>4. Tigraaya</li> </Span> 
+                    </ul>
+                    <p>Tohim irô gaboobi teetit abte baxambaxsa kinni waqdi, Qafar isaddal, isik isih sissin koona saltanat kee mango kedoodâ xaltak ballisih xiinissoosa kurruumak sugtem (Tribal Confederations) giddi sinni numma.</p>
+                    <p>Itoobboyal affara xiinissoh raakaakayat baxambaxsah sugte Qafar, inki xiinissoh raakaakayay teetil muggaqsime geyyiiy, isi muddaqiyanno konnaba elle daabisseek lakal, Eretriya edde anak koona raakaakayat baxambaxxsah ten loqo, mariiy rikel luk suge madqooqi, sittâ fan gacissi heenih, Qafar madqa akak axcuk affeysaanam faxxinte.</p>
+                </div>
+                
+                <!-- Koona Madqa - The Five Versions -->
+                <div class="overview-section">
+                    <h3><i class="fas fa-scroll me-2"></i>Ta Koona Madqa Elle muden Baaxo </h3>
+                    <div class="version-item">
+                        <h4>1. Burqili Madqa</h4>
+                        <p><strong>Qaynata:</strong> Qiddik madqah alayto</p>
+                        <p><strong>Elle muden araca:</strong> Dammohoyta, Seekay, Daahim meelaay, Hadar mo</p>
+                        <p><strong>Mudde gaba:</strong> A madaqa koobaahissem Burqli</p>
+                        <p><strong>Rasitte kee baaxo:</strong> Eretriya, Itoobboya k kilbatti rasu kee 4hayto rasu</p>
+                    </div>
+                    
+                    <div class="version-item">
+                        <h4>2. Buxxuto Baxih Madqa</h4>
+                        <p><strong>Qaynata:</strong> Mogorr os kee daabuk fanah raqta baaxok rakub caxa xiqista aracal muden</p>
+                        <p><strong>Elle muden araca:</strong> Qarabtaay, qasa bakariiy, nassar kee qaginni</p>
+                        <p><strong>Mudde gaba:</strong> A madaqa koobaahissem Buxxutô Baxa Casana</p>
+                        <p><strong>Rasitte kee baaxo:</strong> Eretriya, Itoobboya k Awsi Rasuuy, Gabbi Rasuuy, Fanti Rasu kee Carri Rasu</p>
+                    </div>
+                    
+                    <div class="version-item">
+                        <h4>3. Afkigek Maqaadih Madqa</h4>
+                        <p><strong>Qaynata:</strong> Aysaqii tak walaqs andiqsi ta araca</p>
+                        <p><strong>Elle muden araca:</strong> Afkigek Maqaadaay, kee Aydaacissooy Qarkaytoh xiinak sugte</p>
+                        <p><strong>Rasitte kee baaxo:</strong> Awsi Rasuuy, Gabbi Rasuuy, Fanti Rasu kee Carri Rasu</p>
+                    </div>
+                    
+                    <div class="version-item">
+                        <h4>4. Bodoytâ Meelah Madqa</h4>
+                        <p><strong>Qaynata:</strong> Qaddaq aarak tewqo xiqsita araca</p>
+                        <p><strong>Elle muden araca:</strong> Qali Dawwaani Macammada</p>
+                        <p><strong>Rasitte kee baaxo:</strong> Carri Rasu</p>
+                    </div>
+                    
+                    <div class="version-item">
+                        <h4>5. Debnek-Weeqiimih Madqa</h4>
+                        <p><strong>Qaynata:</strong> Weeqiimi daqaar ak qadaylu xiqsita araca</p>
+                        <p><strong>Elle muden araca:</strong> Qali Qablis kee Qali Qarqi Macammada</p>
+                        <p><strong>Rasitte kee baaxo:</strong> Jabuuti kee Itoobboyak Gabbi Rasu</p>
+                    </div>
+                </div>
+                
+                <!-- Gaaboyso (Unification) -->
+                <div class="overview-section">
+                    <h3><i class="fas fa-handshake me-2"></i>Gaaboyso (Sanat 2000-2006)</h3>
+                    <p>Ta madqooqi gabat leh yan marak, kutbeh gaaboysaanam faxximte. Too gaaboysoy namma gurral tekke, meqe malcina liggida beyte. Tohum sanat 2000-2006 fan kinni.</p>
+                    <p>Woo gaabooyso, elle tekke namma gurrah tu gacte tet tekkek, madqooqi elle taamitta rasitte fan gexak gaaboysimtem kee, tet abnisak suge marak tut tu, Samara magaalâ fan baahak, esserik-gacsal gaabowtem tekke.</p>
+                </div>
+                
+                <!-- Qafar Madqooqih Kinmaane kee Weeloola -->
+                <div class="overview-section">
+                    <h3><i class="fas fa-star me-2"></i>Qafar Madqooqih Kinmaane kee Weeloola</h3>
+                    <ol>
+                        <li><strong>Naharsi weelo:</strong> Qafar madqooqi elle tamiixige, baatileyna, abbixekal, axeekal, digaaltu duddaamih duddo.</li>
+                        <li><strong>Nammayheele weelo:</strong> Uson elle yamixxigeeni abitto (commission) gorcii kee garci baxisak digaaltaama.</li>
+                        <li><strong>Sidocheele weelo:</strong> Qafar madqooqi elle tamiixige, galelway (umaane abaluk cate wayti) digaaltaama.</li>
+                        <li><strong>Fereeyheele weelo:</strong> Tet elle yaaxigeeni yekke baatilih, abte gaba dibuk hinnay, inkih tan kedo essertimtaamih tiya.</li>
+                        <li><strong>Konooyheele weelo:</strong> Uson elle yamixxigeeni, mabloh daffeyte caxá, urruu kee agabu akke waytek numuk gabah assagolli waaso aalle waytaama aymisen ken tekkek faxeemî may.</li>
+                        <li><strong>Leceeyheele weelo:</strong> Qafar madqooqi elle tamixxige, meklah madqan saqa, ufuylii kee ufuy malih nammâ kel baxissaamih tiya. Ufuymali lakqoh korâ kal, ufuyli lakqoh ma kora.</li>
+                        <li><strong>Malcinheele weelo:</strong> Qafar madqooqi elle tamixxige abtol asewaaway akke raariyya digaaltaama.</li>
+                    </ol>
+                </div>
+                
+                <!-- Qafar Madqak Mablö Qexsaya -->
+                <div class="overview-section">
+                    <h3><i class="fas fa-gavel me-2"></i>Qafar Madqak Mablö Qexsaya</h3>
+                    <ol>
+                        <li><strong>Fiiruk:</strong> Waytó xayyowta</li>
+                        <li><strong>Nammeyhaak:</strong> Wayto bahtem loyna faxe waa num tekkek caxah muggaaqisan. Awka tekkek loyna bahit kaak iyyan.</li>
+                        <li><strong>Sidoc haak:</strong> Xayyowte waytoh caxá muggaqsimta</li>
+                        <li><strong>Ferey haak:</strong> Woo caxah ayroo kee arac muggaqsima</li>
+                        <li><strong>Konyhaak:</strong> Maró daffeıta waqdi, leek qayso, waytó le numuk/marak xayıoysâ yan</li>
+                        <li><strong>Leceyhaak:</strong> Yab haysite num kee edde numuk inkih mabbaxeyna baaha iyyan.</li>
+                        <li><strong>Malcin haak:</strong> Caxal, yab fiiruk waytó le exxah yaceen.</li>
+                        <li><strong>Bacarhaak:</strong> Af haysitaah, af kalsitah axcuk, yab tu kak waan exxah yaceen.</li>
+                        <li><strong>Saqal haak:</strong> Qagu namma exxah inkih yaceen.</li>
+                        <li><strong>Taban haak:</strong> Iyyeenim tah kinnii? Axcuk rade yab gabbaaqan.</li>
+                        <li><strong>Taban kee enekhaak:</strong> Rade yab agaaradak makeelisan.</li>
+                        <li><strong>Taban kee nammay haak:</strong> Yab wadu faxak raaqe inna? Ken afal yenbexe? Iyyan.</li>
+                        <li><strong>Taban kee sidoc haak:</strong> Yab giddih raaqek, sumaq marih yab yaabben.</li>
+                        <li><strong>Taban kee ferey haak:</strong> Sumaq waytimek xiiba absiisaanah.</li>
+                        <li><strong>Taban kee konoy haak:</strong> Yab haysite num waddiime kaa tekkek margaqa tantacowowe.</li>
+                        <li><strong>Taban kee lecey haak:</strong> Yabti margaqa, hayste num kee edde haysiten numul inkih gacsan.</li>
+                        <li><strong>Taban kee malcin haak:</strong> Edde cayye wayte exxa yoo-maxiqinna xayyoysan.</li>
+                        <li><strong>Taban kee bacar haak:</strong> Edde cabeenim faatacisan.</li>
+                    </ol>
+                </div>
+                
+                <!-- Digaalá -->
+                <div class="overview-section">
+                    <h3><i class="fas fa-balance-scale me-2"></i>Digaalá</h3>
+                    <p>Ahak naharal mango waqdi; galab kak xagne koona madqay, Qafar ummatta akah xinta; digaalah tascasseeh, madqá elle lem canee kee meklá.</p>
+                    <p><strong>Ceellallo:</strong> Num toobokoyta isik qidde kedok num qidek, toh cané deqsitta.</p>
+                    <p>Qafár madqooqil, num qideenik biilu yakke. Biili, niqnal elle canel anfiddigek, xabbacowoheh meklal anfidigge yakke.</p>
+                    <p>Meklá, Qafar madqooqil, sahdayti, sahdaytul baaheemih namma migaq le. Rooci meklá diyat deqsittaah, xagar meklá xikcá deqsitta.</p>
+                </div>
+                
+                <!-- Bilu -->
+                <div class="overview-section">
+                    <h3><i class="fas fa-coins me-2"></i>Bilu</h3>
+                    <p>Qafar num Qafar numih gabat rabe kaa tekkek, num qidde kedo MEGLÖ may abta áwya le.</p>
+                    <p>Megló addah kak orobte kedo, num kak rabe kedó fan gexak, meglo ken cultem kee, woo buxá nerraay nefdiga axcuk temeetem, ken yaysixxigen.</p>
+                </div>
+                
+                <!-- Madqooqî Xaaqu -->
+                <div class="overview-section">
+                    <h3><i class="fas fa-users me-2"></i>Madqooqî Xaagu Kak Aben Kaslê</h3>
+                    
+                    <h4>1. Burqili Madqah</h4>
+                    <ul><li>Gifta Yaasiin Macammad Acaw</li><li>Qiise Qabdulkaadir Cammadu</li><li>Qali Acaw Qali</li></ul>
+                    
+                    <h4>2. Buxxutö Baxih Madqah</h4>
+                    <ul><li>Gifta Canfaxe Qasawkaytu</li><li>Macammad Qabdu</li><li>Qali Yuusuf Acaw</li></ul>
+                    
+                    <h4>3. Afkigek/Magaadih Madqah</h4>
+                    <ul><li>Gifta Aboobakar Walle</li><li>Qumar Caté</li><li>Cabiib Farag</li></ul>
+                    
+                    <h4>4. Bodaytâ Meelah Madqah</h4>
+                    <ul><li>Gifta Malo Seeko</li><li>Sulte Celem M/d Boddayya</li><li>Haj Qumar Macammad Boddayya</li></ul>
+                    
+                    <h4>5. Debnek/Weeqimih Madqa</h4>
+                    <ul><li>Gifta Qumar Buxah abba (Q.A.Rak Gabbi Rasu)</li><li>Desta Sheceem (Q.A.Rak Gabbi Rasu)</li><li>Qasnum Walle (Q.A.Rak Gabbi Rasu)</li><li>Gifta Qali Acmad Meeko (Jabuutih Ummuunok-Tagorri)</li></ul>
+                </div>
+                
+                <p class="modal-note">
+                    <i class="fas fa-info-circle me-1"></i>
+                    Source: General Afarre-Mada'a Documentation • Qaada kee Turiizim Biiro & Qadli Biiro
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../assets/js/main.js"></script>
+    
     <script>
         AOS.init({ duration: 1000, once: true });
-        window.addEventListener('scroll', () => document.querySelector('.back-to-top').classList.toggle('show', window.pageYOffset > 300));
         
-        const LANG = 'afar';
-        
-        async function loadContent() {
-            try {
-                const res = await fetch('../assets/data/content.json');
-                const data = await res.json();
-                
-                // Navigation
-                const navItems = data.navigation?.[LANG] || ['Home', 'Culture', 'Customary Law', 'Lifestyle', 'Gallery', 'Contact'];
-                const navUrls = ['index.html', 'culture.html', 'customs.html', 'lifestyle.html', 'gallery.html', 'contact.html'];
-                document.getElementById('nav-menu').innerHTML = navItems.map((item, i) => 
-                    `<li class="nav-item"><a class="nav-link ${i === 2 ? 'active' : ''}" href="${navUrls[i]}">${item}</a></li>`
-                ).join('');
-                
-                // Page Content
-                const page = data.pages?.customs?.[LANG];
-                if (page) {
-                    document.getElementById('hero-title').textContent = page.hero?.title || 'Mada\'a - Afar Customary Law';
-                    document.getElementById('hero-subtitle').textContent = page.hero?.subtitle || '';
-                    document.getElementById('page-content').innerHTML = page.content || '<p>Content loading...</p>';
-                }
-                
-                // Footer
-                const site = data.site;
-                if (site) {
-                    document.getElementById('footer-about-title').textContent = `About ${site.name?.[LANG] || 'Afar Culture'}`;
-                    document.getElementById('footer-about-text').textContent = site.description?.[LANG] || '';
-                    document.getElementById('footer-links-title').textContent = 'Quick Links';
-                    document.getElementById('footer-contact-title').textContent = 'Contact';
-                    document.getElementById('footer-copyright').textContent = `© 2024 ${site.name?.[LANG] || 'Afar Culture'}. All Rights Reserved.`;
-                }
-                
-                document.getElementById('footer-links').innerHTML = navItems.slice(0, 4).map((item, i) => 
-                    `<li><a href="${navUrls[i]}">${item}</a></li>`
-                ).join('');
-                
-                document.getElementById('footer-contact').innerHTML = `
-                    <li><i class="fas fa-map-marker-alt me-2"></i> Afar Region, Ethiopia</li>
-                    <li><i class="fas fa-envelope me-2"></i> info@afarculture.org</li>
-                `;
-                
-            } catch (e) {
-                console.log('Loading default...');
-                document.getElementById('hero-title').textContent = 'Mada\'a - Afar Customary Law';
-                document.getElementById('page-content').innerHTML = '<h2>What is Mada\'a?</h2><p>Mada\'a is the traditional customary law of the Afar people...</p>';
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
             }
+        });
+        
+        // ==============================================
+        // MADA'A DATA FOR 5 VERSIONS
+        // ==============================================
+        const madaaFullData = {
+            1: {
+    title: 'Burqili Madqak meklaali',
+    subtitle: 'Burqili Madqal Madqal Qellatitte Digaala (Mekla) ahak gubal geetton.',
+    description: 'Burqili Madqal arrabaak xabba haanam sehdayti rooci fan mekla edde takkem qasa wadara!',
+    note: 'Kassis: Ta madqa mangih Qasa wadaral madqaan way, sittingeyil lakqol akkiiy gersi saqal akki takkeh!',
+    table: [
+        // Section 1: Sahdaytu Rooci (Diyata) - Homicide
+        ['Sahdayti-Rooci - Lab num', '3000 baklo', 'Sehdayti roocih mekla Qafarre madqal Biilu Deqsitta'],
+        ['Sahdaytu-Rooci - Say num', '1,500 baklo', '----'],
+        ['Sahdaytu-Rooci - Sooniba', '3,750 baklo', '----'],
+        
+        // Section 2: Xagara (xicka) - Injuries
+        ['Namma inti', '750 baklo', 'Nammi Inti caxittek (Baytek)'],
+        ['Nammi iba', '750 baklo', 'Namma ibi katek (diglo/gauruq..)'],
+        ['Namma gaba', '750 baklo', 'Namma gaba kattek (diglo/gauruq..)'],
+        ['Namma Ayti', '750 baklo', 'Nammaytik maabba (ragidik)'],
+        ['Muxii kee Labna', '750 baklo', 'Tiggiriqek (Kattek)'],
+        ['Arraba', '750 baklo', 'Ragidik kattek'],
+        ['Sana Katek', '300 baklo', 'San (cadoytal katek)'],
+        ['Dagâ sokto', '250 baklo', 'inkih kattek'],
+        ['Gubi sokto', '300 baklo', 'inkih kattek'],
+        ['Kamuusu', '300 baklo', '----'],
+        ['Feeraari', '500 baklo', 'Gili'],
+        ['Feeraari', '200 baklo', 'geeri feeraari'],
+        ['Moddiin', '120 baklo', 'Dagâ tasuuli raddek'],
+        ['Gubi Moddin', '180 baklo', '-- --'],
+        ['Tassuuli maqanxá', '60 baklo', 'Raddek'],
+        ['Caarí maaqiyo', '50 baklo', 'Raddek'],
+        ['Qaxa', '40 baklo', 'Radek'],
+        ['Masangalê lafá', '30 baklo', 'Tiddigillek'],
+        ['Xukcunto', '140 baklo', '----'],
+        ['Dadaba', '120 baklo', 'Ibak gommo diglo'],
+        ['Angu - saynum', '500 baklo', 'Saynumuk Angu kattek'],
+        ['Angu - labnum', '300 baklo', 'Labnumuk Angu kattek'],
+        ['Qanxix', '30 baklo', 'Qanxxix caxxat yekkek'],
+        ['Qanxix', '40 baklo', 'Qanxxix Gilé yekkek (ixu kee lafa maleh)'],
+        ['Dayli sabbatah fakeenik', '50 baklo', ''],
+        ['Lafâ baxá akak tewqek', '60 baklo', 'Bone injury'],
+        ['Koomam', '10 baklo', 'Bruise'],
+        ['Xagorti kalti (saynumuk)', '20 baklo', 'Abortion'],
+        ['Filla (gilet xaggiimek)', '40 baklo', 'Vulva injury'],
+        ['Sarba (xaggimtek)', '40 baklo', 'Circumcision injury'],
+        ['Deega (xaggimtek)', '50 baklo', 'Breast injury'],
+        ['Caray (xaggimek)', '40 baklo', 'Thigh injury'],
+        ['Iba/gaba', '1,000 baklo', 'Hand/arm major injury'],
+        ['Maacisso', '120 baklo', 'Sexual offense'],
+        ['Maacissot boyli orbek', '1,200 baklo', 'Rape compensation'],
+        
+        // Section 3: Agrá (Insults)
+        ['Silac maleh', '-', 'Insult (no value specified)'],
+        ['Qasgaba', '-', 'Minor insult'],
+        ['Foocat', '60 baklo', 'Face slap'],
+        ['Kaatum teellek', '70 baklo', 'Head injury'],
+        ['Kummuqussa', '-', 'Scratch'],
+        ['Uma arac', '10 baklo', 'Bad touch'],
+        ['Sahlin arac', '5 baklo', 'Inappropriate touch'],
+        ['Giqi (Testa)', '10 baklo', 'Testimony offense'],
+        ['Ibi atka', '-', 'Hand injury (no value)'],
+        ['Kabellak gasiyyo', '10 baklo', 'False accusation'],
+        
+        // Section 4: Silac luk (With weapon)
+        ['Iló', '10 baklo', 'Spying accusation'],
+        ['Tika', '8 baklo', 'Minor offense'],
+        ['Baarô buureyta', '10 baklo', 'Property damage'],
+        ['Daggeyta', '6 baklo', 'Minor damage'],
+        ['Gilé (siibó)', '15 baklo', 'Dagger threat'],
+        ['Seefi (siibó)', '20 baklo', 'Sword threat'],
+        ['Macaxu (gasiyyo)', '30 baklo', 'Threat'],
+        ['Halangi', '15 baklo', 'Property damage'],
+        ['Akata', '5 baklo', 'Minor property'],
+        ['Girâ tiqó kee ascossa', '500 baklo', 'Fire damage'],
+        
+        // Section 5: Quxuusu/Quntuuro (Theft)
+        ['Soola num tekkek', '10 baklo', 'Theft from sitting person'],
+        ['Daffeya', '15 baklo', 'Theft from sleeping person'],
+        ['Qaxah yan num tekkek', '20 baklo', 'Theft from standing person'],
+        ['Saynum tekkek', '30 baklo', 'Theft from woman'],
+        
+        // Section 6: Aroowu/aro
+        ['Aroowu - qable waytek', '6 baklo', 'Dispute without agreement'],
+        ['Aroowu - Qabaltek', '10 baklo', 'Dispute with agreement'],
+        
+        // Section 7: Lifqi (Property)
+        ['Lifqi - Qabaltek', '5 baklo', 'Property with agreement'],
+        ['Lifqi - Qable waytek', '1 baklo', 'Property without agreement'],
+        
+        // Section 8: Qawulu & Leê kumma
+        ['Qawulu', '40 baklo', 'Verbal agreement breach'],
+        ['Leê kumma', '120 baklo', 'Water dispute'],
+        
+        // Section 9: Xarbá (War/Conflict)
+        ['Gennaaqoytá caylisaanam', '40 baklo', 'False accusation of theft'],
+        ['Gennaaqoytat le fayxiik yangooroweenim', '6 baklo', 'Refusal to cooperate'],
+        ['Gennaaqoytak fidô fayxih, gabah yabbixeenim', '10 baklo', 'Physical interference'],
+        ['Gennaaqoytá fidô fayxih yaabisaanam', '10 baklo', 'Verbal interference'],
+        ['Gennaaqoytal fidô fayxih qari culaanam', '10 baklo', 'Home entry interference'],
+        ['Dudde Baxuwwa Caylisaanam - bikir katek', '75 baklo', 'False accusation (first time)'],
+        ['Dudde Baxuwwa Caylisaanam - edde teedeqek', '75 baklo', 'False accusation (repeated)'],
+        
+        // Section 10: Unintentional Death
+        ['Gufe wayte awká', '250 baklo', 'Unintentional death of child'],
+        ['Lab num awká', '750 baklo', 'Unintentional death of male'],
+        
+        // Section 11: Saqá (Theft)
+        ['Alá garqimtek', '97 baklo', 'Camel theft'],
+        ['Sagá garqimtek', '33 baklo', 'Cow theft'],
+        ['Idá garqimtek', '3 baklo', 'Sheep theft'],
+        ['Reytá garqimtek', '3 baklo', 'Goat theft'],
+        ['Mangassi garqimek', '43 baklo', 'Multiple animal theft'],
+        ['Farasa garqimek', '33 baklo', 'Horse theft'],
+        ['Okló garqimtek', '130 baklo', 'Donkey theft'],
+        ['Bakli garqimtek', '130 baklo', 'Mule theft'],
+        ['Dorrahi', '1 baklo', 'Elder theft'],
+        ['Kayyu', '100 baklo', 'Major theft'],
+        
+        // Section 12: Qadab le qideenik (Theft with value)
+        ['Rakuubu', '170 baklo', 'Theft of riding animal'],
+        ['Kayyu', '180 baklo', 'Theft of valuable'],
+        ['Caras Sagá', '100 baklo', 'Theft of cow (alternative)'],
+        ['Farasa', '180 baklo', 'Theft of horse (alternative)'],
+        ['Bakli', '180 baklo', 'Theft of mule (alternative)'],
+        ['Danana', '50 baklo', 'Theft of donkey (alternative)'],
+        
+        // Section 13: Le numih ixxigak iroh gaali lacih
+        ['Deberi qisi aaxaguk abeenik', '10 baklo', 'Property boundary dispute'],
+        ['Ereri', '10 baklo', 'Grazing dispute'],
+        ['Qayni', '10 baklo', 'Water source dispute'],
+        ['Bedu - giral', '40 baklo', 'Boundary dispute (major)'],
+        ['Bedu - gilel', '30 baklo', 'Boundary dispute (minor)'],
+        ['Xigló', '1 baklo', 'Minor dispute'],
+        ['Daru', '10 baklo', 'Land dispute'],
+        ['Guyaaca/naasu', '10 baklo', 'Inheritance dispute'],
+        ['Agra', '10 baklo', 'Neighbor dispute'],
+        ['Kirá', '11 baklo', 'Rental dispute'],
+        
+        // Section 14: Geeri Duyyé (False Accusation)
+        ['Sará, fiddima', '4 baklo', 'False accusation of theft'],
+        ['Siyaakata', '4 baklo', 'False accusation of lying'],
+        ['Lakqó', '4 baklo', 'False accusation of fraud'],
+        ['Silaaca', '4 baklo', 'False accusation of insult'],
+        ['Maaqo', '4 baklo', 'False accusation of bad food'],
+        ['Silac kaafir innal katek', '120 baklo', 'False accusation of apostasy'],
+        
+        // Section 15: Argiqek / cararise (Damage)
+        ['Kusrá', '40 baklo', 'Property damage (minor)'],
+        ['Tamirto', '40 baklo', 'Date palm damage'],
+        ['Garraytó', '40 baklo', 'Tree damage'],
+        ['Iraawô Caxá', '30 baklo', 'Crop damage'],
+        ['Dabqi', '120 baklo', 'Major property damage'],
+        
+        // Section 16: Aggilek / qanxise (Wounding)
+        ['Caxxa', '1 baklo', 'Minor wound'],
+        ['Intimali markassa', '10 baklo', 'Blinding'],
+        ['Iba-mali mandaada', '10 baklo', 'Hand disability'],
+        ['Afleyta gilal', '10 baklo', 'Lock injury'],
+        ['Afleyta cagay', '20 baklo', 'Lock damage (major)'],
+        ['Kabella', '10 baklo', 'Door damage'],
+        ['Dora', '10 baklo', 'Wall damage'],
+        ['Targá', '30 baklo', 'Fence damage'],
+        ['Uguçu', '10 baklo', 'Minor damage'],
+        ['Malabxaa', '10 baklo', 'Tool damage'],
+        ['Dessó', '10 baklo', 'Resting place damage'],
+        
+        // Section 17: Final
+        ['Xaafu', '10 baklo', 'Gossip/slander'],
+        ['Galel wayti (cate wayti)', '10 baklo', 'Disobedience'],
+        ['Qunxa biyak tekkek', '30 baklo', 'Minor injury'],
+        ['Fanaafanah tanim tekkek', '100 baklo', 'Serious injury'],
+        ['Giffitam tekkek (roocinnah tanim)', '100 baklo', 'Compensation for fear'],
+        ['Rooci edde yewqek', '10 baklo', 'Threat causing fear'],
+        ['Mirá (tu edde aame wayta way)', '10 baklo', 'Threat without basis'],
+        ['Hawi', '10 baklo', 'False accusation'],
+        ['Itta-ceele way', '10 baklo', 'Disrespect to elder'],
+        ['Aysacowwa', '270 baklo', 'Serious false accusation'],
+        ['Rooci edde yewqek (alternative)', '270 baklo', 'Fear causing threat'],
+        ['Rado edde tekkek', '250 baklo', 'Threat that materialized']
+    ]
+},
+           2: {
+    title: 'Afkiqek-Maqadih Madqa',
+    subtitle: 'Afkiqek-Maqadih Madqal Qellatitte Digaala (Mekla) ahak gubal geetton.',
+    description: 'Afkiqek-Maqadih Madqal arrabaak xabba haanam sehdayti rooci fan mekla edde takkem Gaala!',
+    note: 'Kassis: Ta madqa mangih Qasa wadaral madqaan way, sittingeyil lakqol akkiiy gersi saqal akki takkeh',
+    table: [
+        // Section 1: Sahdaytu Rooci (Diyata) - Homicide
+        ['Sahdaytu Rooci - Lab num', '100 ala', 'Homicide compensation for male'],
+        ['Sahdaytu Rooci - Say num', '50 ala', 'Homicide compensation for female'],
+        
+        // Section 2: Xagara (xicka) - Injuries
+        ['Namma inti (Both Eyes)', '50 laa', 'Loss of both eyes'],
+        ['Nammi iba (Both Hands)', '50 laa', 'Loss of both hands'],
+        ['Namma gaba (Both Arms)', '50 laa', 'Loss of both arms'],
+        ['Nammaytik maabba (ragidik)', '50 laa', 'Both sides of jaw'],
+        ['Muxii kee baxxe', '50 laa', 'Head and neck injury'],
+        ['Arraba ragidik kattek', '50 laa', 'Tongue cut'],
+        ['Sana (cadoytal katek)', '12 laa', 'Nose cut'],
+        ['Dagâ sokto inkih kattek', '13 laa', 'Ear cut completely'],
+        ['Gubi sokto inkih kattek', '13 laa', 'Lip cut completely'],
+        ['Kamuusu', '12 laa', 'Tooth injury'],
+        ['Feeraari - Gili', '12 laa', 'Thumb injury'],
+        ['Feeraari - geeri feeraari', '10 laa', 'Other finger injury'],
+        ['Moddiini - Dagâ tasuuli', '2 laa', 'Joint injury'],
+        ['Gubi', '-', 'Lip injury (no value specified)'],
+        ['Tassuuli maqanxá', '-', 'Nail bed injury'],
+        ['Caarí maaqiyo', '1 saga', 'Minor scratch'],
+        ['Qaxa', '2 laa', 'Minor wound'],
+        ['Masangalê lafá', '2 laa', 'Rib fracture'],
+        ['Xukcunto', '1 saga', 'Severe beating'],
+        ['Dadaba (ibak gommo diglo)', '1 saga', 'Hand paralysis'],
+        ['Angu - saynum', '50 laa', 'Miscarriage - female fetus'],
+        ['Angu - labnum', '50 laa', 'Miscarriage - male fetus'],
+        ['Qanxix (caxxa)', '1 saga', 'Minor wound'],
+        ['Qanxix (Gilé) - ixu kee lafa maleh', '3 laa', 'Dagger wound without bone'],
+        ['Dayli sabbatah fakeenik', '6 laa', 'Injury from fall'],
+        ['Lafâ baxá akak tewqek', '1 saga', 'Bone injury'],
+        ['Koomam', '1 saga + 6 wadara', 'Bruise'],
+        ['Xagorti kalti (saynum)', '1 saga', 'Abortion'],
+        ['Filla (gilet xaggiimeka)', '2 saga', 'Vulva injury'],
+        ['Sarba (xaggimtek)', '2 saga', 'Circumcision injury'],
+        ['Deega (xaggimtek)', '1 saga', 'Breast injury'],
+        ['Caray (xaggimek)', '1 saga', 'Thigh injury'],
+        ['Iba/gaba', '1 saga', 'Hand/arm injury'],
+        ['Maacisso / kaafirinnal abeenik', '12 soyta/laak', 'Sexual offense'],
+        ['Maacissot boyli orbek', '24 soyta/laak', 'Rape compensation'],
+        
+        // Section 3: Agrá (Insults)
+        ['Silac maleh', '1 saga', 'Insult'],
+        ['Qasgaba', '1 saga', 'Minor insult'],
+        ['Foocat', '2 laa', 'Face slap'],
+        ['Kaatum teellek', '6 wadara', 'Head injury'],
+        ['Kummuuqussa', '6 wadara', 'Scratch'],
+        ['Uma arac', '-', 'Bad touch (no value)'],
+        ['Sahlin arac', '1 saga', 'Inappropriate touch'],
+        ['Giqi (Testa)', '1 saga', 'Testimony offense'],
+        ['Ibi atka', '1 saga', 'Hand injury'],
+        ['Kabellak gasiyyo', '1 saga', 'False accusation'],
+        
+        // Section 4: Silac luk (With weapon)
+        ['Kabellak gasiyyo (alternative)', '1 saga', 'False accusation'],
+        ['Iló/lusa', '12 laa', 'Spying accusation'],
+        ['Baarô buureyta - Baatil', '1 saga', 'Property damage with false claim'],
+        ['Daggeyta', '1 saga', 'Minor damage'],
+        ['Gilé (siibó)', '1 saga', 'Dagger threat'],
+        ['Seefi (siibó)', '1 saga', 'Sword threat'],
+        ['Macaxu (gasiyyo)', '1 saga', 'Threat'],
+        ['Halangi', '1 saga', 'Property damage'],
+        ['Akata', '-', 'Minor property (no value)'],
+        ['Girâ tiqó kee ascossa', '12 laa', 'Fire damage'],
+        
+        // Section 5: Quxuusu/Quntuuro (Theft)
+        ['Quxuusu/Quntuuro', '12 laa', 'Theft of small items'],
+        ['Soola num tekkek', '4 laa', 'Theft from sitting person'],
+        ['Daffeya', '4 laa', 'Theft from sleeping person'],
+        ['Qaxah yan num tekkek', '12 laa', 'Theft from standing person'],
+        ['Saynum tekkek', '4 laa', 'Theft from woman'],
+        
+        // Section 6: Aroowu/aro
+        ['Aroowu - Baxsimtek kulli moddina', '1 saga', 'Dispute with agreement per side'],
+        ['Aroowu - baxsim e waytek', '1 saga', 'Dispute without agreement'],
+        
+        // Section 7: Lifqi (Property)
+        ['Lifqi', '1 reyta', 'Property dispute'],
+        ['Lifqi - Qabaltek', '2 reyta', 'Property with agreement'],
+        ['Lifqi - Qable waytek', '1 reyta', 'Property without agreement'],
+        
+        // Section 8: Qawulu & Leê kumma
+        ['Qawulu', '1 saga', 'Verbal agreement breach'],
+        ['Leê kumma', '12 laa', 'Water dispute'],
+        
+        // Section 9: Xarbá (War/Conflict)
+        ['Gennaaqoytá caylisaanam', '14 laa + 40 reyta', 'False accusation of theft'],
+        ['Gennaaqoytat le fayxiik yangooroweenim', '12 wadara', 'Refusal to cooperate'],
+        ['Gennaaqoytak fidô fayxih, gabah yabbixeenim', '1 saga', 'Physical interference'],
+        ['Gennaaqoytá fidô fayxih yaabisaanam', '1 saga', 'Verbal interference'],
+        ['Gennaaqoytal fidô fayxih qari culaanam', '1 saga', 'Home entry interference'],
+        ['Dudde Baxuwwa Caylisaanam', '12 laa', 'False accusation (repeated)'],
+        
+        // Section 10: Unintentional Death
+        ['Gufe wayte awká', '12 laa', 'Unintentional death of child'],
+        ['Lab num awká', '12 laa', 'Unintentional death of male'],
+        
+        // Section 11: Saqá (Theft)
+        ['Alá garqimtek', '14 laa', 'Camel theft'],
+        ['Sagá garqimtek', '3 laa', 'Cow theft'],
+        ['Idá garqimtek', '4 wadara', 'Sheep theft'],
+        ['Reytá garqimtek', '4 wadara', 'Goat theft'],
+        ['Mangassi garqimek', '4 laa', 'Multiple animal theft'],
+        ['Farasa garqimek', '-', 'Horse theft (no value)'],
+        ['Okló garqimtek', '1 saga', 'Donkey theft'],
+        ['Bakli garqimtek', '-', 'Mule theft (no value)'],
+        ['Caras saga garqimtek', '4 laa', 'Cow theft (alternative)'],
+        ['Kayyu garqimtek', '14 laa', 'Major theft'],
+        
+        // Section 12: Qadab le qideenik (Theft with value)
+        ['Rakuubu', '14 laa', 'Theft of riding animal'],
+        ['Kayyu', '14 laa', 'Theft of valuable'],
+        ['Caras Sagá', '4 laa', 'Theft of cow'],
+        ['Farasa', '-', 'Theft of horse (alternative)'],
+        ['Bakli', '-', 'Theft of mule (alternative)'],
+        ['Danana', '1 saga', 'Theft of donkey'],
+        
+        // Section 13: Le numih ixxigak iroh gaalí lacih
+        ['Deberi', '-', 'Property boundary dispute (no value)'],
+        ['Ereri', '4 laa', 'Grazing dispute'],
+        ['Qayni', '1 saga', 'Water source dispute'],
+        ['Bedu - gira/gilel', '1 saga', 'Boundary dispute'],
+        ['Xigló', '-', 'Minor dispute (no value)'],
+        ['Guyaaca/naasu', '1 saga', 'Inheritance dispute'],
+        ['Kirá', '-', 'Rental dispute'],
+        ['Faxe bahiimat num qidek / umannah biyaake tekkek', '4 laa', 'Accidental death during dispute'],
+        
+        // Section 14: Geeri Duyyé (False Accusation)
+        ['Sará', '1 saga - 2 laa', 'False accusation of theft'],
+        ['Siyaakata', '4 laa', 'False accusation of lying'],
+        ['Lakqó', '2 laa', 'False accusation of fraud'],
+        ['Silaaca', '12 laa', 'False accusation of insult'],
+        ['Maaqo', 'Beenim kee miqo', 'False accusation of bad food'],
+        ['Silac kaafir innal katek', '12 laa', 'False accusation of apostasy'],
+        
+        // Section 15: Argiqek / cararise (Damage)
+        ['Kusrá - buxah adal dubuk tan caxa tekkek', '-', 'Property damage (minor, no value)'],
+        ['Kusrá - inkih elle yangalen caxa tekkek', '-', 'Property damage (major, no value)'],
+        ['Tamirto', '12 laa', 'Date palm damage'],
+        ['Garrytó', '-', 'Tree damage (no value)'],
+        ['Iraawô Caxá', '1 saga', 'Crop damage'],
+        ['Dabqi', '24 laa', 'Major property damage'],
+        
+        // Section 16: Aggilek / qanxise (Wounding)
+        ['Caxxa', '1 saga', 'Minor wound'],
+        ['Intimali markassa', '12 laa', 'Blinding'],
+        ['Iba-mali mandaada', '1 saga', 'Hand disability'],
+        ['Afleyta gilal/ cagayal', '1 saga', 'Lock injury/damage'],
+        ['Kabellak gasiyyo (alternative 2)', '1 saga', 'False accusation'],
+        
+        // Section 17: Final
+        ['Dora', '-', 'Wall damage (no value)'],
+        ['Targá', '-', 'Fence damage (no value)'],
+        ['Ugucu', '1 saga', 'Minor damage'],
+        ['Malabxaa', '1 saga', 'Tool damage'],
+        ['Dessó', '1 saga', 'Resting place damage'],
+        ['Faage arke kalaanam', '-', 'Property protection (no value)'],
+        ['Xaafu', '-', 'Gossip/slander (no value)'],
+        ['Galel wayti (cate wayti)', '1 saga', 'Disobedience'],
+        ['Qunxa biyak tekkek', '2 laa', 'Minor injury'],
+        ['Fanaafanah tanim tekkek', '1 saga', 'Serious injury'],
+        ['Giffitam tekkek (roocinnah tanim)', '-', 'Compensation for fear'],
+        ['Rooci edde yewqek', '-', 'Threat causing fear'],
+        ['Mirá (tu edde aame wayta way)', '1 saga', 'Threat without basis'],
+        ['Hawi', '1 saga', 'False accusation'],
+        ['Itta-ceele way (kaxxa num kee awka)', '1 saga', 'Disrespect to elder'],
+        ['Itta-ceele way (nagay yan num kee biyaakita num)', '1 saga', 'Disrespect between peers'],
+        ['Aysacowwa', '12 laa', 'Serious false accusation'],
+        ['Rooci edde yewqek (alternative)', '12 laa', 'Fear causing threat'],
+        ['Rado edde tekkek', '12 laa', 'Threat that materialized'],
+        ['Nabam dagom tekkek', '12 laa', 'Multiple offenses']
+    ]
+},
+    3: {
+    title: 'Buxxuto-Baxih Madqa',
+    subtitle: 'Buxxuto-Baxih Madqal Qellatitte Digaala (Mekla) ahak gubal geetton.',
+    description: 'Buxxuto-Baxih Madqal arrabaak xabba haanam sehdayti rooci fan mekla edde takkem gersi madqooqik baxsa lennal, Galaay, Laay Wadar kee Illi inkih kinnuk addafaknu ahak gubal wagita!',
+    note: 'Kassis: Ta madqa mangih Qasa wadaral madqaan way, sittingeyil lakqol akkiiy gersi saqal akki takkeh!',
+    table: [
+        // Section 1: Sahdaytu Rooci (Diyata) - Homicide
+        ['Sahdaytu Rooci - Lab num (loowo rabah)', '100 ala', 'Homicide - male (first marriage)'],
+        ['Sahdaytu Rooci - Lab (geeri loowo)', '50 ala', 'Homicide - male (second marriage)'],
+        ['Sahdaytu Rooci - Lab (macubaani)', '25 ala', 'Homicide - male (third marriage)'],
+        ['Sahdaytu Rooci - Say num (loowo)', '50 ala', 'Homicide - female (first marriage)'],
+        ['Sahdaytu Rooci - Say (geeri loowo)', '15 ala', 'Homicide - female (second marriage)'],
+        ['Sahdaytu Rooci - Say (macubaani)', '12½ ala', 'Homicide - female (third marriage)'],
+        ['Sahdaytu Rooci - Sooniba (loowo)', '125 ala', 'Homicide - pregnant (first marriage)'],
+        ['Sahdaytu Rooci - Sooniba (geeri)', '57½ ala', 'Homicide - pregnant (second marriage)'],
+        ['Sahdaytu Rooci - Sooniba (macubaani)', '31½ ala', 'Homicide - pregnant (third marriage)'],
+        
+        // Section 2: Xagara (xicka) - Injuries
+        ['Namma inti', '50 gaala', 'Loss of both eyes'],
+        ['Nammi iba', '22 ala', 'Loss of both hands'],
+        ['Namma gaba', '16 ala', 'Loss of both arms'],
+        ['Nammaytik maabba (ragidik)', '-', 'Both sides of jaw (no value)'],
+        ['Muxii kee baxxe', '50 ala + 120 wadara', 'Head and neck injury'],
+        ['Arraba ragidik kattek', '50 gaala + 120 wadara', 'Tongue cut'],
+        ['Arraba ragidik - tu teetik raqtek', '500 wadara', 'Tongue injury (partial)'],
+        ['Sana (cadoytal katek)', '500 wadar + 5 maruuso', 'Nose cut'],
+        ['Dagâ sokto inkih - feexoh raqtek', '500 wadara', 'Ear cut completely'],
+        ['Dagâ sokto inkih - feexoh raqte wek', '250 wadara', 'Ear cut partially'],
+        ['Gubi sokto inkih - feexoh raqtek', '250 wadara', 'Lip cut completely'],
+        ['Gubi sokto inkih - feexoh raqte wek', '125 wadara', 'Lip cut partially'],
+        ['Kamuusu', '12 laa', 'Tooth injury'],
+        ['Feeraari - Gili', '7 laa', 'Thumb injury'],
+        ['Feeraari - qunxa feera', '4 laa', 'Small finger injury'],
+        ['Feeraari - geeri feeraari', '3 laa', 'Other finger injury'],
+        ['Moddiini - Dagâ tasuuli', '1 ala', 'Joint injury'],
+        ['Gubi', '1 ala', 'Lip injury'],
+        ['Tassuuli maqanxá', '1 ala', 'Nail bed injury'],
+        ['Caarí maaqiyo', '1 ala', 'Minor scratch'],
+        ['Qaxa', '1 ala kee saga', 'Minor wound'],
+        ['Migdi Masangalê lafá', '7 laa', 'Single rib fracture'],
+        ['Guri masaganle lafa', '5 laa', 'Multiple rib fractures'],
+        ['Xukcunto', '-', 'Severe beating (no value)'],
+        ['Dadaba (ibak gommo diglo)', '3 laa', 'Hand paralysis'],
+        ['Angu - saynum', '12 soyta kee 120 wadara', 'Miscarriage - female'],
+        ['Angu - labnum (migdak)', '5 guddali (gaalak)', 'Miscarriage - male (right)'],
+        ['Angu - labnum (guri angu)', '5 guddali (gaalak)', 'Miscarriage - male (left)'],
+        ['Angu - addah tuftecek', '12 guddali (gaalak)', 'Miscarriage - advanced'],
+        ['Qanxix (caxxa) - caxxi edde kactek', '33 wadara', 'Minor wound (deep)'],
+        ['Qanxix (caxxa) - fooca tekkek', '33 wadara', 'Minor wound (face)'],
+        ['Qanxix (caxxa) - geeri dagar', '13 wadara', 'Minor wound (other)'],
+        ['Qanxix (Gilé) - ixu kee lafa maleh', '3 laa', 'Dagger wound without bone'],
+        ['Dayli sabbatah fakeenik', '1 saga kee masgaada maruwu', 'Injury from fall'],
+        ['Lafâ baxá akak tewqek', '4 laa', 'Bone injury'],
+        ['Koomam - arabat raaqe qabal tekkek', '15 wadara', 'Bruise with agreement'],
+        ['Koomam - cadot raaqe qabal tekkek', '7½ wadara', 'Bruise without agreement'],
+        ['Xagorti kalti - timixxige ikke kattek', '3 laa', 'Abortion (minor)'],
+        ['Xagorti kalti - moolo tekkek', '12 laa', 'Abortion (major)'],
+        ['Filla - harrugye tattab tekkek', '8 ala', 'Vulva injury (minor)'],
+        ['Filla - qalmiy tekkek', '12 ala', 'Vulva injury (major)'],
+        ['Sarba - fooci quukeeni', '7 laa', 'Circumcision injury (front)'],
+        ['Sarba - wadirsi quukeeni', '5 laa', 'Circumcision injury (back)'],
+        ['Deega (xaggimtek)', '7 gaala', 'Breast injury'],
+        ['Caray (xaggimek)', '3 laa', 'Thigh injury'],
+        ['Iba/gaba', '3 laa', 'Hand/arm injury'],
+        ['Maacisso / kaafirinnal abeenik', '12 soyta/laak', 'Sexual offense'],
+        ['Maacissot boyli orbek', '24 soyta/laak', 'Rape compensation'],
+        
+        // Section 3: Agrá (Insults)
+        ['Silac maleh', '-', 'Insult (no value)'],
+        ['Qasgaba', '1 laa', 'Minor insult'],
+        ['Foocat - Wahgi saga edde ossointa', '2 laa', 'Face slap (minor)'],
+        ['Kaatum teellek - Ferranto saga edde ossinta', '3 laa', 'Head injury (minor)'],
+        ['Kummuqussa', '3 laa', 'Scratch'],
+        ['Uma arac', '6 laa', 'Bad touch'],
+        ['Sahlin arac', '3 laa', 'Inappropriate touch'],
+        ['Giqi (Testa)', '3 laa', 'Testimony offense'],
+        ['Ibi atka - ariyyo (wadirih)', '2 laa', 'Hand injury (minor)'],
+        ['Ibi atka - ariyyo (foocah)', '3 laa', 'Hand injury (face)'],
+        ['Ibi atka - sammo tekkek', '7 laa', 'Hand injury (moderate)'],
+        ['Ibi atka - cangexa tekkek', '12 laa', 'Hand injury (severe)'],
+        ['Kabellak gasiyyo - gasiyyo hoxxu, raddu', '1 saga', 'False accusation (minor)'],
+        ['Kabellak gasiyyo - raddek/wara,qanxixu,qabala', '1 saga', 'False accusation (major)'],
+        
+        // Section 4: Silac luk (With weapon)
+        ['Iló/lusa - ilo edde aben caxxi haxxa yeellek', '1 saga + xalootu', 'Spying accusation (no harm)'],
+        ['Iló/lusa - haxxale caxxat qeebi abtem', '4 laa + xalootu', 'Spying accusation (harm)'],
+        ['Iló/lusa - makaabantu tekkek', '6 laa + xalootu', 'Spying accusation (severe)'],
+        ['Tika - tabtek', '12 laa', 'Minor offense (with harm)'],
+        ['Tika - tabe waytek', '6 laa', 'Minor offense (no harm)'],
+        ['Baarô buureyta - Baatil', '1 saga + xalotu', 'Property damage with false claim'],
+        ['Daggeyta - keena yeellek/kaafiranna', '12 laa', 'Minor damage (denied)'],
+        ['Daggeyta - keena aallek', '1 saga + xalootu', 'Minor damage (admitted)'],
+        ['Gilé (siibó)', '1 saga', 'Dagger threat'],
+        ['Seefi (siibó) - seef gileh innal radek', '12 laa', 'Sword threat with dagger'],
+        ['Seefi (siibó) - other', '6 laa', 'Sword threat'],
+        ['Macaxu (gasiyyo) - hoxek', '3 laa', 'Threat (minor)'],
+        ['Macaxu (gasiyyo) - radah tabe week', '6 laa', 'Threat (moderate)'],
+        ['Macaxu (gasiyyo) - radeh tabek', '12 laa', 'Threat (severe)'],
+        ['Halangi - abba tekkek', '12 laa', 'Property damage (elder)'],
+        ['Halangi - geeri mara tekkek', '12 laa', 'Property damage (family)'],
+        ['Akata - agabu kee boola le mara', '1 saga', 'Minor property (women/children)'],
+        ['Akata - fardi mara, feera saga luk', '3 laa', 'Minor property (men)'],
+        ['Girâ tiqó kee ascossa - tumuggureh hoxxek', '12 laa', 'Fire damage (intentional)'],
+        ['Girâ tiqó kee ascossa - other', '6 laa', 'Fire damage (unintentional)'],
+        
+        // Section 5: Quxuusu/Quntuuro (Theft)
+        ['Quxuusu - lab marih quntuuro', '1 saga + xalootu', 'Theft (men\'s items)'],
+        ['Quxuusu - edde qawte week', '4 laa', 'Theft (not agreed)'],
+        ['Quxuusu - edde qawtek', '8 laa', 'Theft (agreed)'],
+        ['Quxuusu - wassaakah gezek', '6 laa', 'Theft (caught)'],
+        ['Quxuusu - xiinit sugeh qawtek', '10 laa', 'Theft (elderly, agreed)'],
+        ['Quxuusu - xiinit sugeh wassaakah gezek', '10 laa', 'Theft (elderly, caught)'],
+        ['Soola num tekkek', '-', 'Theft from sitting person'],
+        ['Daffeya', '-', 'Theft from sleeping person'],
+        ['Qaxah yan num tekkek', '-', 'Theft from standing person'],
+        ['Saynum tekkek', '-', 'Theft from woman'],
+        
+        // Section 6: Aroowu/aro
+        ['Aroowu - guba kee daga fereyih mudo raqtek', '8 laa', 'Dispute with one side'],
+        ['Aroowu - guba kee daga 2 mudo raqtek', '4 laa + qabli mekla', 'Dispute with two sides'],
+        
+        // Section 7: Lifqi (Property)
+        ['Lifqi', '1 reyta', 'Property dispute'],
+        ['Lifqi - Qabaltek', '2 reyta', 'Property with agreement'],
+        ['Lifqi - Qable waytek', '1 reyta', 'Property without agreement'],
+        
+        // Section 8: Qawulu & Leê kumma
+        ['Qawulu - dubuk qawul tekkek', '6 laa', 'Verbal agreement breach (single)'],
+        ['Qawulu - dagar gexo/damaysit', '2 laa', 'Verbal agreement breach (multiple)'],
+        ['Leê kumma - kummat qawul yenek', '12 laa', 'Water dispute (agreement)'],
+        ['Leê kumma - qawul edde ane week', '6 laa', 'Water dispute (no agreement)'],
+        
+        // Section 9: Xarbá (War/Conflict)
+        ['Gennaaqoytá caylisaanam', '4 soyta', 'False accusation of theft'],
+        ['Gennaaqoytat le fayxiik yangooroweenim', '2 laa', 'Refusal to cooperate'],
+        ['Gennaaqoytak fidô fayxih, gabah yabbixeenim', '1 saga', 'Physical interference'],
+        ['Gennaaqoytá fidô fayxih yaabisaanam', '2 laa', 'Verbal interference'],
+        ['Gennaaqoytal fidô fayxih qari culaanam - buxak iro tekkek', '2 laa', 'Home entry (from outside)'],
+        ['Gennaaqoytal fidô fayxih qari culaanam - qaafiyatah suge wek', '1 saga', 'Home entry (uninvited)'],
+        ['Dudde Baxuwwa Caylisaanam - bikir katek', '13 laa', 'False accusation (first time)'],
+        ['Dudde Baxuwwa Caylisaanam - edde teedegek', '17 laa', 'False accusation (repeated)'],
+        ['Dudde Baxuwwa Caylisaanam - multiple', '25 laa', 'False accusation (multiple)'],
+        
+        // Section 10: Unintentional Death
+        ['Gufe wayte awká', '12 gaala + 12 laa', 'Unintentional death of child'],
+        ['Lab num awká', '12 gaala + 12 laa', 'Unintentional death of male'],
+        
+        // Section 11: Saqá (Theft)
+        ['Alá garqimtek - geytimtek', '9 wadara', 'Camel theft (found)'],
+        ['Alá garqimtek - waytimtek', '2 ala + 1 soya + 4 wadara', 'Camel theft (not found)'],
+        ['Sagá garqimtek - geytimtek', '3 reyta', 'Cow theft (found)'],
+        ['Sagá garqimtek - waytimtek', '13 reyta', 'Cow theft (not found)'],
+        ['Idá garqimtek - geytimtek', '3 ida', 'Sheep theft (found)'],
+        ['Idá garqimtek - waytimtek', '3 ida', 'Sheep theft (not found)'],
+        ['Reytá garqimtek - geytimtek', '3 reyta', 'Goat theft (found)'],
+        ['Reytá garqimtek - waytimtek', '3 reyta', 'Goat theft (not found)'],
+        ['Mangassi garqimek Mollayti - geytimtek', '3 reyta', 'Multiple theft (found)'],
+        ['Mangassi garqimek Mollayti - waytimtek', '13 reyta', 'Multiple theft (not found)'],
+        ['Ina yaaxi - geytimtek', '-', 'Cattle theft (found, no value)'],
+        ['Ina yaaxi - waytimtek', '6 laa', 'Cattle theft (not found)'],
+        ['Farasa garqimek', '4 laa', 'Horse theft'],
+        ['Okló garqimtek', '3 laa', 'Donkey theft'],
+        ['Bakli garqimtek', '4 laa', 'Mule theft'],
+        ['Caras saga garqimtek', '12 laa', 'Cow theft (alternative)'],
+        ['Kayyu garqimtek', '12 laa', 'Major theft'],
+        
+        // Section 12: Qadab le qideenik (Theft with value)
+        ['Rakuubu', '-', 'Theft of riding animal'],
+        ['Kayyu', '-', 'Theft of valuable'],
+        ['Caras Sagá', '-', 'Theft of cow'],
+        ['Farasa', '-', 'Theft of horse'],
+        ['Bakli', '-', 'Theft of mule'],
+        ['Danana', '-', 'Theft of donkey'],
+        
+        // Section 13: Le numih ixxigak iroh gaalí lacih
+        ['Deberi qisi axaguk abeenik - qisi axige kal tekek', 'Tu mali', 'Property boundary (no dispute)'],
+        ['Deberi qisi axaguk abeenik - qisi axage kal tewe k', '1 Saga', 'Property boundary (disputed)'],
+        ['Ereri - faranih qisih qidak abeenik', 'Tu mali', 'Grazing dispute (no harm)'],
+        ['Ereri - qisi axige week', '2 laa', 'Grazing dispute (with harm)'],
+        ['Qayni', '3 laa', 'Water source dispute'],
+        ['Bedu - gira/gilel - bedu luk suge week', '1 saga', 'Boundary dispute (no prior)'],
+        ['Bedu - bedu luk sugeeh, too bedih baysah abeenik', '4 laa', 'Boundary dispute (with damage)'],
+        ['Xigló', 'Tu mali', 'Minor dispute (no value)'],
+        ['Mudo cooril raqtek', '3 laa + 5 wadara', 'Boundary marker moved'],
+        ['Guyaaca/naasu', '-', 'Inheritance dispute'],
+        ['Agra - aflem edde heenik', '3 laa', 'Neighbor dispute (locked)'],
+        ['Agra - agrat inti tewqek', '7 laa', 'Neighbor dispute (blocked)'],
+        ['Kirá', '3 laa', 'Rental dispute'],
+        
+        // Section 14: Geeri Duyyé (False Accusation)
+        ['Sará - qasunuk cabe weenik', '1 saga', 'False accusation (not repeated)'],
+        ['Sará - qasunuk cabeenik', '2 laa', 'False accusation (repeated)'],
+        ['Siyaakata', '-', 'False accusation of lying'],
+        ['Lakqó', '2 laa', 'False accusation of fraud'],
+        ['Silaaca - gira', '13 laa', 'False accusation (major)'],
+        ['Silaaca - Gile qarqinoh gexxek', '2 laa', 'False accusation (minor)'],
+        ['Silaaca - gile selabuh gexxek', '13 laa', 'False accusation (weapon)'],
+        ['Maaqo', '2 laa', 'False accusation of bad food'],
+        ['Silac kaafir innal katek', '-', 'False accusation of apostasy'],
+        
+        // Section 15: Argiqek / cararise (Damage)
+        ['Kusrá - buxah adal dubuk tan caxa', '12 laa', 'Property damage (minor)'],
+        ['Kusrá - inkih elle yangalen caxa', 'Qeerannale', 'Property damage (major, no value)'],
+        ['Tamirto', '15 laa', 'Date palm damage'],
+        ['Garrayto', '12 laa', 'Tree damage'],
+        ['Iraawô Caxá', '1 saga', 'Crop damage'],
+        ['Dabqi', '24 laa', 'Major property damage'],
+        
+        // Section 16: Aggilek / qanxise (Wounding)
+        ['Caxxa', '1 saga', 'Minor wound'],
+        ['Intimali markassa', '3 laa', 'Blinding'],
+        ['Iba-mali mandaada', '3 laa', 'Hand disability'],
+        ['Afleyta gilal/ cagay - buxak geqxek uma mariyyo', '1 saga', 'Lock injury (minor)'],
+        ['Afleyta - safarak geqxek', '1 saga', 'Lock injury (moderate)'],
+        ['Afleyta - eleeliti kaliya + uma mariyyo', '2 laa', 'Lock injury (severe)'],
+        ['Kabellak gasiyyo - qarqinoh ceya kee massaasah', '1 saga', 'False accusation (door)'],
+        ['Kabellak gasiyyo - qarqinoh tukkaalooot', '4 laa', 'False accusation (multiple)'],
+        ['Kabellak gasiyyo - garuq umaaneh yekkek', '4 laa', 'False accusation (bad intent)'],
+        ['Dora', '1 saga', 'Wall damage'],
+        ['Targa', '1 saga', 'Fence damage'],
+        ['Ugucu - desso tekkek', '1 saga', 'Minor damage (resting place)'],
+        ['Ugucu - umaaneh tekkek', '2 laa', 'Minor damage (bad intent)'],
+        ['Malabxaa', '13 laa', 'Tool damage'],
+        ['Dessó', '1 saga', 'Resting place damage'],
+        ['Faage arke kalaanam - saq tekkek', '1 saga', 'Property protection (cattle)'],
+        ['Faage arke kalaanam - sahada tekkek', '3 laa', 'Property protection (witness)'],
+        
+        // Section 17: Final
+        ['Xaafu', '-', 'Gossip/slander'],
+        ['Galel wayti (cate wayti)', '-', 'Disobedience'],
+        ['Qunxa biyak tekkek', '-', 'Minor injury'],
+        ['Fanaafanah tanim tekkek', '-', 'Serious injury'],
+        ['Gifftam tekkek (roocinnah tanim)', '-', 'Compensation for fear'],
+        ['Rooci edde yewqek', '-', 'Threat causing fear'],
+        ['Mirá (tu edde aame wayta way)', '-', 'Threat without basis'],
+        ['Hawi', '-', 'False accusation'],
+        ['Itta-ceele way (kaxxa num kee awka)', '-', 'Disrespect to elder'],
+        ['Itta-ceele way (nagay yan num kee biyaakita num)', '-', 'Disrespect between peers'],
+        ['Aysacowwa', '-', 'Serious false accusation'],
+        ['Rooci edde yewqek (alternative)', '-', 'Fear causing threat'],
+        ['Rado edde tekkek', '-', 'Threat that materialized'],
+        ['Nabam dagom tekkek', '-', 'Multiple offenses']
+    ]
+},
+    4: {
+    title: 'Debnek Weeqiimih Madqa',
+    subtitle: 'Debnek Weeqiimih Madqal Qellatitte Digaala (Mekla) ahak gubal geetton.',
+    description: 'Debnek Weeqiimih Madqal arrabaak xabba haanam sehdayti rooci fan mekla edde takkem Mangih Laa kinnuk amolladih addafaknu gubal wagita!',
+    note: 'Kassis: Ta madqa mangih Qasa wadaral madqaan way, sittingeyil lakqol akkiiy gersi saqal akki takkem bictah!',
+    table: [
+        // Section 1: Rooi melka (Diyata) - Homicide
+        ['Rooi melka - Russate qiden numute gile haname', '101 saga + 12 saga', 'Homicide with dagger (total 113 saga)'],
+        ['Rooi melka - Macaru numute', '1 saga (cule) + 1 saga (yeweq)', 'Homicide of elder'],
+        ['Rooi melka - Nume qidanik sara warse kalah', '101 saga rooci + 12 saga', 'Homicide without witness'],
+        ['Rooi melka - Nume kate taneh tane mogoh esserih kale', '101 saga rooci + 12 saga battileh + mago', 'Homicide of person seeking help'],
+        ['Rooi melka - Yalih amrih nume burrale kok rabeh', '12 saga (10 saga marote, 2 saga battileh)', 'Accidental death during prayer'],
+        ['Rooi melka - Gira midanissanam dise wenik', '12 saga (5 saga mekla, 7 saga maro)', 'Homicide during fire dispute'],
+        ['Rooi melka - Gira disenih hodek', '2 saga', 'Homicide after fire resolved'],
+        ['Rooi melka - Lab num', '101 saga', 'Homicide - male'],
+        ['Rooi melka - Say num', '150 saga', 'Homicide - female'],
+        
+        // Section 2: Xagar mekla (xikca) - Injuries
+        ['Xagar mekla - 1 mogoyi yixxigilek', '33 saga', 'Single tooth injury'],
+        ['Xagar mekla - 1 ibak mitto tidigilek', '33 saga', 'Single hand injury'],
+        ['Xagar mekla - 1 carrayi yidegilek', '55 saga', 'Single thigh injury'],
+        ['Xagar mekla - 1 reqaarel yidigilek', '55 saga', 'Single leg injury'],
+        ['Xagar mekla - Inkit anuk kabule yidigilek', '55 saga + maakmoh alaa + bakile', 'Multiple injuries together'],
+        ['Xagar mekla - 2 gaba kattek', '50 saga', 'Both arms cut'],
+        ['Xagar mekla - 2 ibi katek', '50 saga', 'Both hands cut'],
+        ['Xagar mekla - 2 inti kattek', '50 saga', 'Both eyes'],
+        ['Xagar mekla - Xagaral raqte wara', '2 saga', 'Wound scar'],
+        ['Xagar mekla - Mudum', '12 saga', 'Blunt injury'],
+        ['Xagar mekla - Macsa', '55 saga', 'Sexual offense'],
+        ['Xagar mekla - Siibu/amaanat gano', '14 saga', 'Breach of trust'],
+        ['Xagar mekla - Galel-way, maabbninno kee maballino', '2 saga', 'Minor dispute'],
+        ['Xagar mekla - Aysacowwa', 'biilu le (rabi edde yekkek)', 'Serious false accusation (if death results)'],
+        
+        // Section 3: Dalwa (Adultery)
+        ['Dalwa - Baruwah tan absuma kalti', '6 saga', 'Adultery with relative'],
+        ['Ginaqo barah kaltih - baqalah tete gacsenik', '5 saga (1 daba kor + 1 Ceera + 1 battile + 2 aysini)', 'Marriage dispute (returned)'],
+        ['Ginaqo barah kaltih - tete cabenik', '16 saga (1 battile + 2 aysini + 12 mekla + 1 arrawu)', 'Marriage dispute (left)'],
+        ['Caylisenta', '12 saga', 'False accusation'],
+        ['Aysinu', '6 saga', 'Mediation fee'],
+        
+        // Section 4: Theft (Garqeenik)
+        ['1 ala garageinh yusgudenik', '12 saga + 12 wadare', 'Camel theft'],
+        ['1 saga garageinh yusgudenik', '24 wadare', 'Cow theft'],
+        ['1 reyita garageinh', '6 reyta (2 batilee, 4 mekla)', 'Goat theft'],
+        ['1 marruw ciinabate yane udure garageinh', '7 wadara', 'Ram theft (with owner)'],
+        ['1 marruw ciinabate anee wa udur garageinh', '6 wadara', 'Ram theft (without owner)'],
+        ['Aka marih bedu issii saqale heenik', '12 saga (2 saga meklah, 10 saga maro)', 'Theft from another clan'],
+        ['Rakube lee numuh warse kalah - tibaa itah toqoreh', '12 saga', 'Theft of riding animal (with harm)'],
+        ['Rakube lee numuh warse kalah - sumaqisisah warisak', '1 battile saga', 'Theft of riding animal (minor)'],
+        ['Danane garqenik', '4 saga (3 sare + 1 battile)', 'Donkey theft'],
+        ['Bakile garqeenik', '12 saga', 'Mule theft'],
+        ['Gaali lac/baatil saga kee kaa', '1 saga + kaa', 'Camel herd theft'],
+        ['Laahi lac', '7 saga', 'Cattle herd theft'],
+        ['Wadar lac/baatil saga kee kaa', '1 saga + kaa', 'Sheep herd theft'],
+        ['Illi lac/baatil saga kee kaa', '1 saga + kaa', 'Goat herd theft'],
+        ['Danana /baatil saga kee kaa', '1 saga + kaa', 'Donkey herd theft'],
+        
+        // Section 5: Leek / qayso (Water & Grazing Disputes)
+        ['Qeela', '12 saga', 'Well/water access dispute'],
+        ['Saara', '1 saga', 'Grazing dispute'],
+        ['Afliita', '2 saga', 'Boundary dispute'],
+        ['Dessoh arac', '1 saga', 'Resting place dispute'],
+        
+        // Section 6: Xagar silaacih seelabu (Weapon Threats)
+        ['Bandug', '12 saga', 'Firearm threat'],
+        ['Gile', '12 saga', 'Dagger threat'],
+        ['Caxxa (rabe numuk kaleenik)', '12 saga', 'Wound from deceased'],
+        ['Inti mali markasa', '2 saga', 'Blindness cause'],
+        ['Iba mali mandaada', '2 saga', 'Hand disability cause'],
+        
+        // Section 7: Xaafu (Gossip/Slander)
+        ['Xaafu - 3 arrabak raddem', '3 laa', 'Gossip from 3 sources'],
+        
+        // Section 8: Cayilisanam (Defamation)
+        ['Baruwa cayilisenik', '12 saga (6 saga maro, 6 saga meklah)', 'Defamation of family'],
+        ['Booka lee maqayi/niyatanam', '2 saga', 'Minor insult'],
+        ['Booka lee cayilisanaam', '12 saga', 'Major insult'],
+        ['Baqala lee barah burah culo', '1 saga (qarii saga lee)', 'Insult to wife'],
+        ['Baqala lee barrate yibixxanik fayixx lee', '3 saga (1 battile, 2 ayisinu)', 'Insult to wife (public)'],
+        ['Baqala lee baraate yebeden nume migida bara baqalate heh rabek', '101 saga + 12 saga battileh', 'Insult leading to death'],
+        ['Teedeqe baxuwwa', 'xallaay, isilimma intam fan barle/biilu', 'False accusation (various)'],
+        
+        // Section 9: Maqaktina baayisee marrii
+        ['Maqaktina baayisee marrii', '55 saga', 'False accusation of theft'],
+        
+        // Section 10: Kafirrina macsa abeenik
+        ['Kafirrina macsa abeenik', '55 saga', 'False accusation of apostasy'],
+        
+        // Section 11: Hawi wagsisak (False Accusation)
+        ['Hawi - Name kedoyi tame wagalegale wayitah', '55 saga', 'False accusation between friends'],
+        ['Hawi - Name nume cadale tame wagalegale wayitah', '2 saga', 'False accusation (minor)']
+    ]
+},
+5: {
+    title: 'Badoyta-Meelah Madqa',
+    subtitle: 'Badoyta-Meelah Madqal Qellatitte Digaala (Mekla) ahak gubal geetton.',
+    description: 'Badoyta-Meelah Madqal arrabaak xabba haanam sehdayti rooci fan mekla edde takkem gersi madqooqik baxsa lennal, Galaay, Laay Wadar kee Illi inkih kinnuk addafaknu ahak gubal wagita!',
+    note: 'Kassis: Ta madqa mangih Qasa wadaral madqaan way, sittingeyil lakqol akkiiy gersi saqal akki takkeh!',
+    table: [
+        // Section 1: Sahdaytu Rooci (Diyata) - Homicide
+        ['Sahdaytu Rooci - Lab num', '92 laa', 'Homicide compensation for male'],
+        ['Sahdaytu Rooci - Say num', '49 laa', 'Homicide compensation for female'],
+        ['Sahdaytu Rooci - Qunxa num', '93 laa', 'Homicide compensation for minor'],
+        ['Sahdaytu Rooci - Sooniba', '75 laa', 'Homicide compensation for pregnant woman'],
+        
+        // Section 2: Xagara (xicka) - Injuries
+        ['Inki inti (One Eye)', '37 laa + 2 wadara', 'Loss of one eye'],
+        ['Namma inti (Both Eyes)', '62 laa + 2 wadara', 'Loss of both eyes'],
+        ['Ibi gilet yiggiriqqek', '37 laa + 2 wadara', 'Hand severed'],
+        ['Iba gulubul kaleenik', '37 laa + 2 wadara', 'Hand deeply cut'],
+        ['Namma gaba (Both Arms)', '-', 'Both arms (no value specified)'],
+        ['Inki gaba (One Arm)', '-', 'One arm (no value specified)'],
+        ['Gaba mogoyul kaleenik', '38 laa + 2 maruwu', 'Arm cut at joint'],
+        ['Gaba cusulul kattek', '37 laa + 2 maruwu', 'Arm cut at wrist'],
+        ['Gaba sunkul kattek', '38 laa', 'Arm cut at elbow'],
+        ['Migdi gaba kattek', '38 laa + fuuto maruwu', 'Right arm cut'],
+        ['Lakbal kattek', '37 laa + 2 maruwu', 'Left arm cut'],
+        ['Gabak canti ramad yiggiriqqek', '37 laa + 2 maruwu', 'Arm severely injured'],
+        ['Inki ayti (One Ear)', '15 laa', 'Loss of one ear'],
+        ['Nammayti (Both Ears)', '16 laa', 'Loss of both ears'],
+        ['Muxii kee buxxe', '49 laa + 2 wadara', 'Head and neck injury'],
+        ['Arraba ragidik kattek', '39 laa + 2 wadara', 'Tongue cut'],
+        ['Sana - tattab/daban katek', 'Mekla akak Caxxi', 'Nose cut (case by case)'],
+        ['Sana - san inkih katek', 'qidol take', 'Nose completely cut'],
+        ['Dagâ sokto inkih kattek', '38 laa + 2 maruwu', 'Ear cut completely'],
+        ['Gubi sokto inkih kattek', '38 laa + 2 maruwu', 'Lip cut completely'],
+        ['Kamuusu gilet xageenik', 'Mekla caxxi qidol takke', 'Tooth injury (case by case)'],
+        ['Feeraari - Gili', '27 laa + 2 wadara', 'Thumb injury'],
+        ['Feeraari - qunxa feera', '22 laa + 2 wadara', 'Small finger injury'],
+        ['Feeraari - gaalak xeerak', '26 laa + 2 wadara', 'Finger from camel bite'],
+        ['Feeraari - sumaq feera', '27 laa + 2 wadara', 'Middle finger injury'],
+        ['Feeraari - qunxa feerah maqanxa', '25 laa + 2 wadara', 'Small finger nail injury'],
+        ['Moddiini - 2 Dagâ tasuuli', '16 laa + 1 marwu', 'Two joint injury'],
+        ['Moddiini - 1 Dagâ tasuuli', '16 laa', 'One joint injury'],
+        ['Gubi', '38 laa + 2 maruwu', 'Lip injury'],
+        ['Tassuuli maqanxá', '16 laa', 'Nail bed injury'],
+        ['Caarí maaqiyo', '-', 'Minor scratch (no value)'],
+        ['Inki kaxxa Qaxiita raddek', '17 laa', 'One major fracture'],
+        ['5 kaxxa qaxi inkih radek', '19 laa', 'Five major fractures'],
+        ['Inki Masangalê lafá', '2 laa + 1 maruwu', 'One rib fracture'],
+        ['Namma masaganle lafa', '2 laa + 1 maruwu', 'Two rib fractures'],
+        ['Xukcunto', '37 laa + 2 wadara', 'Severe beating'],
+        ['Dadaba (ibak gommo diglo)', '37 laa + 2 maruwu', 'Hand paralysis'],
+        ['Angu - saynum (1 angu)', '18 laa kee 2 wadara', 'Miscarriage - one female'],
+        ['Namma nagu kaleenik', '24 laa + 2 wadara', 'Two miscarriages'],
+        ['Angu - labnum', 'Mekla caddi qidol le', 'Miscarriage - male (case by case)'],
+        ['Qanxix (caxxa) - cisri amoh', '17 laa + 2 wadara', 'Minor wound (small)'],
+        ['Qanxix (caxxa) - Kobren amoh', '16 laa + 2 wadara', 'Minor wound (large)'],
+        ['Qanxix (Gilé) - ixu kee lafa maleh', 'Mekla caxxi qidol takke', 'Dagger wound without bone'],
+        ['Lafâ baxá akak tewqek - urtek', 'Mekla Caxxi qidol take', 'Bone injury (with recovery)'],
+        ['Lafa tewqeh ure waytek', 'Mekla Caxxi qidol take', 'Bone injury (no recovery)'],
+        ['Koomam', 'Lem mali', 'Bruise (no value)'],
+        ['Filla (gilet xaggiimeeh aggiriqqe wek)', 'Mekla caddi qidol take', 'Vulva injury (severe)'],
+        ['Filla - fillak qabli ramad gilet xaggiimek', '37 laa + 2 wadar', 'Vulva injury (minor)'],
+        ['Sarba (xaggimtek)', 'Mekla caxxi qidol takke', 'Circumcision injury'],
+        
+        // Section 3: Agrá (Insults)
+        ['Silac maleh - fooca yootekeenik', '1 saga', 'Insult to face'],
+        ['Silac maleh - inti yooteenik', '12 laa', 'Insult with eye gesture'],
+        ['Ferrantole gaba tekkek', '14 laa', 'Insult with hand gesture'],
+        ['Komuuqusa tekkek', '12 laa', 'Scratch insult'],
+        ['Aytih atka', 'Qeeranna saga le', 'Ear injury insult'],
+        ['Ibi atka', 'Qeeranna saga le', 'Hand injury insult'],
+        ['Kabellak gasiyyo - Umaane', 'sagale', 'False accusation (bad intent)'],
+        
+        // Section 4: Silac luk (With weapon)
+        ['Gilé (siibó)', '1 saga', 'Dagger threat'],
+        ['Seefi (siibó) - seef gileh innal radek', '1 saga', 'Sword threat with dagger'],
+        ['Macaxu (gasiyyo)', '16 laa', 'Threat'],
+        ['Halangi - abba tekkek', '2 laa', 'Property damage (elder)'],
+        ['Halangi - geeri mara tekkek', '2 laa', 'Property damage (family)'],
+        ['Girâ tiqó kee ascossa', '12 laa', 'Fire damage'],
+        
+        // Section 5: Quxuusu/Quntuuro (Theft)
+        ['Quxuusu/Quntuuro - qunxa num tekkek', '3 laa', 'Theft from minor'],
+        ['Soola num tekkek', '2 laa', 'Theft from sitting person'],
+        ['Daffeya', '2 laa', 'Theft from sleeping person'],
+        ['Xiinit yan num tekkek', '2 laa', 'Theft from elderly'],
+        
+        // Section 6: Aroowu/aro
+        ['Aroowu - Qabaltek', 'Moddina raat yakkem saga take', 'Dispute with agreement'],
+        ['Aroowu - qable waytek', 'Qeerannale le', 'Dispute without agreement'],
+        
+        // Section 7: Lifqi (Property)
+        ['Lifqi - inki lifiq yeyyeeqeenik', '1 reyta', 'Property dispute (single)'],
+        ['Lifqi - lifiqa inkih yeyyeeqeenik', '1 sagale', 'Property dispute (complete)'],
+        ['Lifqi - moddinah arot yeyyeeqeenik', 'Lifiq amol sagale', 'Property dispute (partial)'],
+        ['Lifqit Qable waytek', 'Mekla mali', 'Property without agreement (no value)'],
+        
+        // Section 8: Qawulu & Leê kumma
+        ['Qawulu', '1 saga', 'Verbal agreement breach'],
+        ['Qawulu - qaulut udurrutek', '2 laa', 'Verbal agreement (minor)'],
+        ['Leê kumma - num gexxa leet ruubeenik', '1 sagale', 'Water dispute (walking)'],
+        ['Leê kumma - num digaala leet rabek', 'Rooci lem le', 'Water dispute (death)'],
+        ['Leê kumma - num qeelat gasiyeenih rabek', 'Tu mali', 'Water dispute (well, no value)'],
+        ['Leê kumma - num qeelat gasiyeenih biyaakitek', 'Biilu/rooci mekla le', 'Water dispute (well, injury)'],
+        ['Leê kumma - num qeelat gasiyeenih biyaakitewek', 'Umaane sagale', 'Water dispute (well, no injury)'],
+        
+        // Section 9: Xarbá (War/Conflict)
+        ['Gennaaqoytá caylisaanam', '12 laa', 'False accusation of theft'],
+        ['Gennaaqoytat le fayxiik yangooroweenim', '7 laa', 'Refusal to cooperate'],
+        ['Gennaaqoytak fidô fayxih, gabah yabbixeenim', '7 laa', 'Physical interference'],
+        ['Gennaaqoytá fidô fayxih yaabisaanam', '7 laa', 'Verbal interference'],
+        ['Gennaaqoytal fidô fayxih qari culaanam - fidoh angaaraw yekkek', '12 laa', 'Home entry (invited)'],
+        ['Gennaaqoytal fidô fayxih qari culaanam - other', '12 laa', 'Home entry (other)'],
+        ['Dudde Baxuwwa Caylisaanam', '14 laa + 6 wadara', 'False accusation (repeated)'],
+        
+        // Section 10: Unintentional Death
+        ['Gufe wayte awká', '12 laa', 'Unintentional death of child'],
+        
+        // Section 11: Saqá (Theft)
+        ['Alá garqimtek', '24 laa + seefah 12 wadara / illi', 'Camel theft'],
+        ['Sagá garqimtek', '7 laa', 'Cow theft'],
+        ['Idá garqimtek', '7 wadara', 'Sheep theft'],
+        ['Reytá garqimtek - dabeeli garqimek', '7 wadara', 'Goat theft (young)'],
+        ['Reytá garqimtek - maruw garqimek', '8 wadara', 'Goat theft (ram)'],
+        ['Farasa garqimek', '12 laa', 'Horse theft'],
+        ['Okló garqimtek', '3 laa', 'Donkey theft'],
+        ['Bakli garqimtek', '12 laa', 'Mule theft'],
+        
+        // Section 12: Qadab le qideenik (Theft with value)
+        ['Rakuubu mataakal suge wek', 'Tu mali', 'Theft of riding animal (no value)'],
+        ['Qebi le Sagá', 'Lem mali', 'Theft of cow (no value)'],
+        ['Qebi sinni Farasa qideenik', '12 laa', 'Theft of horse (with value)'],
+        ['Qebi sinni Bakil qideenik', '12 laa', 'Theft of mule (with value)'],
+        ['Danana', '3 laa', 'Donkey theft'],
+        
+        // Section 13: Geeri Duyyé (False Accusation)
+        ['Siyaakata', '12 laa', 'False accusation of lying'],
+        ['Lakqó', '12 laa + garqeenimi', 'False accusation of fraud'],
+        ['Diinit yan numih Silaac garqeenik', 'Seelabi lem le, mekla akak 12 laa', 'False accusation against religious person'],
+        ['Maaqo', 'Lem mali', 'False accusation of bad food (no value)'],
+        ['Silac kaafir innal katek', '13 laa', 'False accusation of apostasy'],
+        
+        // Section 14: Arqitek / cararise (Damage)
+        ['Arqitek / cararise', '12 laa', 'Property damage'],
+        ['Iraawo Kusrá', '-', 'Property damage (minor, no value)'],
+        ['Iraawo subla', '12 laa', 'Property damage (major)'],
+        ['Iraawo kasalto', '6 wadara', 'Property damage (moderate)'],
+        ['Darqi qarriseenik', '12 laa', 'Theft of property'],
+        ['Darqi - xagar sartan carriseenik', '12 laa', 'Theft of property (clothing)'],
+        ['Darqi - qayso carriseenik', '4 laa', 'Theft of property (minor)'],
+        ['Dabqi qarriseenik', '12 laa', 'Major property theft'],
+        
+        // Section 15: Aggilek / qanxise (Wounding)
+        ['Caxxa', 'Lem mali', 'Minor wound (no value)'],
+        ['Intimali markassa', '1 saga', 'Blinding'],
+        ['Iba-mali mandaada', '1 saga', 'Hand disability'],
+        ['Afleyta gilal', '1 Saga', 'Lock injury'],
+        ['Afleyta cagay', '2 laa', 'Lock damage'],
+        ['Dora', '1 saga', 'Wall damage'],
+        ['Targá', '1 saga', 'Fence damage'],
+        ['Uguçu - kabella qanxiseenik', '1 saga', 'Door damage'],
+        ['Uguçu - saara', '1 saga', 'Grazing damage'],
+        ['Uguçu - koxxa', '2 laa', 'Minor damage'],
+        ['Uguçu - girib', '1 saga', 'Tree damage'],
+        ['Uguçu - qokkasa', '1 saga', 'Crop damage'],
+        ['Uguçu - uluqta', '1 saga', 'Tool damage'],
+        ['Uguçu - ayni', '12 laa', 'Boundary damage'],
+        ['Uguçu - baleyso buuleenik', '12 laa', 'Resting place damage'],
+        ['Lac dabqah baaxol gace kalaanam', '1 saga', 'Livestock protection'],
+        ['Saq Faage arke kalaanam', '1 saga', 'Cattle protection'],
+        
+        // Section 16: Final
+        ['Xaafu', '3 wadar / 1 saga', 'Gossip/slander'],
+        ['Galel wayti (cate wayti)', '1 saga', 'Disobedience'],
+        ['Hawi', '1 saga', 'False accusation'],
+        ['Aysacowwa', '25 laa', 'Serious false accusation'],
+        ['Rooci edde yewqek', '1 saga', 'Threat causing fear'],
+        ['Rado edde tekkek', '1 saga', 'Threat that materialized'],
+        ['Rooci edde awqe week', '1 saga', 'Threat without basis']
+    ]
+},
+    5: {
+    title: 'Badoyta-Meelah Madqa',
+    subtitle: 'Contemporary Adaptation • Afar Customary Law',
+    description: 'Badoytâ meelah madqak dagar meklaali - Modern adaptation with camels and cash equivalents.',
+    note: 'Note: laa = camels, wadara = sheep, maruwu = ram, saga = cow. Contemporary version allows flexibility.',
+    table: [
+        // Section 1: Sahdaytu Rooci (Diyata) - Homicide
+        ['Sahdaytu Rooci - Lab num', '92 laa', 'Homicide compensation for male'],
+        ['Sahdaytu Rooci - Say num', '49 laa', 'Homicide compensation for female'],
+        ['Sahdaytu Rooci - Qunxa num', '93 laa', 'Homicide compensation for minor'],
+        ['Sahdaytu Rooci - Sooniba', '75 laa', 'Homicide compensation for pregnant woman'],
+        
+        // Section 2: Xagara (xicka) - Injuries
+        ['Inki inti (One Eye)', '37 laa + 2 wadara', 'Loss of one eye'],
+        ['Namma inti (Both Eyes)', '62 laa + 2 wadara', 'Loss of both eyes'],
+        ['Ibi gilet yiggiriqqek', '37 laa + 2 wadara', 'Hand severed'],
+        ['Iba gulubul kaleenik', '37 laa + 2 wadara', 'Hand deeply cut'],
+        ['Namma gaba (Both Arms)', '-', 'Both arms (no value specified)'],
+        ['Inki gaba (One Arm)', '-', 'One arm (no value specified)'],
+        ['Gaba mogoyul kaleenik', '38 laa + 2 maruwu', 'Arm cut at joint'],
+        ['Gaba cusulul kattek', '37 laa + 2 maruwu', 'Arm cut at wrist'],
+        ['Gaba sunkul kattek', '38 laa', 'Arm cut at elbow'],
+        ['Migdi gaba kattek', '38 laa + fuuto maruwu', 'Right arm cut'],
+        ['Lakbal kattek', '37 laa + 2 maruwu', 'Left arm cut'],
+        ['Gabak canti ramad yiggiriqqek', '37 laa + 2 maruwu', 'Arm severely injured'],
+        ['Inki ayti (One Ear)', '15 laa', 'Loss of one ear'],
+        ['Nammayti (Both Ears)', '16 laa', 'Loss of both ears'],
+        ['Muxii kee buxxe', '49 laa + 2 wadara', 'Head and neck injury'],
+        ['Arraba ragidik kattek', '39 laa + 2 wadara', 'Tongue cut'],
+        ['Sana - tattab/daban katek', 'Mekla akak Caxxi', 'Nose cut (case by case)'],
+        ['Sana - san inkih katek', 'qidol take', 'Nose completely cut'],
+        ['Dagâ sokto inkih kattek', '38 laa + 2 maruwu', 'Ear cut completely'],
+        ['Gubi sokto inkih kattek', '38 laa + 2 maruwu', 'Lip cut completely'],
+        ['Kamuusu gilet xageenik', 'Mekla caxxi qidol takke', 'Tooth injury (case by case)'],
+        ['Feeraari - Gili', '27 laa + 2 wadara', 'Thumb injury'],
+        ['Feeraari - qunxa feera', '22 laa + 2 wadara', 'Small finger injury'],
+        ['Feeraari - gaalak xeerak', '26 laa + 2 wadara', 'Finger from camel bite'],
+        ['Feeraari - sumaq feera', '27 laa + 2 wadara', 'Middle finger injury'],
+        ['Feeraari - qunxa feerah maqanxa', '25 laa + 2 wadara', 'Small finger nail injury'],
+        ['Moddiini - 2 Dagâ tasuuli', '16 laa + 1 marwu', 'Two joint injury'],
+        ['Moddiini - 1 Dagâ tasuuli', '16 laa', 'One joint injury'],
+        ['Gubi', '38 laa + 2 maruwu', 'Lip injury'],
+        ['Tassuuli maqanxá', '16 laa', 'Nail bed injury'],
+        ['Caarí maaqiyo', '-', 'Minor scratch (no value)'],
+        ['Inki kaxxa Qaxiita raddek', '17 laa', 'One major fracture'],
+        ['5 kaxxa qaxi inkih radek', '19 laa', 'Five major fractures'],
+        ['Inki Masangalê lafá', '2 laa + 1 maruwu', 'One rib fracture'],
+        ['Namma masaganle lafa', '2 laa + 1 maruwu', 'Two rib fractures'],
+        ['Xukcunto', '37 laa + 2 wadara', 'Severe beating'],
+        ['Dadaba (ibak gommo diglo)', '37 laa + 2 maruwu', 'Hand paralysis'],
+        ['Angu - saynum (1 angu)', '18 laa kee 2 wadara', 'Miscarriage - one female'],
+        ['Namma nagu kaleenik', '24 laa + 2 wadara', 'Two miscarriages'],
+        ['Angu - labnum', 'Mekla caddi qidol le', 'Miscarriage - male (case by case)'],
+        ['Qanxix (caxxa) - cisri amoh', '17 laa + 2 wadara', 'Minor wound (small)'],
+        ['Qanxix (caxxa) - Kobren amoh', '16 laa + 2 wadara', 'Minor wound (large)'],
+        ['Qanxix (Gilé) - ixu kee lafa maleh', 'Mekla caxxi qidol takke', 'Dagger wound without bone'],
+        ['Lafâ baxá akak tewqek - urtek', 'Mekla Caxxi qidol take', 'Bone injury (with recovery)'],
+        ['Lafa tewqeh ure waytek', 'Mekla Caxxi qidol take', 'Bone injury (no recovery)'],
+        ['Koomam', 'Lem mali', 'Bruise (no value)'],
+        ['Filla (gilet xaggiimeeh aggiriqqe wek)', 'Mekla caddi qidol take', 'Vulva injury (severe)'],
+        ['Filla - fillak qabli ramad gilet xaggiimek', '37 laa + 2 wadar', 'Vulva injury (minor)'],
+        ['Sarba (xaggimtek)', 'Mekla caxxi qidol takke', 'Circumcision injury'],
+        
+        // Section 3: Agrá (Insults)
+        ['Silac maleh - fooca yootekeenik', '1 saga', 'Insult to face'],
+        ['Silac maleh - inti yooteenik', '12 laa', 'Insult with eye gesture'],
+        ['Ferrantole gaba tekkek', '14 laa', 'Insult with hand gesture'],
+        ['Komuuqusa tekkek', '12 laa', 'Scratch insult'],
+        ['Aytih atka', 'Qeeranna saga le', 'Ear injury insult'],
+        ['Ibi atka', 'Qeeranna saga le', 'Hand injury insult'],
+        ['Kabellak gasiyyo - Umaane', 'sagale', 'False accusation (bad intent)'],
+        
+        // Section 4: Silac luk (With weapon)
+        ['Gilé (siibó)', '1 saga', 'Dagger threat'],
+        ['Seefi (siibó) - seef gileh innal radek', '1 saga', 'Sword threat with dagger'],
+        ['Macaxu (gasiyyo)', '16 laa', 'Threat'],
+        ['Halangi - abba tekkek', '2 laa', 'Property damage (elder)'],
+        ['Halangi - geeri mara tekkek', '2 laa', 'Property damage (family)'],
+        ['Girâ tiqó kee ascossa', '12 laa', 'Fire damage'],
+        
+        // Section 5: Quxuusu/Quntuuro (Theft)
+        ['Quxuusu/Quntuuro - qunxa num tekkek', '3 laa', 'Theft from minor'],
+        ['Soola num tekkek', '2 laa', 'Theft from sitting person'],
+        ['Daffeya', '2 laa', 'Theft from sleeping person'],
+        ['Xiinit yan num tekkek', '2 laa', 'Theft from elderly'],
+        
+        // Section 6: Aroowu/aro
+        ['Aroowu - Qabaltek', 'Moddina raat yakkem saga take', 'Dispute with agreement'],
+        ['Aroowu - qable waytek', 'Qeerannale le', 'Dispute without agreement'],
+        
+        // Section 7: Lifqi (Property)
+        ['Lifqi - inki lifiq yeyyeeqeenik', '1 reyta', 'Property dispute (single)'],
+        ['Lifqi - lifiqa inkih yeyyeeqeenik', '1 sagale', 'Property dispute (complete)'],
+        ['Lifqi - moddinah arot yeyyeeqeenik', 'Lifiq amol sagale', 'Property dispute (partial)'],
+        ['Lifqit Qable waytek', 'Mekla mali', 'Property without agreement (no value)'],
+        
+        // Section 8: Qawulu & Leê kumma
+        ['Qawulu', '1 saga', 'Verbal agreement breach'],
+        ['Qawulu - qaulut udurrutek', '2 laa', 'Verbal agreement (minor)'],
+        ['Leê kumma - num gexxa leet ruubeenik', '1 sagale', 'Water dispute (walking)'],
+        ['Leê kumma - num digaala leet rabek', 'Rooci lem le', 'Water dispute (death)'],
+        ['Leê kumma - num qeelat gasiyeenih rabek', 'Tu mali', 'Water dispute (well, no value)'],
+        ['Leê kumma - num qeelat gasiyeenih biyaakitek', 'Biilu/rooci mekla le', 'Water dispute (well, injury)'],
+        ['Leê kumma - num qeelat gasiyeenih biyaakitewek', 'Umaane sagale', 'Water dispute (well, no injury)'],
+        
+        // Section 9: Xarbá (War/Conflict)
+        ['Gennaaqoytá caylisaanam', '12 laa', 'False accusation of theft'],
+        ['Gennaaqoytat le fayxiik yangooroweenim', '7 laa', 'Refusal to cooperate'],
+        ['Gennaaqoytak fidô fayxih, gabah yabbixeenim', '7 laa', 'Physical interference'],
+        ['Gennaaqoytá fidô fayxih yaabisaanam', '7 laa', 'Verbal interference'],
+        ['Gennaaqoytal fidô fayxih qari culaanam - fidoh angaaraw yekkek', '12 laa', 'Home entry (invited)'],
+        ['Gennaaqoytal fidô fayxih qari culaanam - other', '12 laa', 'Home entry (other)'],
+        ['Dudde Baxuwwa Caylisaanam', '14 laa + 6 wadara', 'False accusation (repeated)'],
+        
+        // Section 10: Unintentional Death
+        ['Gufe wayte awká', '12 laa', 'Unintentional death of child'],
+        
+        // Section 11: Saqá (Theft)
+        ['Alá garqimtek', '24 laa + seefah 12 wadara / illi', 'Camel theft'],
+        ['Sagá garqimtek', '7 laa', 'Cow theft'],
+        ['Idá garqimtek', '7 wadara', 'Sheep theft'],
+        ['Reytá garqimtek - dabeeli garqimek', '7 wadara', 'Goat theft (young)'],
+        ['Reytá garqimtek - maruw garqimek', '8 wadara', 'Goat theft (ram)'],
+        ['Farasa garqimek', '12 laa', 'Horse theft'],
+        ['Okló garqimtek', '3 laa', 'Donkey theft'],
+        ['Bakli garqimtek', '12 laa', 'Mule theft'],
+        
+        // Section 12: Qadab le qideenik (Theft with value)
+        ['Rakuubu mataakal suge wek', 'Tu mali', 'Theft of riding animal (no value)'],
+        ['Qebi le Sagá', 'Lem mali', 'Theft of cow (no value)'],
+        ['Qebi sinni Farasa qideenik', '12 laa', 'Theft of horse (with value)'],
+        ['Qebi sinni Bakil qideenik', '12 laa', 'Theft of mule (with value)'],
+        ['Danana', '3 laa', 'Donkey theft'],
+        
+        // Section 13: Geeri Duyyé (False Accusation)
+        ['Siyaakata', '12 laa', 'False accusation of lying'],
+        ['Lakqó', '12 laa + garqeenimi', 'False accusation of fraud'],
+        ['Diinit yan numih Silaac garqeenik', 'Seelabi lem le, mekla akak 12 laa', 'False accusation against religious person'],
+        ['Maaqo', 'Lem mali', 'False accusation of bad food (no value)'],
+        ['Silac kaafir innal katek', '13 laa', 'False accusation of apostasy'],
+        
+        // Section 14: Arqitek / cararise (Damage)
+        ['Arqitek / cararise', '12 laa', 'Property damage'],
+        ['Iraawo Kusrá', '-', 'Property damage (minor, no value)'],
+        ['Iraawo subla', '12 laa', 'Property damage (major)'],
+        ['Iraawo kasalto', '6 wadara', 'Property damage (moderate)'],
+        ['Darqi qarriseenik', '12 laa', 'Theft of property'],
+        ['Darqi - xagar sartan carriseenik', '12 laa', 'Theft of property (clothing)'],
+        ['Darqi - qayso carriseenik', '4 laa', 'Theft of property (minor)'],
+        ['Dabqi qarriseenik', '12 laa', 'Major property theft'],
+        
+        // Section 15: Aggilek / qanxise (Wounding)
+        ['Caxxa', 'Lem mali', 'Minor wound (no value)'],
+        ['Intimali markassa', '1 saga', 'Blinding'],
+        ['Iba-mali mandaada', '1 saga', 'Hand disability'],
+        ['Afleyta gilal', '1 Saga', 'Lock injury'],
+        ['Afleyta cagay', '2 laa', 'Lock damage'],
+        ['Dora', '1 saga', 'Wall damage'],
+        ['Targá', '1 saga', 'Fence damage'],
+        ['Uguçu - kabella qanxiseenik', '1 saga', 'Door damage'],
+        ['Uguçu - saara', '1 saga', 'Grazing damage'],
+        ['Uguçu - koxxa', '2 laa', 'Minor damage'],
+        ['Uguçu - girib', '1 saga', 'Tree damage'],
+        ['Uguçu - qokkasa', '1 saga', 'Crop damage'],
+        ['Uguçu - uluqta', '1 saga', 'Tool damage'],
+        ['Uguçu - ayni', '12 laa', 'Boundary damage'],
+        ['Uguçu - baleyso buuleenik', '12 laa', 'Resting place damage'],
+        ['Lac dabqah baaxol gace kalaanam', '1 saga', 'Livestock protection'],
+        ['Saq Faage arke kalaanam', '1 saga', 'Cattle protection'],
+        
+        // Section 16: Final
+        ['Xaafu', '3 wadar / 1 saga', 'Gossip/slander'],
+        ['Galel wayti (cate wayti)', '1 saga', 'Disobedience'],
+        ['Hawi', '1 saga', 'False accusation'],
+        ['Aysacowwa', '25 laa', 'Serious false accusation'],
+        ['Rooci edde yewqek', '1 saga', 'Threat causing fear'],
+        ['Rado edde tekkek', '1 saga', 'Threat that materialized'],
+        ['Rooci edde awqe week', '1 saga', 'Threat without basis']
+    ]
+}
+};
+        // Open Mada'a Table Modal
+        function openMadaaTableModal(version) {
+            const data = madaaFullData[version];
+            if (!data) return;
+            
+            document.getElementById('madaaModalTitle').textContent = data.title;
+            document.getElementById('madaaModalSubtitle').textContent = data.subtitle;
+            document.getElementById('madaaModalDescription').textContent = data.description;
+            document.getElementById('madaaModalNote').textContent = data.note;
+            
+            const tableContainer = document.getElementById('madaaTableContainer');
+            tableContainer.innerHTML = `
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Offense</th>
+                            <th>Compensation</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${data.table.map(row => `
+                            <tr>
+                                <td>${row[0]}</td>
+                                <td>${row[1]}</td>
+                                <td>${row[2]}</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            `;
+            
+            document.getElementById('madaaTableModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
         }
         
-        loadContent();
-    </script>
+        function closeMadaaTableModal() {
+            document.getElementById('madaaTableModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // General Afarre Mada'a Modal Functions
+        function openGeneralMadaaModal() {
+            document.getElementById('generalMadaaModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeGeneralMadaaModal() {
+            document.getElementById('generalMadaaModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeMadaaTableModal();
+                closeGeneralMadaaModal();
+            }
+        });
+</script>
 </body>
 </html>

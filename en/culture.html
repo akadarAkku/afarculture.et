@@ -3,63 +3,652 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Afar Culture - Traditions & Heritage</title>
-    <meta name="description" content="Explore Afar cultural traditions, attire, oral traditions, and customs">
+    <title>Afar Culture - Traditions, Customs & Heritage</title>
+    <meta name="description" content="Explore the rich cultural traditions of the Afar people, including social structure, traditional attire, ceremonies, and oral traditions">
     <link rel="icon" href="../assets/images/favicon.png" type="image/x-icon">
     
+    <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
     
     <style>
-        :root { --primary-blue: #1a3a5c; --secondary-blue: #2c5f7c; --accent-gold: #ffd700; }
-        body { font-family: 'Poppins', sans-serif; background: #f8f9fa; }
-        .navbar { background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%); padding: 15px 0; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
-        .nav-link { color: white !important; font-weight: 500; margin: 0 10px; transition: all 0.3s ease; }
-        .nav-link:hover { color: var(--accent-gold) !important; }
-        .lang-btn { background: rgba(255,255,255,0.2); color: white; padding: 8px 15px; border-radius: 20px; text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; }
-        .lang-btn:hover, .lang-btn.active { background: var(--accent-gold); color: var(--primary-blue); }
-        .page-header { background: linear-gradient(rgba(26,58,92,0.85), rgba(44,95,124,0.9)), url('https://images.unsplash.com/photo-1590073242678-70ee3fc28f8a?w=1950&q=80'); background-size: cover; background-position: center; color: white; padding: 80px 0; text-align: center; }
-        .page-header h1 { font-size: 3.5rem; font-weight: 700; }
-        .culture-section { padding: 80px 0; }
-        .culture-card { background: white; border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); height: 100%; border-bottom: 4px solid var(--secondary-blue); transition: all 0.3s ease; }
-        .culture-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(26,58,92,0.15); }
-        .culture-icon { width: 70px; height: 70px; background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue)); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
-        .culture-icon i { font-size: 30px; color: var(--accent-gold); }
-        .culture-card h3 { color: var(--primary-blue); font-weight: 600; margin-bottom: 15px; }
-        .culture-card p { color: #666; line-height: 1.8; }
-        .btn-read-more { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--secondary-blue); border: none; padding: 8px 0; font-weight: 600; cursor: pointer; margin-top: 10px; transition: all 0.3s ease; }
-        .btn-read-more:hover { color: var(--primary-blue); }
-        .btn-read-more i { transition: transform 0.3s ease; }
-        .btn-read-more:hover i { transform: translateX(5px); }
-        .full-text { margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee; display: none; }
-        .full-text h4 { color: var(--primary-blue); font-weight: 600; margin: 15px 0 8px; }
-        .footer { background: #0f2640; color: white; padding: 60px 0 20px; }
-        .footer h5 { color: var(--accent-gold); margin-bottom: 20px; }
-        .footer-links { list-style: none; padding: 0; }
-        .footer-links li { margin-bottom: 10px; }
-        .footer-links a { color: #ccc; text-decoration: none; transition: all 0.3s ease; }
-        .footer-links a:hover { color: var(--accent-gold); padding-left: 5px; }
-        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 40px; padding-top: 20px; text-align: center; color: #aaa; }
-        .back-to-top { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background: var(--primary-blue); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 99; }
-        .back-to-top.show { opacity: 1; visibility: visible; }
-        .back-to-top:hover { background: var(--accent-gold); color: var(--primary-blue); }
-        @media (max-width: 768px) { .page-header h1 { font-size: 2.5rem; } }
+        :root {
+            --primary-blue: #1a3a5c;
+            --secondary-blue: #2c5f7c;
+            --accent-gold: #ffd700;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f8f9fa;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            padding: 15px 0;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand img {
+            height: 50px;
+        }
+        
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--accent-gold) !important;
+        }
+        
+        .language-selector {
+            display: flex;
+            gap: 10px;
+            margin-left: 20px;
+        }
+        
+        .lang-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-btn:hover, .lang-btn.active {
+            background: var(--accent-gold);
+            color: var(--primary-blue);
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(26,58,92,0.85), rgba(44,95,124,0.9)), url('https://images.unsplash.com/photo-1590073242678-70ee3fc28f8a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        /* Content Sections */
+        .culture-section {
+            padding: 80px 0;
+        }
+        
+        .culture-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            height: 100%;
+            transition: all 0.3s ease;
+            border-bottom: 4px solid var(--secondary-blue);
+        }
+        
+        .culture-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(26,58,92,0.15);
+        }
+        
+        .culture-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .culture-icon i {
+            font-size: 30px;
+            color: var(--accent-gold);
+        }
+        
+        .culture-card h3 {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .culture-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        /* Tradition Timeline */
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 40px;
+        }
+        
+        .timeline-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-gold);
+            font-size: 24px;
+            margin-right: 30px;
+            flex-shrink: 0;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            flex-grow: 1;
+        }
+        
+        .timeline-content h4 {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        /* Image Gallery */
+        .culture-gallery {
+            margin-top: 30px;
+        }
+        
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Footer */
+        .footer {
+            background: #0f2640;
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer h5 {
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-gold);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--accent-gold);
+            color: var(--primary-blue);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 40px;
+            padding-top: 20px;
+            text-align: center;
+            color: #aaa;
+        }
+        
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 99;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+            }
+            
+            .timeline-icon {
+                margin-bottom: 15px;
+            }
+        }
+
+        /* Image Card Styling */
+.culture-card-image {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.culture-card-image:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(26, 58, 92, 0.15);
+}
+
+.culture-card-image .card-img {
+    height: 200px;
+    overflow: hidden;
+}
+
+.culture-card-image .card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.culture-card-image:hover .card-img img {
+    transform: scale(1.1);
+}
+
+.culture-card-image .card-content {
+    padding: 25px 20px 20px;
+}
+
+.culture-card-image h3 {
+    color: var(--primary-blue);
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.culture-card-image p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Read More Button */
+.btn-read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-read-more:hover {
+    background: var(--primary-blue);
+    color: white;
+}
+
+.btn-read-more i {
+    transition: transform 0.3s ease;
+}
+
+.btn-read-more:hover i {
+    transform: translateX(5px);
+}
+
+/* Modal Popup Styling */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    overflow-y: auto;
+    padding: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.modal-container {
+    background: white;
+    border-radius: 20px;
+    max-width: 800px;
+    margin: 50px auto;
+    position: relative;
+    animation: modalSlideIn 0.4s ease;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.modal-close:hover {
+    background: var(--accent-gold);
+    color: var(--primary-blue);
+    transform: rotate(90deg);
+}
+
+.modal-header {
+    padding: 0;
+}
+
+.modal-header img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+.modal-body h2 {
+    color: var(--primary-blue);
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.modal-body h4 {
+    color: var(--primary-blue);
+    font-weight: 600;
+    margin: 20px 0 10px;
+}
+
+.modal-body p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.modal-body ul {
+    color: #666;
+    line-height: 1.8;
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.modal-body li {
+    margin-bottom: 8px;
+}
+
+/* Hide all modal content by default */
+.modal-content {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .modal-container {
+        margin: 20px auto;
+    }
+    
+    .modal-body {
+        padding: 20px;
+    }
+}
     </style>
+    <!-- Modal Popups -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+    <div class="modal-container" onclick="event.stopPropagation()">
+        <button class="modal-close" onclick="closeModal()">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <!-- Traditional Attire Modal -->
+        <div class="modal-content" id="modal-attire">
+            <div class="modal-header">
+                <img src="../assets/images/culture/traditional-attire.jpg" alt="Traditional Attire" onerror="this.src='https://images.unsplash.com/photo-1589652717521-10c0d092dea9?w=800&q=80'">
+            </div>
+            <div class="modal-body">
+                <h2>Traditional Attire</h2>
+                <p>The traditional attire of the Afar people is both practical for the harsh desert environment and rich in cultural symbolism.</p>
+                <h4>Men's Attire</h4>
+                <p><strong>Sanafil:</strong> A wraparound waistcloth worn by Afar men, practical for the hot climate.</p>
+                <p><strong>Shash:</strong> A headscarf protecting from intense sun and blowing sand.</p>
+                <p><strong>The Jile:</strong> A curved dagger symbolizing honor, bravery, and manhood.</p>
+                <h4>Women's Attire</h4>
+                <p><strong>Gambo:</strong> A long, flowing dress made from brightly colored cotton fabric.</p>
+                <p><strong>Jewelry:</strong> Silver necklaces, bracelets, and earrings serve as portable wealth.</p>
+            </div>
+        </div>
+        
+        <!-- Oral Traditions Modal -->
+        <div class="modal-content" id="modal-oral">
+            <div class="modal-header">
+                <img src="../assets/images/culture/oral-traditions.jpg" alt="Oral Traditions" onerror="this.src='https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&q=80'">
+            </div>
+            <div class="modal-body">
+                <h2>Oral Traditions</h2>
+                <p>Oral traditions form the backbone of Afar cultural preservation, transmitting history, laws, and values across generations.</p>
+                <h4>Gabay - Afar Poetry</h4>
+                <p>Classical poetry with complex meter and sophisticated wordplay. Poets (Gabaytu) hold a special place in society.</p>
+                <h4>Folk Songs</h4>
+                <p>Music accompanies every aspect of Afar life—camel songs, wedding songs, war songs, and lullabies.</p>
+                <h4>Proverbs</h4>
+                <p>"A man without a clan is like a camel without a herd." "The elder's word is medicine."</p>
+            </div>
+        </div>
+        
+        <!-- Marriage Customs Modal -->
+        <div class="modal-content" id="modal-marriage">
+            <div class="modal-header">
+                <img src="../assets/images/culture/marriage.jpg" alt="Marriage Customs" onerror="this.src='https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&q=80'">
+            </div>
+            <div class="modal-body">
+                <h2>Marriage Customs</h2>
+                <p>Marriage in Afar society is an alliance between families, clans, and communities.</p>
+                <h4>Marriage Arrangements</h4>
+                <p>Absuma—cross-cousin marriage—is preferred to strengthen clan ties.</p>
+                <h4>Bride Wealth (Lebe)</h4>
+                <p>Paid in livestock—camels, cattle, goats, and sheep—to the bride's family.</p>
+                <h4>Wedding Ceremonies</h4>
+                <p>Joyous community celebrations lasting several days with feasting and dancing.</p>
+            </div>
+        </div>
+        
+        <!-- Ceremonies & Festivals Modal -->
+        <div class="modal-content" id="modal-ceremonies">
+            <div class="modal-header">
+                <img src="../assets/images/culture/ceremonies.jpg" alt="Ceremonies" onerror="this.src='https://images.unsplash.com/photo-1531386151447-fd76ad50012f?w=800&q=80'">
+            </div>
+            <div class="modal-body">
+                <h2>Ceremonies & Festivals</h2>
+                <p>Ceremonies and festivals mark the rhythm of Afar life, celebrating transitions and reinforcing community bonds.</p>
+                <h4>Birth (Ubka)</h4>
+                <p>Naming ceremony on the seventh day welcomes the child into the clan.</p>
+                <h4>Circumcision (Asallata)</h4>
+                <p>Major community event for boys ages 7-12 with feasting and dancing.</p>
+                <h4>Religious Festivals</h4>
+                <p>Eid al-Fitr, Eid al-Adha, and Mawlid celebrations.</p>
+            </div>
+        </div>
+        
+        <!-- Hospitality Modal -->
+        <div class="modal-content" id="modal-hospitality">
+            <div class="modal-header">
+                <img src="../assets/images/culture/hospitality.jpg" alt="Hospitality" onerror="this.src='https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&q=80'">
+            </div>
+            <div class="modal-body">
+                <h2>Hospitality (Qaffu)</h2>
+                <p>Hospitality is a sacred duty and fundamental pillar of Afar values.</p>
+                <h4>The Sacred Duty</h4>
+                <p>Guests are offered fresh milk and the best available food. Refusing hospitality brings shame.</p>
+                <h4>Rituals of Welcome</h4>
+                <p>Greeting, seating, washing hands, and serving milk or tea.</p>
+                <h4>Traditional Foods</h4>
+                <p>Fresh milk (Can), fermented milk (Ali), meat, and ghee (Subah).</p>
+            </div>
+        </div>
+        
+        <!-- Peacemaking Modal -->
+        <div class="modal-content" id="modal-peacemaking">
+            <div class="modal-header">
+                <img src="../assets/images/culture/peacemaking.jpg" alt="Peacemaking" onerror="this.src='https://images.unsplash.com/photo-1589578527966-fdac0f44566c?w=800&q=80'">
+            </div>
+            <div class="modal-body">
+                <h2>Peacemaking (Mabla)</h2>
+                <p>Mabla is the traditional conflict resolution mechanism essential for maintaining social order.</p>
+                <h4>Philosophy</h4>
+                <p>The goal is reconciliation and restoration of harmony, not punishment.</p>
+                <h4>Role of Elders</h4>
+                <p>Elders (Dorra) serve as mediators and judges based on community respect.</p>
+                <h4>Compensation (Guma)</h4>
+                <p>Wrongs are righted through payment in livestock according to established scales.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Modal Functions
+function openModal(modalId) {
+    document.getElementById('modalOverlay').style.display = 'block';
+    document.getElementById('modal-' + modalId).style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    document.getElementById('modalOverlay').style.display = 'none';
+    document.querySelectorAll('.modal-content').forEach(content => {
+        content.style.display = 'none';
+    });
+    document.body.style.overflow = 'auto';
+}
+
+// Close with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeModal();
+    }
+});
+</script>
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 50'%3E%3Crect width='150' height='50' rx='5' fill='%23ffd700'/%3E%3Ctext x='75' y='30' font-family='Arial' font-size='14' fill='%231a3a5c' text-anchor='middle' font-weight='bold'%3EAfar Culture%3C/text%3E%3C/svg%3E" alt="Afar Culture" style="height: 50px;">
-</a>
- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 50'%3E%3Crect width='150' height='50' rx='5' fill='%23ffd700'/%3E%3Ctext x='75' y='30' font-family='Arial' font-size='14' fill='%231a3a5c' text-anchor='middle' font-weight='bold'%3EAfar Culture%3C/text%3E%3C/svg%3E" alt="Afar Culture">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto" id="nav-menu"></ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="culture.html">Culture</a></li>
+                    <li class="nav-item"><a class="nav-link" href="customs.html">Customary Law</a></li>
+                    <li class="nav-item"><a class="nav-link" href="lifestyle.html">Lifestyle</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
                 <div class="language-selector">
                     <a href="../afar/culture.html" class="lang-btn">Afar</a>
                     <a href="../am/culture.html" class="lang-btn">አማርኛ</a>
@@ -69,121 +658,187 @@
         </div>
     </nav>
 
+    <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1 data-aos="fade-up" id="hero-title"></h1>
-            <p data-aos="fade-up" data-aos-delay="100" id="hero-subtitle"></p>
+            <h1 data-aos="fade-up">Afar Culture & Traditions</h1>
+            <p data-aos="fade-up" data-aos-delay="100">Discover the ancient customs, social structures, and cultural practices that define Afar identity</p>
         </div>
     </section>
-
-    <section class="culture-section">
-        <div class="container">
-            <h2 class="text-center mb-5" style="color: var(--primary-blue); font-weight: 700;" data-aos="fade-up" id="section-title"></h2>
-            <div class="row" id="culture-elements-container"></div>
+    
+   <!-- Cultural Elements Grid -->
+<section class="culture-section" style="background: #f0f4f8;">
+    <div class="container">
+        <h2 class="text-center mb-5" style="color: var(--primary-blue); font-weight: 700;" data-aos="fade-up">Key Cultural Elements</h2>
+        
+        <div class="row" id="culture-elements-container">
+            
+            <!-- 1. Traditional Attire Card -->
+            <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="culture-card-image">
+                    <div class="card-img">
+                        <img src="../assets/images/culture/traditional-attire.jpg" alt="Traditional Attire" onerror="this.src='https://images.unsplash.com/photo-1589652717521-10c0d092dea9?w=600&q=80'">
+                    </div>
+                    <div class="card-content">
+                        <h3>Traditional Attire</h3>
+                        <p>The Sanafil and Shash for men, Gambo for women, and the iconic Jile dagger.</p>
+                        <button class="btn-read-more" onclick="openModal('attire')">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 2. Oral Traditions Card -->
+            <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="culture-card-image">
+                    <div class="card-img">
+                        <img src="../assets/images/culture/oral-traditions.jpg" alt="Oral Traditions" onerror="this.src='https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=600&q=80'">
+                    </div>
+                    <div class="card-content">
+                        <h3>Oral Traditions</h3>
+                        <p>Poetry (Gabay), proverbs, and folk songs preserve history and knowledge.</p>
+                        <button class="btn-read-more" onclick="openModal('oral')">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 3. Marriage Customs Card -->
+            <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="culture-card-image">
+                    <div class="card-img">
+                        <img src="../assets/images/culture/marriage.jpg" alt="Marriage Customs" onerror="this.src='https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80'">
+                    </div>
+                    <div class="card-content">
+                        <h3>Marriage Customs</h3>
+                        <p>Arranged marriages with bride wealth (Lebe) and Absuma preference.</p>
+                        <button class="btn-read-more" onclick="openModal('marriage')">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 4. Ceremonies & Festivals Card -->
+            <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="culture-card-image">
+                    <div class="card-img">
+                        <img src="../assets/images/culture/ceremonies.jpg" alt="Ceremonies & Festivals" onerror="this.src='https://images.unsplash.com/photo-1531386151447-fd76ad50012f?w=600&q=80'">
+                    </div>
+                    <div class="card-content">
+                        <h3>Ceremonies & Festivals</h3>
+                        <p>Births, circumcisions, weddings, and funerals marked by community celebrations.</p>
+                        <button class="btn-read-more" onclick="openModal('ceremonies')">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 5. Hospitality Card -->
+            <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="culture-card-image">
+                    <div class="card-img">
+                        <img src="../assets/images/culture/hospitality.jpg" alt="Hospitality" onerror="this.src='https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=600&q=80'">
+                    </div>
+                    <div class="card-content">
+                        <h3>Hospitality (Qaffu)</h3>
+                        <p>Sacred duty to welcome guests with milk, meat, and Ali.</p>
+                        <button class="btn-read-more" onclick="openModal('hospitality')">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 6. Peacemaking Card -->
+            <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="culture-card-image">
+                    <div class="card-img">
+                        <img src="../assets/images/culture/peacemaking.jpg" alt="Peacemaking" onerror="this.src='https://images.unsplash.com/photo-1589578527966-fdac0f44566c?w=600&q=80'">
+                    </div>
+                    <div class="card-content">
+                        <h3>Peacemaking (Mabla)</h3>
+                        <p>Reconciliation and compensation through elder mediation.</p>
+                        <button class="btn-read-more" onclick="openModal('peacemaking')">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
         </div>
-    </section>
+    </div>
+</section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 mb-4"><h5 id="footer-about-title"></h5><p id="footer-about-text" style="color: #ccc;"></p></div>
-                <div class="col-lg-2 mb-4"><h5 id="footer-links-title"></h5><ul class="footer-links" id="footer-links"></ul></div>
-                <div class="col-lg-4 mb-4"><h5 id="footer-contact-title"></h5><ul class="footer-links" id="footer-contact"></ul></div>
+                <div class="col-lg-4 mb-4">
+                    <h5>About Afar Culture</h5>
+                    <p style="color: #ccc;">Dedicated to preserving, documenting, and sharing the rich cultural heritage of the Afar people in the Horn of Africa.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="culture.html">Culture</a></li>
+                        <li><a href="customs.html">Customary Law</a></li>
+                        <li><a href="lifestyle.html">Lifestyle</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Resources</h5>
+                    <ul class="footer-links">
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Publications</a></li>
+                        <li><a href="#">Research</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <h5>Contact</h5>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> Afar Region, Ethiopia</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@afarculture.org</li>
+                        <li><i class="fas fa-phone me-2"></i> +251 000 000000</li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-bottom"><p id="footer-copyright"></p></div>
+            <div class="footer-bottom">
+                <p>© 2024 Qafar Qaada | Afar Culture. All Rights Reserved.</p>
+            </div>
         </div>
     </footer>
 
+    <!-- Back to Top -->
     <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../assets/js/main.js"></script>
+    
     <script>
         AOS.init({ duration: 1000, once: true });
-        window.addEventListener('scroll', () => document.querySelector('.back-to-top').classList.toggle('show', window.pageYOffset > 300));
         
-        const LANG = 'en';
-        
-        function toggleReadMore(btn) {
-            const card = btn.closest('.culture-card');
-            const full = card.querySelector('.full-text');
-            const preview = card.querySelector('.preview-text');
-            if (full.style.display === 'none' || full.style.display === '') {
-                full.style.display = 'block'; preview.style.display = 'none';
-                btn.innerHTML = 'Read Less <i class="fas fa-chevron-up"></i>';
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
             } else {
-                full.style.display = 'none'; preview.style.display = 'block';
-                btn.innerHTML = 'Read More <i class="fas fa-chevron-down"></i>';
+                backToTop.classList.remove('show');
             }
-        }
-        
-        async function loadContent() {
-            try {
-                const res = await fetch('../assets/data/content.json');
-                const data = await res.json();
-                
-                // Navigation
-                const navItems = data.navigation?.[LANG] || ['Home', 'Culture', 'Customary Law', 'Lifestyle', 'Gallery', 'Contact'];
-                const navUrls = ['index.html', 'culture.html', 'customs.html', 'lifestyle.html', 'gallery.html', 'contact.html'];
-                document.getElementById('nav-menu').innerHTML = navItems.map((item, i) => 
-                    `<li class="nav-item"><a class="nav-link ${i === 1 ? 'active' : ''}" href="${navUrls[i]}">${item}</a></li>`
-                ).join('');
-                
-                // Page Content
-                const page = data.pages?.culture?.[LANG];
-                if (page) {
-                    document.getElementById('hero-title').textContent = page.hero?.title || 'Afar Culture';
-                    document.getElementById('hero-subtitle').textContent = page.hero?.subtitle || '';
-                    document.getElementById('section-title').textContent = page.sectionTitle || 'Key Cultural Elements';
-                    
-                    const elements = page.elements || [];
-                    document.getElementById('culture-elements-container').innerHTML = elements.map((el) => `
-                        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
-                            <div class="culture-card">
-                                <div class="culture-icon"><i class="fas ${el.icon || 'fa-star'}"></i></div>
-                                <h3>${el.title || ''}</h3>
-                                <div class="card-content">
-                                    <p class="preview-text">${el.preview || ''}</p>
-                                    <div class="full-text">${el.full || ''}</div>
-                                </div>
-                                <button class="btn-read-more" onclick="toggleReadMore(this)">Read More <i class="fas fa-chevron-down"></i></button>
-                            </div>
-                        </div>
-                    `).join('');
-                }
-                
-                // Footer
-                const site = data.site;
-                if (site) {
-                    document.getElementById('footer-about-title').textContent = `About ${site.name?.[LANG] || 'Afar Culture'}`;
-                    document.getElementById('footer-about-text').textContent = site.description?.[LANG] || '';
-                    document.getElementById('footer-links-title').textContent = 'Quick Links';
-                    document.getElementById('footer-contact-title').textContent = 'Contact';
-                    document.getElementById('footer-copyright').textContent = `© 2024 ${site.name?.[LANG] || 'Afar Culture'}. All Rights Reserved.`;
-                }
-                
-                document.getElementById('footer-links').innerHTML = navItems.slice(0, 4).map((item, i) => 
-                    `<li><a href="${navUrls[i]}">${item}</a></li>`
-                ).join('');
-                
-                document.getElementById('footer-contact').innerHTML = `
-                    <li><i class="fas fa-map-marker-alt me-2"></i> Afar Region, Ethiopia</li>
-                    <li><i class="fas fa-envelope me-2"></i> info@afarculture.org</li>
-                `;
-                
-            } catch (e) {
-                console.log('Loading default...');
-                document.getElementById('hero-title').textContent = 'Afar Culture';
-                document.getElementById('section-title').textContent = 'Key Cultural Elements';
-                document.getElementById('culture-elements-container').innerHTML = `
-                    <div class="col-lg-4 col-md-6 mb-4"><div class="culture-card"><div class="culture-icon"><i class="fas fa-user-tie"></i></div><h3>Traditional Attire</h3><p>Loading...</p></div></div>
-                    <div class="col-lg-4 col-md-6 mb-4"><div class="culture-card"><div class="culture-icon"><i class="fas fa-music"></i></div><h3>Oral Traditions</h3><p>Loading...</p></div></div>
-                    <div class="col-lg-4 col-md-6 mb-4"><div class="culture-card"><div class="culture-icon"><i class="fas fa-ring"></i></div><h3>Marriage Customs</h3><p>Loading...</p></div></div>
-                `;
-            }
-        }
-        
-        loadContent();
+        });
     </script>
 </body>
 </html>
